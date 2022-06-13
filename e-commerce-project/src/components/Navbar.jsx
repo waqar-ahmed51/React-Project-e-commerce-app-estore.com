@@ -70,7 +70,7 @@ const Navbar = () => {
           </SearchContainer>
         </Left>
         <Center>
-          <Logo>nisum. shop</Logo>
+          <Logo>E-Store.</Logo>
         </Center>
         <Right>
           <MenuItem>REGISTER</MenuItem>
