@@ -34,7 +34,7 @@ const Arrow = styled.div`
   right: ${(props) => props.direction === "right" && "15px"};
   margin: auto;
   cursor: pointer;
-  /* opacity: 0.5; */
+  opacity: 0.7;
 `;
 
 const Slide = styled.div`

@@ -31,7 +31,6 @@ const SearchContainer = styled.div`
   align-items: center;
   margin-left: 25px;
   padding: 5px;
-  cursor: pointer;
 `;
 
 const Input = styled.input`
@@ -66,7 +65,7 @@ const Navbar = () => {
     <Container>
       <Wrapper>
         <Left>
-          <Logo>E-Store.</Logo>
+          <Logo>estore.</Logo>
         </Left>
         <Center>
           <SearchContainer>
