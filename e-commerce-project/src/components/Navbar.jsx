@@ -41,7 +41,7 @@ const Center = styled.div`
 `;
 
 const Logo = styled.h1`
-  color: #09c0ff;
+  color: #06a9ce;
   font-weight: bold;
   text-align: center;
 `;

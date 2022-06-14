@@ -1,7 +1,8 @@
 import { KeyboardArrowLeftOutlined } from "@material-ui/icons";
 import { KeyboardArrowRightOutlined } from "@material-ui/icons";
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
+import { sliderItems } from "../data";
 
 const Container = styled.div`
   width: 100%;
@@ -14,7 +15,8 @@ const Container = styled.div`
 const Wrapper = styled.div`
   height: 100%;
   display: flex;
-  transform: translateX(-100vw);
+  transition: all 1.5s ease;
+  transform: translateX(${(props) => props.slideIndex * -100}vw);
 `;
 
 const Arrow = styled.div`
@@ -40,7 +42,7 @@ const Slide = styled.div`
   width: 100vw;
   height: 100vh;
   align-items: center;
-  /* background-color: #${(props) => props.bg}; */
+  background-color: #${(props) => props.bg};
 `;
 
 const ImageContainer = styled.div`
@@ -50,6 +52,7 @@ const ImageContainer = styled.div`
 const InfoContainer = styled.div`
   flex: 1;
   padding: 50px;
+  margin-left: 40px;
 `;
 
 const Title = styled.h1`
@@ -76,54 +79,37 @@ const Image = styled.img`
 `;
 
 const Slider = () => {
-  const handledClick = (direction) => {};
+  const [slideIndex, setSlideIndex] = useState(0);
+  const handleClick = (direction) => {
+    if (direction === "left") {
+      //   console.log("Left");
+      setSlideIndex(slideIndex > 0 ? slideIndex - 1 : 2);
+    } else {
+      //   console.log("Right");
+      setSlideIndex(slideIndex < 2 ? slideIndex + 1 : 0);
+    }
+  };
+
   return (
     <Container>
-      <Arrow direction="left" onClick={handledClick("left")}>
+      <Wrapper slideIndex={slideIndex}>
+        {sliderItems.map((items) => (
+          <Slide bg={items.bg} key={items.id}>
+            <InfoContainer>
+              <Title>{items.title}</Title>
+              <Desc>{items.desc}</Desc>
+              <Button>BUY NOW</Button>
+            </InfoContainer>
+            <ImageContainer>
+              <Image src={items.img} />
+            </ImageContainer>
+          </Slide>
+        ))}
+      </Wrapper>
+      <Arrow direction="left" onClick={() => handleClick("left")}>
         <KeyboardArrowLeftOutlined />
       </Arrow>
-      <Wrapper>
-        <Slide bg="b30808">
-          <InfoContainer>
-            <Title>BUY TECH NOW</Title>
-            <Desc>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum
-              porro exercitationem,perferendis a iste.
-            </Desc>
-            <Button>BUY NOW</Button>
-          </InfoContainer>
-          <ImageContainer>
-            <Image src="https://www.brostudiocz.com/wp-content/gallery/product-photography-on-white/hive-xl-front.jpg" />
-          </ImageContainer>
-        </Slide>
-        <Slide bg="072122">
-          <InfoContainer>
-            <Title>BUY TECH NOW2</Title>
-            <Desc>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum
-              porro exercitationem,perferendis a iste.
-            </Desc>
-            <Button>BUY NOW</Button>
-          </InfoContainer>
-          <ImageContainer>
-            <Image src="https://www.brostudiocz.com/wp-content/gallery/product-photography-on-white/hive-xl-front.jpg" />
-          </ImageContainer>
-        </Slide>
-        <Slide bg="e410c8">
-          <InfoContainer>
-            <Title>BUY TECH NOW3</Title>
-            <Desc>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum
-              porro exercitationem,perferendis a iste.
-            </Desc>
-            <Button>BUY NOW</Button>
-          </InfoContainer>
-          <ImageContainer>
-            <Image src="https://www.brostudiocz.com/wp-content/gallery/product-photography-on-white/hive-xl-front.jpg" />
-          </ImageContainer>
-        </Slide>
-      </Wrapper>
-      <Arrow direction="right" onClick={handledClick("right")}>
+      <Arrow direction="right" onClick={() => handleClick("right")}>
         <KeyboardArrowRightOutlined />
       </Arrow>
     </Container>
