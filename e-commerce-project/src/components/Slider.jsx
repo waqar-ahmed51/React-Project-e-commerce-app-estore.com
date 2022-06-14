@@ -22,7 +22,7 @@ const Wrapper = styled.div`
 const Arrow = styled.div`
   width: 50px;
   height: 50px;
-  background-color: #ffffff;
+  background-color: #000000;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -34,7 +34,7 @@ const Arrow = styled.div`
   right: ${(props) => props.direction === "right" && "15px"};
   margin: auto;
   cursor: pointer;
-  opacity: 0.5;
+  /* opacity: 0.5; */
 `;
 
 const Slide = styled.div`
@@ -46,6 +46,7 @@ const Slide = styled.div`
 `;
 
 const ImageContainer = styled.div`
+  padding-top: 50px;
   height: 100%;
   flex: 1;
 `;
@@ -107,13 +108,13 @@ const Slider = () => {
         ))}
       </Wrapper>
       <Arrow direction="left" onClick={() => handleClick("left")}>
-        <KeyboardArrowLeftOutlined />
+        <KeyboardArrowLeftOutlined style={{ color: "white" }} />
       </Arrow>
       <Arrow direction="right" onClick={() => handleClick("right")}>
-        <KeyboardArrowRightOutlined />
+        <KeyboardArrowRightOutlined style={{ color: "white" }} />
       </Arrow>
     </Container>
   );
 };
-
+// #e9e9e9cc
 export default Slider;

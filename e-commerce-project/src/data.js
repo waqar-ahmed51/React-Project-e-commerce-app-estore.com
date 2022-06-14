@@ -1,30 +1,25 @@
 export const sliderItems = [
     {
         id: 1,
-        img: "https://www.brostudiocz.com/wp-content/gallery/product-photography-on-white/hive-xl-front.jpg",
-        title: "BUY TECH NOW",
+        img: "https://www.pngmart.com/files/4/Macbook-PNG-Photo.png",
+        title: "BUY LAPTOPS 30% OFF",
         desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum porro exercitationem,perferendis a iste.",
-        bg: "",
+        bg: "ebfcf5",
     },
     {
         id: 2,
-        img: "",
-        title: "BUY TECH NOW2",
+        img: "https://www.pngmart.com/files/4/Phone-Case-Transparent-PNG.png",
+        title: "BUY PHONES 20% OFF",
         desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum porro exercitationem,perferendis a iste.",
-        bg: "cccc",
+        bg: "f9f6ff",
     },
     {
         id: 3,
-        img: "https://www.brostudiocz.com/wp-content/gallery/product-photography-on-white/hive-xl-front.jpg",
-        title: "BUY TECH NOW3",
+        img: "https://www.pngmart.com/files/6/Sennheiser-Headphone-PNG-Transparent-Picture.png",
+        title: "BUY HEADPHONES",
         desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum porro exercitationem,perferendis a iste.",
-        bg: "",
+        bg: "e9e9e9cc",
     },
-    {
-        id: 4,
-        img: "https://www.brostudiocz.com/wp-content/gallery/product-photography-on-white/hive-xl-front.jpg",
-        title: "BUY TECH NOW4",
-        desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum porro exercitationem,perferendis a iste.",
-        bg: "",
-    },
+    
+    
 ];

@@ -26,22 +26,25 @@ const Language = styled.div`
 `;
 
 const SearchContainer = styled.div`
-  border: 0.5px solid lightgray;
+  border: 0.5px solid black;
   display: flex;
   align-items: center;
   margin-left: 25px;
   padding: 5px;
+  cursor: pointer;
 `;
 
 const Input = styled.input`
   border: none;
+  width: 100%;
+  cursor: pointer;
 `;
 const Center = styled.div`
   flex: 1;
 `;
 
 const Logo = styled.h1`
-  color: #06a9ce;
+  color: #000000;
   font-weight: bold;
   text-align: center;
 `;
@@ -63,16 +66,16 @@ const Navbar = () => {
     <Container>
       <Wrapper>
         <Left>
-          <Language>EN</Language>
-          <SearchContainer>
-            <Input />
-            <Search style={{ color: "gray", fontSize: 16 }} />
-          </SearchContainer>
+          <Logo>E-Store.</Logo>
         </Left>
         <Center>
-          <Logo>E-Store.</Logo>
+          <SearchContainer>
+            <Input />
+            <Search style={{ color: "black", fontSize: 20 }} />
+          </SearchContainer>
         </Center>
         <Right>
+          <Language>EN</Language>
           <MenuItem>REGISTER</MenuItem>
           <MenuItem>SIGN IN</MenuItem>
           <MenuItem>

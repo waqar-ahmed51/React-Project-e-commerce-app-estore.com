@@ -12,7 +12,7 @@ const Container = styled.div`
   font-weight: 500;
 `;
 const Announcement = () => {
-  return <Container>Announcements will be here soon!</Container>;
+  return <Container>SALE UPTO 40% OFF ON DIFFERENT PRODUCTS</Container>;
 };
 
 export default Announcement;
