@@ -40,7 +40,7 @@ const Arrow = styled.div`
 const Slide = styled.div`
   display: flex;
   width: 100vw;
-  height: 100vh;
+  height: 92vh;
   align-items: center;
   background-color: #${(props) => props.bg};
 `;
