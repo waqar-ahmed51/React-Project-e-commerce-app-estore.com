@@ -45,50 +45,42 @@ export const categories = [
 export const popularProducts = [
     {
         id: 1,
-        img: "https://images.samsung.com/is/image/samsung/p6pim/levant/2202/gallery/levant-galaxy-s22-plus-s906-412889-sm-s906ezwgmea-thumb-530961165?$264_264_PNG$",
+        img: "https://gagadget.com/media/post_big/iphone-13-pro-review-dan-baker-35_gAtW7pC.jpg",
     },
     {
         id: 2,
-        img: "https://images.samsung.com/is/image/samsung/p6pim/levant/2202/gallery/levant-galaxy-s22-plus-s906-412889-sm-s906ezwgmea-thumb-530961165?$264_264_PNG$",
+        img: "https://gagadget.com/media/post_big/iphone-13-pro-review-dan-baker-35_gAtW7pC.jpg",
     },
     {
         id: 3,
-        img: "https://images.samsung.com/is/image/samsung/p6pim/levant/2202/gallery/levant-galaxy-s22-plus-s906-412889-sm-s906ezwgmea-thumb-530961165?$264_264_PNG$",
+        img: "https://gagadget.com/media/post_big/iphone-13-pro-review-dan-baker-35_gAtW7pC.jpg",
     },
     {
         id: 4,
-        img: "https://images.samsung.com/is/image/samsung/p6pim/levant/2202/gallery/levant-galaxy-s22-plus-s906-412889-sm-s906ezwgmea-thumb-530961165?$264_264_PNG$",
+        img: "https://gagadget.com/media/post_big/iphone-13-pro-review-dan-baker-35_gAtW7pC.jpg",
     },
     {
         id: 5,
-        img: "https://images.samsung.com/is/image/samsung/p6pim/levant/2202/gallery/levant-galaxy-s22-plus-s906-412889-sm-s906ezwgmea-thumb-530961165?$264_264_PNG$",
+        img: "https://gagadget.com/media/post_big/iphone-13-pro-review-dan-baker-35_gAtW7pC.jpg",
     },
     {
         id: 6,
-        img: "https://images.samsung.com/is/image/samsung/p6pim/levant/2202/gallery/levant-galaxy-s22-plus-s906-412889-sm-s906ezwgmea-thumb-530961165?$264_264_PNG$",
+        img: "https://gagadget.com/media/post_big/iphone-13-pro-review-dan-baker-35_gAtW7pC.jpg",
     },
     {
         id: 7,
-        img: "https://images.samsung.com/is/image/samsung/p6pim/levant/2202/gallery/levant-galaxy-s22-plus-s906-412889-sm-s906ezwgmea-thumb-530961165?$264_264_PNG$",
+        img: "https://gagadget.com/media/post_big/iphone-13-pro-review-dan-baker-35_gAtW7pC.jpg",
     },
     {
         id: 8,
-        img: "https://images.samsung.com/is/image/samsung/p6pim/levant/2202/gallery/levant-galaxy-s22-plus-s906-412889-sm-s906ezwgmea-thumb-530961165?$264_264_PNG$",
+        img: "https://gagadget.com/media/post_big/iphone-13-pro-review-dan-baker-35_gAtW7pC.jpg",
     },
     {
         id: 9,
-        img: "https://images.samsung.com/is/image/samsung/p6pim/levant/2202/gallery/levant-galaxy-s22-plus-s906-412889-sm-s906ezwgmea-thumb-530961165?$264_264_PNG$",
+        img: "https://gagadget.com/media/post_big/iphone-13-pro-review-dan-baker-35_gAtW7pC.jpg",
     },
     {
         id: 10,
-        img: "https://images.samsung.com/is/image/samsung/p6pim/levant/2202/gallery/levant-galaxy-s22-plus-s906-412889-sm-s906ezwgmea-thumb-530961165?$264_264_PNG$",
-    },
-    {
-        id: 11,
-        img: "https://images.samsung.com/is/image/samsung/p6pim/levant/2202/gallery/levant-galaxy-s22-plus-s906-412889-sm-s906ezwgmea-thumb-530961165?$264_264_PNG$",
-    },
-    {
-        id: 12,
-        img: "https://images.samsung.com/is/image/samsung/p6pim/levant/2202/gallery/levant-galaxy-s22-plus-s906-412889-sm-s906ezwgmea-thumb-530961165?$264_264_PNG$",
+        img: "https://gagadget.com/media/post_big/iphone-13-pro-review-dan-baker-35_gAtW7pC.jpg",
     },
 ];
