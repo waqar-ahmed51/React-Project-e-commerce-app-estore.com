@@ -30,13 +30,16 @@ const SearchContainer = styled.div`
   display: flex;
   align-items: center;
   margin-left: 25px;
+  justify-content: space-between;
   padding: 5px;
 `;
 
 const Input = styled.input`
   border: none;
-  width: 100%;
+  flex: 8;
+  height: 25px;
   cursor: pointer;
+  display: flex;
 `;
 const Center = styled.div`
   flex: 1;
