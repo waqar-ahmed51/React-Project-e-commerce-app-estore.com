@@ -5,8 +5,8 @@ import Product from "./pages/Product";
 
 const App = () => {
   // return <Home />;
-  return <ProductList />;
-  // return <Product />;
+  // return <ProductList />;
+  return <Product />;
 };
 
 export default App;
