@@ -29,15 +29,22 @@ const InputContainer = styled.div`
   border: 1px solid lightgray;
 `;
 const Input = styled.input`
-  border: none;
+  border: 1px solid black;
   flex: 8;
   padding-left: 20px;
 `;
 const Button = styled.button`
   flex: 1;
   border: none;
-  background-color: black;
-  color: white;
+  border: 1px solid black;
+  background-color: #ffffff;
+  color: #000000;
+  &:hover {
+    background-color: #000000;
+    color: white;
+    transform: scale(1.1);
+    transition: all 0.5s ease;
+  }
 `;
 
 const NewsLetter = () => {

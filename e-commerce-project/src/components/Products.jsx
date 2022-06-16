@@ -13,19 +13,10 @@ const ProductContainer = styled.div`
   justify-content: space-between;
 `;
 
-const Title = styled.h1`
-  font-size: 50px;
-  margin-bottom: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-`;
-
 const Products = () => {
   return (
     <Container>
-      <Title>Popular Products</Title>
+      
       <ProductContainer>
         {popularProducts.map((item) => (
           <Product item={item} key={item.id} />

@@ -2,8 +2,8 @@ export const sliderItems = [
     {
         id: 1,
         // Comment the image below of laptop during development its a heavy image 
-        // img: "https://www.pngmart.com/files/4/Macbook-PNG-Photo.png",
-        img: "https://cdn2-imgix.macpaw.com/images/content/en_1633513105.png?auto=format&fm=png&ixlib=php-3.3.1&q=60&w=468",
+        img: "https://www.pngmart.com/files/4/Macbook-PNG-Photo.png",
+        // img: "https://cdn2-imgix.macpaw.com/images/content/en_1633513105.png?auto=format&fm=png&ixlib=php-3.3.1&q=60&w=468",
         title: "LAPTOPS 30% OFF",
         desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum porro exercitationem,perferendis a iste.",
         bg: "ebfcf5",
@@ -46,42 +46,52 @@ export const categories = [
 export const popularProducts = [
     {
         id: 1,
+        title: "IPHONE 13 PRO MAX",
         img: "https://gagadget.com/media/post_big/iphone-13-pro-review-dan-baker-35_gAtW7pC.jpg",
     },
     {
         id: 2,
+        title: "IPHONE 13 PRO MAX",
         img: "https://gagadget.com/media/post_big/iphone-13-pro-review-dan-baker-35_gAtW7pC.jpg",
     },
     {
         id: 3,
+        title: "IPHONE 13 PRO MAX",
         img: "https://gagadget.com/media/post_big/iphone-13-pro-review-dan-baker-35_gAtW7pC.jpg",
     },
     {
         id: 4,
+        title: "IPHONE 13 PRO MAX",
         img: "https://gagadget.com/media/post_big/iphone-13-pro-review-dan-baker-35_gAtW7pC.jpg",
     },
     {
         id: 5,
+        title: "IPHONE 13 PRO MAX",
         img: "https://gagadget.com/media/post_big/iphone-13-pro-review-dan-baker-35_gAtW7pC.jpg",
     },
     {
         id: 6,
+        title: "IPHONE 13 PRO MAX",
         img: "https://gagadget.com/media/post_big/iphone-13-pro-review-dan-baker-35_gAtW7pC.jpg",
     },
     {
         id: 7,
+        title: "IPHONE 13 PRO MAX",
         img: "https://gagadget.com/media/post_big/iphone-13-pro-review-dan-baker-35_gAtW7pC.jpg",
     },
     {
         id: 8,
+        title: "IPHONE 13 PRO MAX",
         img: "https://gagadget.com/media/post_big/iphone-13-pro-review-dan-baker-35_gAtW7pC.jpg",
     },
     {
         id: 9,
+        title: "IPHONE 13 PRO MAX",
         img: "https://gagadget.com/media/post_big/iphone-13-pro-review-dan-baker-35_gAtW7pC.jpg",
     },
     {
         id: 10,
+        title: "IPHONE 13 PRO MAX",
         img: "https://gagadget.com/media/post_big/iphone-13-pro-review-dan-baker-35_gAtW7pC.jpg",
     },
 ];

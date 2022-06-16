@@ -12,10 +12,22 @@ const Container = styled.div`
   overflow: hidden;
 `;
 
+//Auto transfrom for the slider after seconds
+// var sec = 0;
+// setInterval(function () {
+//   this.sec = sec + 1;
+//   console.log(sec);
+//   if (sec === 3) {
+//     sec = 0;
+//   }
+//   return sec;
+// }, 2000);
+
 const Wrapper = styled.div`
   height: 100%;
   display: flex;
   transition: all 1.5s ease;
+  transition: ease 1000ms;
   transform: translateX(${(props) => props.slideIndex * -100}vw);
 `;
 
