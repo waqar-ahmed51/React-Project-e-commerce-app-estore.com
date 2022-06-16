@@ -73,6 +73,12 @@ const Button = styled.button`
   font-size: 20px;
   background-color: transparent;
   cursor: pointer;
+  &:hover {
+    background-color: #000000;
+    color: white;
+    /* transform: scale(1.4); */
+    transition: all 0.3s ease;
+  }
 `;
 
 const Image = styled.img`

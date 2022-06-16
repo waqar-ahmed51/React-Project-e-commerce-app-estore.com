@@ -11,6 +11,18 @@ const Image = styled.img`
   height: 100%;
   object-fit: cover;
 `;
+
+const TitleBackground = styled.div`
+  position: absolute;
+  background-color: black;
+  width: 100%;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.7;
+`;
+
 const Info = styled.div`
   position: absolute;
   top: 0;
@@ -19,20 +31,40 @@ const Info = styled.div`
   height: 100%;
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+  &:hover ${TitleBackground} {
+    height: 100%;
+    transition: all 0.5s ease;
+  }
 `;
+
 const Title = styled.h1`
+  position: absolute;
+  bottom: 330px;
+  margin-bottom: 300px;
   color: white;
-  margin-bottom: 20px;
+  margin: 15px;
+  opacity: none;
 `;
+
 const Button = styled.button`
+  position: absolute;
+  bottom: 295px;
   border: none;
   padding: 10px;
   background-color: white;
-  color: gray;
+  border: 2px solid white;
+  color: #000000;
   cursor: pointer;
   font-weight: 600;
+  &:hover {
+    background-color: #000000;
+    color: white;
+    transform: scale(1.4);
+    transition: all 0.3s ease;
+  }
 `;
 
 const CategoryItem = ({ item }) => {
@@ -40,6 +72,7 @@ const CategoryItem = ({ item }) => {
     <Container>
       <Image src={item.img} />
       <Info>
+        <TitleBackground />
         <Title>{item.title}</Title>
         <Button>BUY NOW</Button>
       </Info>

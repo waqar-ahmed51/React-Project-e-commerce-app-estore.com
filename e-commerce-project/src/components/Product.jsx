@@ -59,12 +59,12 @@ const Icon = styled.div`
   align-items: center;
   justify-content: center;
   margin: 10px;
-  transition: all 0.5s ease;
+  transition: all 0.3s ease;
 
   &:hover {
     background-color: #000000;
     color: white;
-    transform: scale(1.3);
+    transform: scale(1.4);
   }
 `;
 

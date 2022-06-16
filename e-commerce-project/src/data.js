@@ -1,8 +1,9 @@
 export const sliderItems = [
     {
         id: 1,
+        // Comment the image below of laptop during development its a heavy image 
         // img: "https://www.pngmart.com/files/4/Macbook-PNG-Photo.png",
-        img: "https://www.pngmart.com/files/4/Phone-Case-Transparent-PNG.png",
+        img: "https://cdn2-imgix.macpaw.com/images/content/en_1633513105.png?auto=format&fm=png&ixlib=php-3.3.1&q=60&w=468",
         title: "LAPTOPS 30% OFF",
         desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum porro exercitationem,perferendis a iste.",
         bg: "ebfcf5",
