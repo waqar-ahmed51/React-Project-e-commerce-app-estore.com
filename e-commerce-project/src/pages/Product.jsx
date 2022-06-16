@@ -49,6 +49,7 @@ const Product = () => {
             earum.
           </Desc>
           <Price>120000 PKR</Price>
+          
         </InfoContainer>
       </Wrapper>
 

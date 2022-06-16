@@ -8,6 +8,11 @@ const Container = styled.div``;
 
 const Title = styled.h1`
   margin: 20px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  border-bottom: 1px solid #b7b7b7;
+  padding-bottom: 20px;
 `;
 
 const FilterContainer = styled.div`
@@ -44,17 +49,22 @@ const ProductList = () => {
             <Option disabled selected>
               RAM
             </Option>
-            <Option>1</Option>
-            <Option>3</Option>
-            <Option>4</Option>
+            <Option>2 GB</Option>
+            <Option>4 GB</Option>
+            <Option>6 GB</Option>
+            <Option>8 GB</Option>
+            <Option>16 GB</Option>
           </Select>
           <Select>
             <Option disabled selected>
               ROM
             </Option>
-            <Option>1</Option>
-            <Option>3</Option>
-            <Option>4</Option>
+            <Option>8 GB</Option>
+            <Option>16 GB</Option>
+            <Option>32 GB</Option>
+            <Option>64 GB</Option>
+            <Option>128 GB</Option>
+            <Option>256 GB</Option>
           </Select>
         </Filter>
         <Filter>
@@ -63,9 +73,10 @@ const ProductList = () => {
             <Option disabled selected>
               Sort by
             </Option>
-            <Option>1</Option>
-            <Option>3</Option>
-            <Option>4</Option>
+            <Option>Price Low to High</Option>
+            <Option>Price High to Low</Option>
+            <Option>Latest</Option>
+            <Option>Popular</Option>
           </Select>
         </Filter>
       </FilterContainer>
