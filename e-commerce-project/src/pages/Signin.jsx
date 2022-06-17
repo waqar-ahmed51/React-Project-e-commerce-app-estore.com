@@ -18,7 +18,6 @@ const Title = styled.h1`
 const Wrapper = styled.div`
   margin: 20px;
   height: 60vh;
-  border-bottom: 1px solid #b7b7b7;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -60,9 +59,14 @@ const ForgetPassword = styled.p`
   align-items: center;
   margin-bottom: 10px;
   cursor: pointer;
+  &:hover {
+    transform: scale(1.1);
+    transition: all 0.3s ease;
+    color: black;
+  }
 `;
 
-const Signin = () => {
+const SignIn = () => {
   return (
     <Container>
       <Announcement />
@@ -81,4 +85,4 @@ const Signin = () => {
   );
 };
 
-export default Signin;
+export default SignIn;

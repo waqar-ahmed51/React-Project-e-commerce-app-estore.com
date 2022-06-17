@@ -19,7 +19,6 @@ const Title = styled.h1`
 const Wrapper = styled.div`
   margin: 20px;
   height: 60vh;
-  border-bottom: 1px solid #b7b7b7;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -61,6 +60,9 @@ const Agreement = styled.div`
 const AgreementText = styled.p`
   font-size: 15px;
   color: #757575;
+  &:hover {
+    color: black;
+  }
 `;
 
 const Register = () => {

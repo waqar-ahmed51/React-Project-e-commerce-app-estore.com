@@ -1,16 +1,18 @@
 import "./App.css";
-// import Home from "./pages/Home";
-// import ProductList from "./pages/ProductList";
-import Product from "./pages/Product";
-// import Register from "./pages/Register";
-// import Signin from "./pages/Signin";
+import Home from "./pages/Home";
+import ProductList from "./pages/ProductList";
+import ProductView from "./pages/ProductView";
+import Register from "./pages/Register";
+import SignIn from "./pages/SignIn";
+import Cart from "./pages/Cart";
 
 const App = () => {
   // return <Home />;
   // return <ProductList />;
-  return <Product />;
+  // return <ProductView />;
   // return <Register />;
-  // return <Signin />;
+  // return <SignIn />;
+  return <Cart />;
 };
 
 export default App;

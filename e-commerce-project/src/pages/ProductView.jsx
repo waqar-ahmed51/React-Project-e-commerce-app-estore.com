@@ -10,6 +10,7 @@ const Wrapper = styled.div`
   display: flex;
 `;
 const ImageContainer = styled.div`
+  border: 2px solid black;
   flex: 1;
 `;
 const Image = styled.img`
@@ -42,13 +43,14 @@ const SpecContianer = styled.div`
 `;
 const SpectTitle = styled.p`
   background-color: black;
-  border: 0.2px solid white;
+  border-bottom: 0.2px solid white;
   color: white;
   display: flex;
   padding: 5px;
   justify-content: flex-end;
   align-items: center;
   flex: 1;
+  font-size: 15px;
 `;
 const SpecDetail = styled.p`
   display: flex;
@@ -56,8 +58,12 @@ const SpecDetail = styled.p`
   padding: 5px;
   flex: 3;
   background-color: white;
-  border: 1px solid black;
-  font-size: 20px;
+  border-bottom: 0.2px solid black;
+  font-size: 15px;
+  &:hover {
+    background-color: #e4e3e3;
+    transition: all 0.2s ease;
+  }
 `;
 
 const QuantityPrice = styled.div`
@@ -66,17 +72,32 @@ const QuantityPrice = styled.div`
   align-content: center;
   align-items: center;
 `;
-
+const QuantityButtonContainer = styled.div`
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+`;
 const QuantityButton = styled.button`
+  padding: 3px;
   align-items: center;
   justify-content: center;
   font-size: 20px;
-  border: 2px solid black;
-  background-color: #e2e2e2;
+  border: 1px solid black;
+  background-color: black;
+  color: white;
   cursor: pointer;
+  width: 30px;
+  height: 30px;
+  &:hover {
+    background-color: white;
+    color: black;
+    transform: scale(1.1);
+    transition: all 0.5s ease;
+  }
 `;
 const Quantity = styled.p`
-  font-size: 30px;
+  font-size: 25px;
   margin: 0px 20px;
 `;
 
@@ -85,7 +106,7 @@ const Price = styled.span`
   justify-content: flex-end;
   flex: 5;
   font-weight: 100;
-  font-size: 40px;
+  font-size: 30px;
 `;
 
 const ColorContainer = styled.div`
@@ -110,7 +131,7 @@ const Color = styled.div`
   }
 `;
 
-const Product = () => {
+const ProductView = () => {
   return (
     <Container>
       <Announcement />
@@ -128,23 +149,23 @@ const Product = () => {
             earum.
           </Desc>
           <SpecContianer>
-            <SpectTitle>RAM :</SpectTitle>
+            <SpectTitle>RAM </SpectTitle>
             <SpecDetail>16 GB</SpecDetail>
           </SpecContianer>
           <SpecContianer>
-            <SpectTitle>ROM :</SpectTitle>
+            <SpectTitle>ROM </SpectTitle>
             <SpecDetail>128 GB</SpecDetail>
           </SpecContianer>
           <SpecContianer>
-            <SpectTitle>Processor :</SpectTitle>
+            <SpectTitle>Processor </SpectTitle>
             <SpecDetail>Snapdragon 1080 </SpecDetail>
           </SpecContianer>
           <SpecContianer>
-            <SpectTitle>Dual SIM :</SpectTitle>
+            <SpectTitle>Dual SIM </SpectTitle>
             <SpecDetail>Yes</SpecDetail>
           </SpecContianer>
           <ColorContainer>
-            Color :
+            Color
             <Color color="6EA3C5" style={{ border: "3px solid black" }}></Color>
             <Color color="000000"></Color>
             <Color color="460000"></Color>
@@ -152,13 +173,15 @@ const Product = () => {
             <Color color="ffffff"></Color>
           </ColorContainer>
           <QuantityPrice>
-            <QuantityButton>
-              <Remove />
-            </QuantityButton>
-            <Quantity>9</Quantity>
-            <QuantityButton>
-              <Add />
-            </QuantityButton>
+            <QuantityButtonContainer>
+              <QuantityButton>
+                <Remove />
+              </QuantityButton>
+              <Quantity>1</Quantity>
+              <QuantityButton>
+                <Add />
+              </QuantityButton>
+            </QuantityButtonContainer>
             <Price>12,0000 PKR</Price>
           </QuantityPrice>
         </InfoContainer>
@@ -169,4 +192,4 @@ const Product = () => {
   );
 };
 
-export default Product;
+export default ProductView;
