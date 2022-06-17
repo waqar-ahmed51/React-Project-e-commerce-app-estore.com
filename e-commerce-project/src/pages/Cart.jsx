@@ -54,6 +54,20 @@ const Desc = styled.p`
   text-align: center;
 `;
 
+const Color = styled.div`
+  background-color: #${(props) => props.color};
+  border: 1px solid black;
+  margin-left: 20px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  &:hover {
+    transform: scale(1.2);
+    transition: all 0.3s ease;
+  }
+`;
+
 const ProdctPrice = styled.div`
   /* background-color: #09c40f; */
   display: flex;
@@ -104,6 +118,35 @@ const Price = styled.span`
   font-size: 25px;
 `;
 
+const TotalTitle = styled.h1`
+  color: #3e3e3e;
+  border-right: 1px solid black;
+  padding-right: 20px;
+  font-size: 25px;
+`;
+const TotalPrice = styled.h1`
+  margin-left: 20px;
+`;
+
+const TotalPriceContainer = styled.div`
+  background-color: #e7e6e6;
+  padding: 10px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  &:hover {
+    background-color: black;
+    transition: all 0.5s ease;
+  }
+  &:hover ${TotalTitle} {
+    border-right: 1px solid white;
+    color: white;
+  }
+  &:hover ${TotalPrice} {
+    color: white;
+  }
+`;
+
 const Cart = () => {
   return (
     <Container>
@@ -119,7 +162,9 @@ const Cart = () => {
           </ProducImage>
           <ProdctDetails>
             <Title>IPHONE 13 PRO</Title>
-            <Desc>RAM : 6GB | ROM : 128 GB | COLOR: BLUE</Desc>
+            <Desc>
+              RAM : 6 GB | ROM : 128 GB | COLOR: <Color color="6EA3C5"></Color>
+            </Desc>
             <Desc>
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
               Temporibus nostrum quo veniam alias sunt laudantium iste soluta,
@@ -152,7 +197,7 @@ const Cart = () => {
           </ProducImage>
           <ProdctDetails>
             <Title>IPHONE 13 PRO</Title>
-            <Desc>RAM : 6GB | ROM : 128 GB | COLOR: BLUE</Desc>
+            <Desc>RAM : 6 GB | ROM : 128 GB | COLOR: BLUE</Desc>
             <Desc>
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
               Temporibus nostrum quo veniam alias sunt laudantium iste soluta,
@@ -185,7 +230,7 @@ const Cart = () => {
           </ProducImage>
           <ProdctDetails>
             <Title>IPHONE 13 PRO</Title>
-            <Desc>RAM : 6GB | ROM : 128 GB | COLOR: BLUE</Desc>
+            <Desc>RAM : 6 GB | ROM : 128 GB | COLOR: BLUE</Desc>
             <Desc>
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
               Temporibus nostrum quo veniam alias sunt laudantium iste soluta,
@@ -208,6 +253,10 @@ const Cart = () => {
             </QuantityPrice>
           </ProdctPrice>
         </CartItem>
+        <TotalPriceContainer>
+          <TotalTitle>Total </TotalTitle>
+          <TotalPrice>3,60,000 PKR</TotalPrice>
+        </TotalPriceContainer>
       </Wrapper>
       <Footer />
     </Container>
