@@ -60,7 +60,7 @@ const Agreement = styled.div`
 `;
 const AgreementText = styled.p``;
 
-const Register = () => {
+const Signin = () => {
   return (
     <Container>
       <Announcement />
@@ -88,4 +88,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default Signin;

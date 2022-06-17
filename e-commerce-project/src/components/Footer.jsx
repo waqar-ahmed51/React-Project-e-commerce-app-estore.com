@@ -20,7 +20,7 @@ const FooterContainer = styled.div`
   display: flex;
 `;
 const Left = styled.div`
-  border-right: 1px solid black;
+  border-right: 1px solid #b7b7b7;
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -52,7 +52,7 @@ const SocialIcon = styled.div`
 `;
 
 const Center = styled.div`
-  border-right: 1px solid black;
+  border-right: 1px solid #b7b7b7;
   flex: 1;
   padding: 0px 20px 0px 20px;
 `;
