@@ -54,20 +54,6 @@ const Desc = styled.p`
   text-align: center;
 `;
 
-const Color = styled.div`
-  background-color: #${(props) => props.color};
-  border: 1px solid black;
-  margin-left: 20px;
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  cursor: pointer;
-  &:hover {
-    transform: scale(1.2);
-    transition: all 0.3s ease;
-  }
-`;
-
 const ProdctPrice = styled.div`
   /* background-color: #09c40f; */
   display: flex;
@@ -162,9 +148,7 @@ const Cart = () => {
           </ProducImage>
           <ProdctDetails>
             <Title>IPHONE 13 PRO</Title>
-            <Desc>
-              RAM : 6 GB | ROM : 128 GB | COLOR: <Color color="6EA3C5"></Color>
-            </Desc>
+            <Desc>RAM : 6 GB | ROM : 128 GB | COLOR: BLUE</Desc>
             <Desc>
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
               Temporibus nostrum quo veniam alias sunt laudantium iste soluta,
