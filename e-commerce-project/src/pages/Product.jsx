@@ -1,3 +1,4 @@
+import { Add, Remove } from "@material-ui/icons";
 import styled from "styled-components";
 import Announcement from "../components/Announcement";
 import Footer from "../components/Footer";
@@ -22,11 +23,67 @@ const InfoContainer = styled.div`
 `;
 const Title = styled.h2`
   font-weight: 100;
+  background-color: black;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 8%;
 `;
 const Desc = styled.p`
   margin: 20px 0px;
+  text-align: justify;
 `;
+
+const SpecContianer = styled.div`
+  display: flex;
+  /* justify-content: center;
+  align-content: center; */
+`;
+const SpectTitle = styled.p`
+  background-color: black;
+  border: 0.2px solid white;
+  color: white;
+  display: flex;
+  padding: 5px;
+  justify-content: flex-end;
+  align-items: center;
+  flex: 1;
+`;
+const SpecDetail = styled.p`
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  flex: 3;
+  background-color: white;
+  border: 1px solid black;
+  font-size: 20px;
+`;
+
+const QuantityPrice = styled.div`
+  margin-top: 20px;
+  display: flex;
+  align-content: center;
+  align-items: center;
+`;
+
+const QuantityButton = styled.button`
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  border: 2px solid black;
+  background-color: #e2e2e2;
+  cursor: pointer;
+`;
+const Quantity = styled.p`
+  font-size: 30px;
+  margin: 0px 20px;
+`;
+
 const Price = styled.span`
+  display: flex;
+  justify-content: flex-end;
+  flex: 5;
   font-weight: 100;
   font-size: 40px;
 `;
@@ -48,8 +105,32 @@ const Product = () => {
             dolorum itaque ullam nulla sapiente, eum sunt, aliquid sit. Nostrum,
             earum.
           </Desc>
-          <Price>120000 PKR</Price>
-          
+          <SpecContianer>
+            <SpectTitle>RAM :</SpectTitle>
+            <SpecDetail>16 GB</SpecDetail>
+          </SpecContianer>
+          <SpecContianer>
+            <SpectTitle>RAM :</SpectTitle>
+            <SpecDetail>16 GB</SpecDetail>
+          </SpecContianer>
+          <SpecContianer>
+            <SpectTitle>RAM :</SpectTitle>
+            <SpecDetail>16 GB</SpecDetail>
+          </SpecContianer>
+          <SpecContianer>
+            <SpectTitle>RAM :</SpectTitle>
+            <SpecDetail>16 GB</SpecDetail>
+          </SpecContianer>
+          <QuantityPrice>
+            <QuantityButton>
+              <Remove />
+            </QuantityButton>
+            <Quantity>9</Quantity>
+            <QuantityButton>
+              <Add />
+            </QuantityButton>
+            <Price>120000 PKR</Price>
+          </QuantityPrice>
         </InfoContainer>
       </Wrapper>
 
