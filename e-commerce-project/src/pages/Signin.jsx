@@ -1,4 +1,3 @@
-import { Checkbox } from "@material-ui/core";
 import styled from "styled-components";
 import Announcement from "../components/Announcement";
 import Footer from "../components/Footer";
@@ -54,11 +53,14 @@ const SubmitButton = styled.button`
   }
 `;
 
-const Agreement = styled.div`
+const ForgetPassword = styled.p`
   display: flex;
+  font-size: 15px;
+  color: #757575;
   align-items: center;
+  margin-bottom: 10px;
+  cursor: pointer;
 `;
-const AgreementText = styled.p``;
 
 const Signin = () => {
   return (
@@ -67,20 +69,11 @@ const Signin = () => {
       <Navbar />
       <Wrapper>
         <RegistreForm>
-          <Title>Create your account</Title>
-          <InputField placeholder="First Name"></InputField>
-          <InputField placeholder="Last Name"></InputField>
+          <Title>SIGN IN TO YOUR ACCOUNT</Title>
           <InputField placeholder="Email"></InputField>
           <InputField placeholder="Password" type="password"></InputField>
-          <InputField
-            placeholder="Confirm Password"
-            type="password"
-          ></InputField>
-          <Agreement>
-            <Checkbox color="black" />
-            <AgreementText>Agree to our terms and policies.</AgreementText>
-          </Agreement>
-          <SubmitButton>Register</SubmitButton>
+          <ForgetPassword>FORGET PASSWORD</ForgetPassword>
+          <SubmitButton>SIGN IN</SubmitButton>
         </RegistreForm>
       </Wrapper>
       <Footer />

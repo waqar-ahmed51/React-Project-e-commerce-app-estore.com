@@ -12,8 +12,9 @@ import {
 import styled from "styled-components";
 
 const Container = styled.div`
-  margin: 0;
-  padding: 0;
+  margin: 20px 0px 0px 0px;
+  padding: 15px 0px 0px 0px;
+  border-top: 1px solid #b7b7b7;
 `;
 
 const FooterContainer = styled.div`

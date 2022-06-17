@@ -58,7 +58,10 @@ const Agreement = styled.div`
   display: flex;
   align-items: center;
 `;
-const AgreementText = styled.p``;
+const AgreementText = styled.p`
+  font-size: 15px;
+  color: #757575;
+`;
 
 const Register = () => {
   return (
@@ -67,7 +70,7 @@ const Register = () => {
       <Navbar />
       <Wrapper>
         <RegistreForm>
-          <Title>Create your account</Title>
+          <Title>CREATE YOUR ACCOUNT</Title>
           <InputField placeholder="First Name"></InputField>
           <InputField placeholder="Last Name"></InputField>
           <InputField placeholder="Email"></InputField>
@@ -78,9 +81,9 @@ const Register = () => {
           ></InputField>
           <Agreement>
             <Checkbox color="black" />
-            <AgreementText>Agree to our terms and policies.</AgreementText>
+            <AgreementText>AGREE TO OUR TERMS AND POLICIES</AgreementText>
           </Agreement>
-          <SubmitButton>Register</SubmitButton>
+          <SubmitButton>REGISTER</SubmitButton>
         </RegistreForm>
       </Wrapper>
       <Footer />

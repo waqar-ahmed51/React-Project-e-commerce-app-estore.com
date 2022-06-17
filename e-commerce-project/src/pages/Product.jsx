@@ -61,7 +61,7 @@ const SpecDetail = styled.p`
 `;
 
 const QuantityPrice = styled.div`
-  margin-top: 20px;
+  margin-top: 10px;
   display: flex;
   align-content: center;
   align-items: center;
@@ -88,6 +88,28 @@ const Price = styled.span`
   font-size: 40px;
 `;
 
+const ColorContainer = styled.div`
+  display: flex;
+  align-items: center;
+  margin: 10px 0px;
+  padding: 10px 10px;
+  border-bottom: 1px solid black;
+  /* justify-content: ; */
+`;
+const Color = styled.div`
+  background-color: #${(props) => props.color};
+  border: 1px solid black;
+  margin-left: 20px;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  cursor: pointer;
+  &:hover {
+    transform: scale(1.2);
+    transition: all 0.3s ease;
+  }
+`;
+
 const Product = () => {
   return (
     <Container>
@@ -98,7 +120,7 @@ const Product = () => {
           <Image src="https://gagadget.com/media/post_big/iphone-13-pro-review-dan-baker-35_gAtW7pC.jpg" />
         </ImageContainer>
         <InfoContainer>
-          <Title>Iphone 13 pro max</Title>
+          <Title>IPHONE 13 PRO</Title>
           <Desc>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis
             numquam aperiam explicabo esse eius eaque vitae nihil, qui expedita
@@ -110,17 +132,25 @@ const Product = () => {
             <SpecDetail>16 GB</SpecDetail>
           </SpecContianer>
           <SpecContianer>
-            <SpectTitle>RAM :</SpectTitle>
-            <SpecDetail>16 GB</SpecDetail>
+            <SpectTitle>ROM :</SpectTitle>
+            <SpecDetail>128 GB</SpecDetail>
           </SpecContianer>
           <SpecContianer>
-            <SpectTitle>RAM :</SpectTitle>
-            <SpecDetail>16 GB</SpecDetail>
+            <SpectTitle>Processor :</SpectTitle>
+            <SpecDetail>Snapdragon 1080 </SpecDetail>
           </SpecContianer>
           <SpecContianer>
-            <SpectTitle>RAM :</SpectTitle>
-            <SpecDetail>16 GB</SpecDetail>
+            <SpectTitle>Dual SIM :</SpectTitle>
+            <SpecDetail>Yes</SpecDetail>
           </SpecContianer>
+          <ColorContainer>
+            Color :
+            <Color color="6EA3C5" style={{ border: "3px solid black" }}></Color>
+            <Color color="000000"></Color>
+            <Color color="460000"></Color>
+            <Color color="000746"></Color>
+            <Color color="ffffff"></Color>
+          </ColorContainer>
           <QuantityPrice>
             <QuantityButton>
               <Remove />
@@ -129,7 +159,7 @@ const Product = () => {
             <QuantityButton>
               <Add />
             </QuantityButton>
-            <Price>120000 PKR</Price>
+            <Price>12,0000 PKR</Price>
           </QuantityPrice>
         </InfoContainer>
       </Wrapper>
