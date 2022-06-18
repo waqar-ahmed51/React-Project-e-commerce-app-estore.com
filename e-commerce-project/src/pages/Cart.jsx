@@ -9,6 +9,7 @@ const Container = styled.div``;
 const Wrapper = styled.div`
   margin: 20px;
   height: 60vh;
+  width: auto;
 `;
 
 const CartItem = styled.div`
