@@ -9,7 +9,7 @@ import Cart from "./pages/Cart";
 const App = () => {
   return <Home />;
   // return <ProductList />;
-  // return <ProductView />;
+  return <ProductView />;
   // return <Register />;
   // return <SignIn />;
   return <Cart />;
