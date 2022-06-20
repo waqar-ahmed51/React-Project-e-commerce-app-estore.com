@@ -1,4 +1,9 @@
-import { Add, Remove } from "@material-ui/icons";
+import {
+  Add,
+  AddShoppingCart,
+  Remove,
+  ShoppingBasket,
+} from "@material-ui/icons";
 import styled from "styled-components";
 import Announcement from "../components/Announcement";
 import Footer from "../components/Footer";
@@ -44,14 +49,13 @@ const ProdctDetails = styled.div`
   /* background-color: #9ca141; */
   flex: 6;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   flex-direction: column;
 `;
 const Title = styled.h2``;
 const Desc = styled.p`
   margin: 3px;
   color: #565656;
-  text-align: center;
 `;
 
 const ProdctPrice = styled.div`
@@ -130,6 +134,55 @@ const TotalPriceContainer = styled.div`
   }
   &:hover ${TotalPrice} {
     color: white;
+  }
+`;
+
+const ButtonsContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+`;
+const ContinueShopping = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  margin-right: 40px;
+  border: none;
+  border: 1px solid black;
+  background-color: black;
+  color: white;
+  font-size: 20px;
+  padding: 10px 20px;
+  margin-bottom: 50px;
+  cursor: pointer;
+  &:hover {
+    background-color: white;
+    color: black;
+    transform: scale(1.1);
+    transition: all 0.5s ease;
+  }
+`;
+
+const Checkout = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  border: none;
+  border: 1px solid black;
+  background-color: black;
+  color: white;
+  font-size: 20px;
+  padding: 10px 20px;
+  margin-bottom: 50px;
+  cursor: pointer;
+  &:hover {
+    background-color: white;
+    color: black;
+    transform: scale(1.1);
+    transition: all 0.5s ease;
   }
 `;
 
@@ -241,6 +294,16 @@ const Cart = () => {
           <TotalTitle>Total </TotalTitle>
           <TotalPrice>3,60,000 PKR</TotalPrice>
         </TotalPriceContainer>
+        <ButtonsContainer>
+          <ContinueShopping>
+            <AddShoppingCart style={{ marginRight: "20px" }} />
+            CONTINUE SHOPPING
+          </ContinueShopping>
+          <Checkout>
+            <ShoppingBasket style={{ marginRight: "20px" }} />
+            CHECKOUT
+          </Checkout>
+        </ButtonsContainer>
       </Wrapper>
       <Footer />
     </Container>
