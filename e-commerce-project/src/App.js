@@ -4,7 +4,8 @@ import "./App.css";
 // import ProductView from "./pages/ProductView";
 // import Register from "./pages/Register";
 // import SignIn from "./pages/SignIn";
-import Cart from "./pages/Cart";
+// import Cart from "./pages/Cart";
+import Checkout from "./pages/Checkout";
 
 
 const App = () => {
@@ -13,7 +14,8 @@ const App = () => {
   // return <ProductView />;
   // return <Register />;
   // return <SignIn />;
-  return <Cart />;
+  // return <Cart />;
+  return <Checkout/>;
 };
 
 export default App;

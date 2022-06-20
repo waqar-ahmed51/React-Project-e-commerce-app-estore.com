@@ -1,17 +1,17 @@
+import Navbar from "../components/Navbar";
 import Announcement from "../components/Announcement";
 import Footer from "../components/Footer";
-import Navbar from "../components/Navbar";
-import RegisterForm from "../components/RegisterForm";
+import ShippingPayment from "../components/ShippingPayment";
 
-const Register = () => {
+const Checkout = () => {
   return (
     <div>
       <Announcement />
       <Navbar />
-      <RegisterForm />
+      <ShippingPayment />
       <Footer />
     </div>
   );
 };
 
-export default Register;
+export default Checkout;
