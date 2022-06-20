@@ -1,6 +1,7 @@
 import {
   Add,
   AddShoppingCart,
+  DeleteOutline,
   Remove,
   ShoppingBasket,
 } from "@material-ui/icons";
@@ -108,6 +109,23 @@ const Price = styled.span`
   font-size: 25px;
 `;
 
+const DeleteProductContainer = styled.div`
+  background-color: black;
+  padding: 2px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 100px;
+  &:hover {
+    border: 1px solid black;
+    background-color: white;
+    color: black;
+    transform: scale(1.1);
+    transition: all 0.3s ease;
+  }
+`;
+
 const TotalTitle = styled.h1`
   color: #3e3e3e;
   border-right: 1px solid black;
@@ -116,6 +134,12 @@ const TotalTitle = styled.h1`
 `;
 const TotalPrice = styled.h1`
   margin-left: 20px;
+`;
+
+const TotalItems = styled.h1`
+  font-size: 20px;
+  padding-right: 77%;
+  text-align: center;
 `;
 
 const TotalPriceContainer = styled.div`
@@ -133,6 +157,9 @@ const TotalPriceContainer = styled.div`
     color: white;
   }
   &:hover ${TotalPrice} {
+    color: white;
+  }
+  &:hover ${TotalItems} {
     color: white;
   }
 `;
@@ -223,6 +250,9 @@ const Cart = () => {
               </QuantityButtonContainer>
             </QuantityPrice>
           </ProdctPrice>
+          <DeleteProductContainer>
+            <DeleteOutline />
+          </DeleteProductContainer>
         </CartItem>
 
         <CartItem>
@@ -256,6 +286,9 @@ const Cart = () => {
               </QuantityButtonContainer>
             </QuantityPrice>
           </ProdctPrice>
+          <DeleteProductContainer>
+            <DeleteOutline />
+          </DeleteProductContainer>
         </CartItem>
 
         <CartItem>
@@ -289,8 +322,13 @@ const Cart = () => {
               </QuantityButtonContainer>
             </QuantityPrice>
           </ProdctPrice>
+          <DeleteProductContainer>
+            <DeleteOutline />
+          </DeleteProductContainer>
         </CartItem>
+
         <TotalPriceContainer>
+          <TotalItems>(3 items)</TotalItems>
           <TotalTitle>Total </TotalTitle>
           <TotalPrice>3,60,000 PKR</TotalPrice>
         </TotalPriceContainer>
