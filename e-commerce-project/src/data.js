@@ -1,5 +1,3 @@
-console.log("Testing js on windows pv lenovo");
-
 export const sliderItems = [
     {
         id: 1,

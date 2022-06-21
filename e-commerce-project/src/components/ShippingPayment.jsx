@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Checkbox } from "@material-ui/core";
 
 const Wrapper = styled.div`
   margin: 20px;
@@ -66,7 +67,7 @@ const Option = styled.option``;
 const PurchaseSummary = styled.div`
   border: 1px solid black;
   margin: 10px 0px;
-  background-color: #edeaea;
+  /* background-color: #edeaea; */
   padding: 10px;
   padding-bottom: 10px;
   width: 100%;
@@ -111,6 +112,20 @@ const SummaryTitle = styled.h3`
   padding: 5px 0px;
 `;
 
+const PaymentMethod = styled.div`
+  height: 50px;
+  width: 100%;
+  padding-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+`;
+const CashOnDelivery = styled.div`
+  padding-right: 90px;
+`;
+const OnlinePayment = styled.div``;
+
 const ShippingPayment = () => {
   return (
     <Wrapper>
@@ -128,7 +143,7 @@ const ShippingPayment = () => {
           </PriceContianer>
           <PriceContianer>
             <PriceTitle style={{ fontSize: "30px" }}>Total </PriceTitle>
-            <PriceDetail style={{ fontSize: "30px" }}>3,20,100 PKR</PriceDetail>
+            <PriceDetail style={{ fontSize: "30px" }}>3,21,000 PKR</PriceDetail>
           </PriceContianer>
         </PurchaseSummary>
         <InputField placeholder="Full Name"></InputField>
@@ -143,6 +158,12 @@ const ShippingPayment = () => {
           <Option>Multan</Option>
         </SelectFiled>
         <InputFieldAddress placeholder="Address"></InputFieldAddress>
+        <PaymentMethod>
+          <Checkbox color="black" checked />
+          <CashOnDelivery>Cash on delivery</CashOnDelivery>
+          <Checkbox color="black" />
+          <OnlinePayment>Online Payment</OnlinePayment>
+        </PaymentMethod>
         <SubmitButton>PLACE ORDER</SubmitButton>
       </ShippingPaymentContainer>
     </Wrapper>
