@@ -3,7 +3,7 @@ import { Checkbox } from "@material-ui/core";
 
 const Wrapper = styled.div`
   margin: 20px;
-  height: 600px;
+  height: 60vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -19,26 +19,18 @@ const Title = styled.h1`
   flex-direction: column;
 `;
 
-const ShippingPaymentContainer = styled.div`
+const RegisterFields = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  width: 35vw;
 `;
 const InputField = styled.input`
   border: 1px solid black;
   padding: 10px;
   margin-bottom: 10px;
-  width: 100%;
+  width: 30vw;
 `;
-const InputFieldAddress = styled.textarea`
-  border: 1px solid black;
-  padding: 10px;
-  margin-bottom: 10px;
-  width: 100%;
-`;
-
 const SubmitButton = styled.button`
   border: none;
   border: 1px solid black;
@@ -56,6 +48,7 @@ const SubmitButton = styled.button`
   }
 `;
 
+<<<<<<< HEAD
 const SelectFiled = styled.select`
   padding: 10px;
   border: 1px solid black;
@@ -93,23 +86,18 @@ const PriceTitle = styled.p`
   font-size: 15px;
 `;
 const PriceDetail = styled.p`
+=======
+const Agreement = styled.div`
+>>>>>>> parent of 10e36e9 (Update ShippingPayment.jsx)
   display: flex;
   align-items: center;
-  justify-content: flex-end;
-  padding: 5px;
-  flex: 3;
-  background-color: white;
-  border-bottom: 0.2px solid black;
-  font-size: 15px;
-  &:hover {
-    background-color: #e4e3e3;
-    transition: all 0.2s ease;
-  }
 `;
-const SummaryTitle = styled.h3`
-  text-align: center;
-  margin: 5px 0px;
-  padding: 5px 0px;
+const AgreementText = styled.p`
+  font-size: 15px;
+  color: #757575;
+  &:hover {
+    color: black;
+  }
 `;
 
 const PaymentMethod = styled.div`
@@ -129,6 +117,7 @@ const OnlinePayment = styled.div``;
 const ShippingPayment = () => {
   return (
     <Wrapper>
+<<<<<<< HEAD
       <ShippingPaymentContainer>
         <Title>SHIPPING AND PAYMENT DETAILS</Title>
         <PurchaseSummary>
@@ -166,6 +155,21 @@ const ShippingPayment = () => {
         </PaymentMethod>
         <SubmitButton>PLACE ORDER</SubmitButton>
       </ShippingPaymentContainer>
+=======
+      <RegisterFields>
+        <Title>CREATE YOUR ACCOUNT</Title>
+        <InputField placeholder="First Name"></InputField>
+        <InputField placeholder="Last Name"></InputField>
+        <InputField placeholder="Email"></InputField>
+        <InputField placeholder="Password" type="password"></InputField>
+        <InputField placeholder="Confirm Password" type="password"></InputField>
+        <Agreement>
+          <Checkbox color="black" />
+          <AgreementText>AGREE TO OUR TERMS AND POLICIES</AgreementText>
+        </Agreement>
+        <SubmitButton>REGISTER</SubmitButton>
+      </RegisterFields>
+>>>>>>> parent of 10e36e9 (Update ShippingPayment.jsx)
     </Wrapper>
   );
 };
