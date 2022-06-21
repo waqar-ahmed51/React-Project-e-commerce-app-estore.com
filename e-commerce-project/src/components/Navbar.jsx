@@ -2,6 +2,7 @@ import { Badge } from "@material-ui/core";
 import { Search, ShoppingCartOutlined } from "@material-ui/icons";
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const Container = styled.div`
   height: 60px;
@@ -65,11 +66,16 @@ const MenuItem = styled.div`
 `;
 
 const Navbar = () => {
+  function register() {
+    console.log("Register Clicked!!!!!");
+  }
   return (
     <Container>
       <Wrapper>
         <Left>
-          <Logo>estore.</Logo>
+          <Link to="/">
+            <Logo>estore.</Logo>
+          </Link>
         </Left>
         <Center>
           <SearchContainer>
@@ -79,7 +85,9 @@ const Navbar = () => {
         </Center>
         <Right>
           <Language>EN</Language>
-          <MenuItem>REGISTER</MenuItem>
+          <MenuItem to="/register" onClick={register}>
+            REGISTER
+          </MenuItem>
           <MenuItem>SIGN IN</MenuItem>
           <MenuItem>
             <Badge badgeContent={1} color="primary">
