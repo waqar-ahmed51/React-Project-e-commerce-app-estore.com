@@ -6,15 +6,18 @@ import Register from "./pages/Register";
 import SignIn from "./pages/SignIn";
 import Cart from "./pages/Cart";
 import Checkout from "./pages/Checkout";
+import ErrorPage from "./pages/ErrorPage";
 
-import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 
 const App = () => {
 
   return (
-    <BrowserRouter>
-    <div>
+    <Router>
+      <Navbar/>
     <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/productlist" element={<ProductList />} />
@@ -23,9 +26,10 @@ const App = () => {
         <Route path="/signin" element={<SignIn />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/checkout" element={<Checkout />} />
+        <Route path="*" element={<ErrorPage />} />
       </Routes>
-    </div>
-    </BrowserRouter>
+      <Footer/>
+    </Router>
   );
   
   // return <ProductList />;

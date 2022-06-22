@@ -22,10 +22,6 @@ const Left = styled.div`
   display: flex;
   align-items: center;
 `;
-const Language = styled.div`
-  font-size: 14px;
-  cursor: pointer;
-`;
 
 const SearchContainer = styled.div`
   border: 0.5px solid black;
@@ -65,6 +61,8 @@ const MenuItem = styled.div`
   margin-left: 25px;
 `;
 
+// const Link = styled.div``;
+
 const Navbar = () => {
   function register() {
     console.log("Register Clicked!!!!!");
@@ -73,7 +71,7 @@ const Navbar = () => {
     <Container>
       <Wrapper>
         <Left>
-          <Link to="/">
+          <Link to="/" class="CustomRouterLink">
             <Logo>estore.</Logo>
           </Link>
         </Left>
@@ -84,15 +82,22 @@ const Navbar = () => {
           </SearchContainer>
         </Center>
         <Right>
-          <Language>EN</Language>
           <MenuItem to="/register" onClick={register}>
-            REGISTER
+            <Link to="/register" class="CustomRouterLink">
+              REGISTER
+            </Link>
           </MenuItem>
-          <MenuItem>SIGN IN</MenuItem>
           <MenuItem>
-            <Badge badgeContent={1} color="primary">
-              <ShoppingCartOutlined />
-            </Badge>
+            <Link to="/signin" class="CustomRouterLink">
+              SIGN IN
+            </Link>
+          </MenuItem>
+          <MenuItem>
+            <Link to="/cart" class="CustomRouterLink">
+              <Badge badgeContent={1} color="primary">
+                <ShoppingCartOutlined />
+              </Badge>
+            </Link>
           </MenuItem>
         </Right>
       </Wrapper>
