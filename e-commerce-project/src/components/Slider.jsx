@@ -109,7 +109,7 @@ const Slider = () => {
       setSlideIndex(slideIndex < 2 ? slideIndex + 1 : 0);
     }
   };
-
+  let navigate = useNavigate();
   return (
     <Container>
       <Wrapper slideIndex={slideIndex}>
@@ -120,7 +120,7 @@ const Slider = () => {
               <Desc>{items.desc}</Desc>
               <Button
                 onClick={() => {
-                  // navigate("/laptopsDiscount");
+                  navigate(items.link);
                 }}
               >
                 BUY NOW

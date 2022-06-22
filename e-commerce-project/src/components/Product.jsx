@@ -5,6 +5,7 @@ import {
 } from "@material-ui/icons";
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const ProductTitleSpace = styled.div`
   bottom: 0;
@@ -89,21 +90,25 @@ const Icon = styled.div`
 const Product = ({ item }) => {
   return (
     <Container>
-      <Image src={item.img} />
-      <ProductTitleSpace>
-        <ProductTitle>{item.title}</ProductTitle>
-      </ProductTitleSpace>
-      <Info>
-        <Icon>
-          <ShoppingCartOutlined />
-        </Icon>
-        <Icon>
-          <SearchOutlined />
-        </Icon>
-        <Icon>
-          <FavoriteBorderOutlined />
-        </Icon>
-      </Info>
+      <Link to="/productview/3123" class="CustomRouterLink">
+        <Image src={item.img} />
+        <ProductTitleSpace>
+          <ProductTitle>{item.title}</ProductTitle>
+        </ProductTitleSpace>
+        <Info>
+          <Icon>
+            <ShoppingCartOutlined />
+          </Icon>
+
+          <Icon>
+            <SearchOutlined />
+          </Icon>
+
+          <Icon>
+            <FavoriteBorderOutlined />
+          </Icon>
+        </Info>
+      </Link>
     </Container>
   );
 };
