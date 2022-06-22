@@ -3,6 +3,7 @@ import { KeyboardArrowRightOutlined } from "@material-ui/icons";
 import React, { useState } from "react";
 import styled from "styled-components";
 import { sliderItems } from "../data";
+import { useNavigate } from "react-router-dom";
 
 const Container = styled.div`
   width: 100%;
@@ -117,7 +118,13 @@ const Slider = () => {
             <InfoContainer>
               <Title>{items.title}</Title>
               <Desc>{items.desc}</Desc>
-              <Button>BUY NOW</Button>
+              <Button
+                onClick={() => {
+                  // navigate("/laptopsDiscount");
+                }}
+              >
+                BUY NOW
+              </Button>
             </InfoContainer>
             <ImageContainer>
               <Image src={items.img} />
