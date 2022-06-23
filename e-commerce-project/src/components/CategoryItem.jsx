@@ -71,7 +71,7 @@ const Button = styled.button`
 const CategoryItem = ({ item }) => {
   return (
     <Container>
-      <Link to={item.link} class="CustomRouterLink">
+      <Link to={item.link} className="CustomRouterLink">
         <Image src={item.img} />
         <Info>
           <TitleBackground />

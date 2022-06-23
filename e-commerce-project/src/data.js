@@ -51,6 +51,11 @@ export const categories = [
 
 export const popularProducts = [
     {
+        id: 0,
+        title: "IPHONE 13 PRO MAX",
+        img: "https://gagadget.com/media/post_big/iphone-13-pro-review-dan-baker-35_gAtW7pC.jpg",
+    },
+    {
         id: 1,
         title: "IPHONE 13 PRO MAX",
         img: "https://gagadget.com/media/post_big/iphone-13-pro-review-dan-baker-35_gAtW7pC.jpg",
