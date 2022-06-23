@@ -101,3 +101,85 @@ export const popularProducts = [
         img: "https://gagadget.com/media/post_big/iphone-13-pro-review-dan-baker-35_gAtW7pC.jpg",
     },
 ];
+
+// Products all here 
+// Product Id starts from zero same as index to object
+export const Products = [
+    {
+        id: 0,
+        title: "IPHONE 13 PRO MAX",
+        desc: "lorem ispsum",
+        img: "https://gagadget.com/media/post_big/iphone-13-pro-review-dan-baker-35_gAtW7pC.jpg",
+        price: 123,
+        specs:{
+            RAM: "4 GB",
+            Processor: "64 GB",
+            "Dual SIM": "YES",
+            Battery: "Li-Ion 3240 mAh, non-removable (12.41 Wh)",
+            "Main Camera": "12 MP, f/1.6, 26mm (wide), 1.7µm, dual pixel PDAF, sensor-shift OIS",
+        },
+        colors:{
+            color1: "58FF33",
+            color2: "FF33F3",
+            color3: "3346FF",
+        },
+    },
+    {
+        id: 1,
+        title: "IPHONE 13 PRO MAX 1",
+        desc: "lorem ispsum",
+        img: "https://gagadget.com/media/post_big/iphone-13-pro-review-dan-baker-35_gAtW7pC.jpg",
+        price: 11,
+        specs:{
+            RAM: "4 GB",
+            Processor: "64 GB",
+            "Dual SIM": "YES",
+            Battery: "Li-Ion 3240 mAh, non-removable (12.41 Wh)",
+            "Main Camera": "12 MP, f/1.6, 26mm (wide), 1.7µm, dual pixel PDAF, sensor-shift OIS",
+        },
+        colors:{
+            color1: "58FF33",
+            color2: "FF33F3",
+            color3: "3346FF",
+        },
+    },
+    {
+        id: 2,
+        title: "IPHONE 13 PRO MAX 2",
+        desc: "lorem ispsum",
+        img: "https://gagadget.com/media/post_big/iphone-13-pro-review-dan-baker-35_gAtW7pC.jpg",
+        price: 22,
+        specs:{
+            RAM: "4 GB",
+            Processor: "64 GB",
+            "Dual SIM": "YES",
+            Battery: "Li-Ion 3240 mAh, non-removable (12.41 Wh)",
+            "Main Camera": "12 MP, f/1.6, 26mm (wide), 1.7µm, dual pixel PDAF, sensor-shift OIS",
+        },
+        colors:{
+            color1: "58FF33",
+            color2: "FF33F3",
+            color3: "3346FF",
+        },
+    },
+    {
+        id: 3,
+        title: "IPHONE 13 PRO MAX 3",
+        desc: "lorem ispsum",
+        img: "https://gagadget.com/media/post_big/iphone-13-pro-review-dan-baker-35_gAtW7pC.jpg",
+        price: 33,
+        specs:{
+            RAM: "4 GB",
+            Processor: "64 GB",
+            "Dual SIM": "YES",
+            Battery: "Li-Ion 3240 mAh, non-removable (12.41 Wh)",
+            "Main Camera": "12 MP, f/1.6, 26mm (wide), 1.7µm, dual pixel PDAF, sensor-shift OIS",
+        },
+        colors:{
+            color1: "58FF33",
+            color2: "FF33F3",
+            color3: "3346FF",
+        },
+    },
+
+];

@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import { Add, Remove } from "@material-ui/icons";
+import { useParams } from "react-router-dom";
+import { Products } from "../data";
 
 const Wrapper = styled.div`
   padding: 50px;
@@ -129,42 +131,44 @@ const Color = styled.div`
   }
 `;
 const ProductViewDetails = () => {
+  // Fetching the product id from url
+  let { id } = useParams();
+  // Converting URL id(String) to number to fetch details below
+  id = parseInt(id);
+
+  // Getting the specs of the product and pushing them in arry to visible in them spec UI table
+  const specs = [];
+  for (const key in Products[id].specs) {
+    console.log(`${key}: ${Products[id].specs[key]}`);
+    specs.push(
+      <SpecContianer>
+        <SpectTitle>{key}</SpectTitle>
+        <SpecDetail>{Products[id].specs[key]}</SpecDetail>
+      </SpecContianer>
+    );
+  }
+
+  // Getting the colors of the product and pushing them in arry to visible in them as color for the device
+  const colors = [];
+  for (const key in Products[id].colors) {
+    console.log(`${key}: ${Products[id].colors[key]}`);
+    colors.push(<Color color={Products[id].colors[key]}></Color>);
+  }
+
   return (
     <Wrapper>
       <ImageContainer>
-        <Image src="https://gagadget.com/media/post_big/iphone-13-pro-review-dan-baker-35_gAtW7pC.jpg" />
+        <Image src={Products[id].img} />
       </ImageContainer>
       <InfoContainer>
-        <Title>IPHONE 13 PRO</Title>
-        <Desc>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis
-          numquam aperiam explicabo esse eius eaque vitae nihil, qui expedita
-          dolorum itaque ullam nulla sapiente, eum sunt, aliquid sit. Nostrum,
-          earum.
-        </Desc>
-        <SpecContianer>
-          <SpectTitle>RAM </SpectTitle>
-          <SpecDetail>16 GB</SpecDetail>
-        </SpecContianer>
-        <SpecContianer>
-          <SpectTitle>ROM </SpectTitle>
-          <SpecDetail>128 GB</SpecDetail>
-        </SpecContianer>
-        <SpecContianer>
-          <SpectTitle>Processor </SpectTitle>
-          <SpecDetail>Snapdragon 1080 </SpecDetail>
-        </SpecContianer>
-        <SpecContianer>
-          <SpectTitle>Dual SIM </SpectTitle>
-          <SpecDetail>Yes</SpecDetail>
-        </SpecContianer>
+        <Title>{Products[id].title}</Title>
+        <Desc>{Products[id].desc}</Desc>
+        {/* Getting Specs for the product through for in loop */}
+        {specs}
         <ColorContainer>
           Color
-          <Color color="6EA3C5" style={{ border: "3px solid black" }}></Color>
-          <Color color="000000"></Color>
-          <Color color="460000"></Color>
-          <Color color="000746"></Color>
-          <Color color="ffffff"></Color>
+          {/* <Color color="6EA3C5" style={{ border: "3px solid black" }}></Color> */}
+          {colors}
         </ColorContainer>
         <QuantityPrice>
           <QuantityButtonContainer>
@@ -176,7 +180,7 @@ const ProductViewDetails = () => {
               <Add />
             </QuantityButton>
           </QuantityButtonContainer>
-          <Price>12,0000 PKR</Price>
+          <Price>{Products[id].price}</Price>
         </QuantityPrice>
       </InfoContainer>
     </Wrapper>

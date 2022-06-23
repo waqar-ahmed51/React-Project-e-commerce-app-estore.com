@@ -140,7 +140,7 @@ function Footer() {
       <FooterContainer>
         <Left>
           <Logo>
-            <Link to="/" class="CustomRouterLink">
+            <Link to="/" className="CustomRouterLink">
               estore.
             </Link>
           </Logo>
@@ -175,12 +175,12 @@ function Footer() {
           <Title>Useful Links</Title>
           <List>
             <ListItem>
-              <Link to="/" class="CustomRouterLink">
+              <Link to="/" className="CustomRouterLink">
                 Home
               </Link>
             </ListItem>
             <ListItem>
-              <Link to="/cart" class="CustomRouterLink">
+              <Link to="/cart" className="CustomRouterLink">
                 Cart
               </Link>
             </ListItem>

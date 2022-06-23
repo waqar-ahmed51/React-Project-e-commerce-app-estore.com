@@ -42,6 +42,7 @@ const Container = styled.div`
   flex: 1;
   margin: 5px;
   min-width: 280px;
+  /* max-width: 350px; */
   height: 350px;
   display: flex;
   align-items: center;
@@ -90,25 +91,23 @@ const Icon = styled.div`
 const Product = ({ item }) => {
   return (
     <Container>
-      <Link to="/productview/3123" class="CustomRouterLink">
-        <Image src={item.img} />
-        <ProductTitleSpace>
-          <ProductTitle>{item.title}</ProductTitle>
-        </ProductTitleSpace>
-        <Info>
-          <Icon>
-            <ShoppingCartOutlined />
-          </Icon>
-
+      <Image src={item.img} />
+      <ProductTitleSpace>
+        <ProductTitle>{item.title}</ProductTitle>
+      </ProductTitleSpace>
+      <Info>
+        <Icon>
+          <ShoppingCartOutlined />
+        </Icon>
+        <Link to={"/productview/" + item.id} className="CustomRouterLink">
           <Icon>
             <SearchOutlined />
           </Icon>
-
-          <Icon>
-            <FavoriteBorderOutlined />
-          </Icon>
-        </Info>
-      </Link>
+        </Link>
+        <Icon>
+          <FavoriteBorderOutlined />
+        </Icon>
+      </Info>
     </Container>
   );
 };

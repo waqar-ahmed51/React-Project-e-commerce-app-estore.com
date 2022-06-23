@@ -71,7 +71,7 @@ const Navbar = () => {
     <Container>
       <Wrapper>
         <Left>
-          <Link to="/" class="CustomRouterLink">
+          <Link to="/" className="CustomRouterLink">
             <Logo>estore.</Logo>
           </Link>
         </Left>
@@ -83,17 +83,17 @@ const Navbar = () => {
         </Center>
         <Right>
           <MenuItem to="/register" onClick={register}>
-            <Link to="/register" class="CustomRouterLink">
+            <Link to="/register" className="CustomRouterLink">
               REGISTER
             </Link>
           </MenuItem>
           <MenuItem>
-            <Link to="/signin" class="CustomRouterLink">
+            <Link to="/signin" className="CustomRouterLink">
               SIGN IN
             </Link>
           </MenuItem>
           <MenuItem>
-            <Link to="/cart" class="CustomRouterLink">
+            <Link to="/cart" className="CustomRouterLink">
               <Badge badgeContent={1} color="primary">
                 <ShoppingCartOutlined />
               </Badge>
