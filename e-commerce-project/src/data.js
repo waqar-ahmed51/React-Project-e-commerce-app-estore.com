@@ -110,13 +110,14 @@ export const Products = [
         title: "IPHONE 13 PRO MAX",
         desc: "lorem ispsum",
         img: "https://gagadget.com/media/post_big/iphone-13-pro-review-dan-baker-35_gAtW7pC.jpg",
-        price: 123,
+        price: 120000,
         specs:{
             RAM: "4 GB",
             Processor: "64 GB",
             "Dual SIM": "YES",
             Battery: "Li-Ion 3240 mAh, non-removable (12.41 Wh)",
             "Main Camera": "12 MP, f/1.6, 26mm (wide), 1.7µm, dual pixel PDAF, sensor-shift OIS",
+            "Front Camera": "10 MP, f/1.6, 26mm (wide), 1.7µm, dual pixel PDAF, sensor-shift OIS",
         },
         colors:{
             color1: "58FF33",

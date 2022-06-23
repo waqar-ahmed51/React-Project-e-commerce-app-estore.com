@@ -109,6 +109,12 @@ const Price = styled.span`
   font-size: 30px;
 `;
 
+const Currency = styled.span`
+  font-size: 20px;
+  margin-left: 10px;
+  color: #707070;
+`;
+
 const ColorContainer = styled.div`
   display: flex;
   align-items: center;
@@ -139,9 +145,8 @@ const ProductViewDetails = () => {
   // Getting the specs of the product and pushing them in arry to visible in them spec UI table
   const specs = [];
   for (const key in Products[id].specs) {
-    console.log(`${key}: ${Products[id].specs[key]}`);
     specs.push(
-      <SpecContianer>
+      <SpecContianer key={key}>
         <SpectTitle>{key}</SpectTitle>
         <SpecDetail>{Products[id].specs[key]}</SpecDetail>
       </SpecContianer>
@@ -151,8 +156,26 @@ const ProductViewDetails = () => {
   // Getting the colors of the product and pushing them in arry to visible in them as color for the device
   const colors = [];
   for (const key in Products[id].colors) {
-    console.log(`${key}: ${Products[id].colors[key]}`);
-    colors.push(<Color color={Products[id].colors[key]}></Color>);
+    colors.push(<Color color={Products[id].colors[key]} key={key}></Color>);
+  }
+
+  //Product Quantity and total price
+  var quantity = 1;
+  var product_total_price = Products[id].price * quantity;
+  function AddQuantity() {
+    quantity = quantity + 1;
+    var total_price = product_total_price * quantity;
+    document.getElementById("product_quanity").innerHTML = quantity;
+    document.getElementById("prodcut_total_price").innerHTML = total_price;
+  }
+  function RemoveQuantity() {
+    quantity = quantity - 1;
+    if (quantity <= 1) {
+      quantity = 1;
+    }
+    var total_price = product_total_price * quantity;
+    document.getElementById("product_quanity").innerHTML = quantity;
+    document.getElementById("prodcut_total_price").innerHTML = total_price;
   }
 
   return (
@@ -173,14 +196,15 @@ const ProductViewDetails = () => {
         <QuantityPrice>
           <QuantityButtonContainer>
             <QuantityButton>
-              <Remove />
+              <Remove onClick={RemoveQuantity} />
             </QuantityButton>
-            <Quantity>1</Quantity>
+            <Quantity id="product_quanity">{quantity}</Quantity>
             <QuantityButton>
-              <Add />
+              <Add onClick={AddQuantity} />
             </QuantityButton>
           </QuantityButtonContainer>
-          <Price>{Products[id].price}</Price>
+          <Price id="prodcut_total_price">{product_total_price}</Price>
+          <Currency>PKR</Currency>
         </QuantityPrice>
       </InfoContainer>
     </Wrapper>
