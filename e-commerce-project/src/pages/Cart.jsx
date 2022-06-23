@@ -1,9 +1,6 @@
 import styled from "styled-components";
-import Announcement from "../components/Announcement";
 import CartCheckoutContinueShoppingButtons from "../components/CartCheckoutContinueShoppingButtons";
 import CartItem from "../components/CartItem";
-import Footer from "../components/Footer";
-import Navbar from "../components/Navbar";
 import TotalPriceCart from "../components/TotalPriceCart";
 
 const Container = styled.div`
@@ -13,8 +10,6 @@ const Container = styled.div`
 const Cart = () => {
   return (
     <div>
-      <Announcement />
-      <Navbar />
       <Container>
         <CartItem />
         <CartItem />
@@ -22,7 +17,6 @@ const Cart = () => {
         <TotalPriceCart />
         <CartCheckoutContinueShoppingButtons />
       </Container>
-      <Footer />
     </div>
   );
 };

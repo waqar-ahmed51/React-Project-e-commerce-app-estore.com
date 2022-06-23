@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const Container = styled.div`
@@ -70,12 +71,14 @@ const Button = styled.button`
 const CategoryItem = ({ item }) => {
   return (
     <Container>
-      <Image src={item.img} />
-      <Info>
-        <TitleBackground />
-        <Title>{item.title}</Title>
-        <Button>BUY NOW</Button>
-      </Info>
+      <Link to={item.link} className="CustomRouterLink">
+        <Image src={item.img} />
+        <Info>
+          <TitleBackground />
+          <Title>{item.title}</Title>
+          <Button>BUY NOW</Button>
+        </Info>
+      </Link>
     </Container>
   );
 };

@@ -10,6 +10,7 @@ import {
   YouTube,
 } from "@material-ui/icons";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const Container = styled.div`
   margin: 20px 0px 0px 0px;
@@ -138,7 +139,11 @@ function Footer() {
     <Container>
       <FooterContainer>
         <Left>
-          <Logo>estore.</Logo>
+          <Logo>
+            <Link to="/" className="CustomRouterLink">
+              estore.
+            </Link>
+          </Logo>
           <Desc>
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sint ipsam
             distinctio nostrum eum, aliquam excepturi cupiditate ad harum.
@@ -169,8 +174,16 @@ function Footer() {
         <Center>
           <Title>Useful Links</Title>
           <List>
-            <ListItem>Home</ListItem>
-            <ListItem>Cart</ListItem>
+            <ListItem>
+              <Link to="/" className="CustomRouterLink">
+                Home
+              </Link>
+            </ListItem>
+            <ListItem>
+              <Link to="/cart" className="CustomRouterLink">
+                Cart
+              </Link>
+            </ListItem>
             <ListItem>Laptops</ListItem>
             <ListItem>Phones</ListItem>
             <ListItem>Headphones</ListItem>

@@ -2,6 +2,7 @@ import { Badge } from "@material-ui/core";
 import { Search, ShoppingCartOutlined } from "@material-ui/icons";
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const Container = styled.div`
   height: 60px;
@@ -20,10 +21,6 @@ const Left = styled.div`
   flex: 1;
   display: flex;
   align-items: center;
-`;
-const Language = styled.div`
-  font-size: 14px;
-  cursor: pointer;
 `;
 
 const SearchContainer = styled.div`
@@ -64,12 +61,19 @@ const MenuItem = styled.div`
   margin-left: 25px;
 `;
 
+// const Link = styled.div``;
+
 const Navbar = () => {
+  function register() {
+    console.log("Register Clicked!!!!!");
+  }
   return (
     <Container>
       <Wrapper>
         <Left>
-          <Logo>estore.</Logo>
+          <Link to="/" className="CustomRouterLink">
+            <Logo>estore.</Logo>
+          </Link>
         </Left>
         <Center>
           <SearchContainer>
@@ -78,13 +82,22 @@ const Navbar = () => {
           </SearchContainer>
         </Center>
         <Right>
-          <Language>EN</Language>
-          <MenuItem>REGISTER</MenuItem>
-          <MenuItem>SIGN IN</MenuItem>
+          <MenuItem to="/register" onClick={register}>
+            <Link to="/register" className="CustomRouterLink">
+              REGISTER
+            </Link>
+          </MenuItem>
           <MenuItem>
-            <Badge badgeContent={1} color="primary">
-              <ShoppingCartOutlined />
-            </Badge>
+            <Link to="/signin" className="CustomRouterLink">
+              SIGN IN
+            </Link>
+          </MenuItem>
+          <MenuItem>
+            <Link to="/cart" className="CustomRouterLink">
+              <Badge badgeContent={1} color="primary">
+                <ShoppingCartOutlined />
+              </Badge>
+            </Link>
           </MenuItem>
         </Right>
       </Wrapper>
