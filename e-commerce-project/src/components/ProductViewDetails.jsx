@@ -177,6 +177,15 @@ const ProductViewDetails = () => {
     document.getElementById("product_quanity").innerHTML = quantity;
     document.getElementById("prodcut_total_price").innerHTML = total_price;
   }
+  function RemoveQuantity() {
+    quantity = quantity - 1;
+    if (quantity <= 1) {
+      quantity = 1;
+    }
+    var total_price = product_total_price * quantity;
+    document.getElementById("product_quanity").innerHTML = quantity;
+    document.getElementById("prodcut_total_price").innerHTML = total_price;
+  }
 
   return (
     <Wrapper>
