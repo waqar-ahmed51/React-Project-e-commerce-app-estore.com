@@ -136,7 +136,6 @@ const Color = styled.div`
     transition: all 0.3s ease;
   }
 `;
-const AddCart = styled.button``;
 const ProductViewDetails = () => {
   // Fetching the product id from url
   let { id } = useParams();
@@ -208,7 +207,6 @@ const ProductViewDetails = () => {
           <Currency>PKR</Currency>
         </QuantityPrice>
       </InfoContainer>
-      <AddCart>Add to Cart</AddCart>
     </Wrapper>
   );
 };
