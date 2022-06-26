@@ -31,13 +31,6 @@ const App = () => {
       <Footer/>
     </Router>
   );
-  
-  // return <ProductList />;
-  // return <ProductView />;
-  // return <Register />;
-  // return <SignIn />;
-  // return <Cart />;
-  // return <Checkout/>;
 };
 
 export default App;
