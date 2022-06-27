@@ -60,6 +60,9 @@ const AgreementText = styled.p`
   }
 `;
 const RegisterForm = () => {
+  function registerUser() {
+    console.log("Register Clicked!!!");
+  }
   return (
     <Wrapper>
       <RegisterFields>
@@ -70,10 +73,10 @@ const RegisterForm = () => {
         <InputField placeholder="Password" type="password"></InputField>
         <InputField placeholder="Confirm Password" type="password"></InputField>
         <Agreement>
-          <Checkbox color="black" />
+          <Checkbox color="default" />
           <AgreementText>AGREE TO OUR TERMS AND POLICIES</AgreementText>
         </Agreement>
-        <SubmitButton>REGISTER</SubmitButton>
+        <SubmitButton onClick={registerUser}>REGISTER</SubmitButton>
       </RegisterFields>
     </Wrapper>
   );
