@@ -3,6 +3,7 @@ import { Search, ShoppingCartOutlined } from "@material-ui/icons";
 import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { cartItems } from "../data";
 
 const Container = styled.div`
   height: 60px;
@@ -61,12 +62,16 @@ const MenuItem = styled.div`
   margin-left: 25px;
 `;
 
-// const Link = styled.div``;
+let cartItemPush = {
+  id: 10,
+  title: "IPHONE 13 PRO MAX",
+  img: "https://gagadget.com/media/post_big/iphone-13-pro-review-dan-baker-35_gAtW7pC.jpg",
+};
+
+cartItems.push(cartItemPush);
 
 const Navbar = () => {
-  function register() {
-    console.log("Register Clicked!!!!!");
-  }
+  console.log("Cart Items Lookup: ", cartItems);
   return (
     <Container>
       <Wrapper>
@@ -82,7 +87,7 @@ const Navbar = () => {
           </SearchContainer>
         </Center>
         <Right>
-          <MenuItem to="/register" onClick={register}>
+          <MenuItem to="/register">
             <Link to="/register" className="CustomRouterLink">
               REGISTER
             </Link>
@@ -94,7 +99,7 @@ const Navbar = () => {
           </MenuItem>
           <MenuItem>
             <Link to="/cart" className="CustomRouterLink">
-              <Badge badgeContent={1} color="primary">
+              <Badge badgeContent={cartItems.length} color="primary">
                 <ShoppingCartOutlined />
               </Badge>
             </Link>
