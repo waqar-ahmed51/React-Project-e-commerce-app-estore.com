@@ -16,7 +16,6 @@ const ProductContainer = styled.div`
 const Products = () => {
   return (
     <Container>
-      
       <ProductContainer>
         {popularProducts.map((item) => (
           <Product item={item} key={item.id} />

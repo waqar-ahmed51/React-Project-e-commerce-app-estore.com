@@ -82,7 +82,6 @@ const SigInForm = () => {
   function signInUser() {
     // SignIn Form validation starts here.
     var validationCheck = true; // a variable which will be ture after all validation checkups
-    var registerUser = false; // a variable which will be ture after all validation checkups
     var email = document.getElementById("email").value;
     var pswd = document.getElementById("pswd").value;
 
@@ -122,7 +121,6 @@ const SigInForm = () => {
       validationCheck = false;
     } else {
       validationCheck = true;
-      registerUser = true; // After complete validation this varibale will push data to databases to register new user.
     }
 
     if (validationCheck) {

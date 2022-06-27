@@ -6,6 +6,7 @@ import {
 import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { cartItems } from "../data";
 
 const ProductTitleSpace = styled.div`
   bottom: 0;
@@ -97,7 +98,7 @@ const Product = ({ item }) => {
       </ProductTitleSpace>
       <Info>
         <Icon>
-          <ShoppingCartOutlined />
+          <ShoppingCartOutlined onClick={addItemCart} />
         </Icon>
         <Link to={"/productview/" + item.id} className="CustomRouterLink">
           <Icon>
@@ -110,6 +111,10 @@ const Product = ({ item }) => {
       </Info>
     </Container>
   );
+  function addItemCart() {
+    console.log(cartItems);
+    cartItems.push(item);
+  }
 };
 
 export default Product;
