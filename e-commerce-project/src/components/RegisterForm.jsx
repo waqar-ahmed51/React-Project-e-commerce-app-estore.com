@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Checkbox } from "@material-ui/core";
+import { withRouter } from "react-router-dom";
 
 const Wrapper = styled.div`
   margin: 20px;
@@ -78,6 +79,7 @@ const RegisterForm = () => {
   function registerUser() {
     // Register Form validation starts here.
     var validationCheck = true; // a variable which will be ture after all validation checkups
+    var registerUser = false; // a variable which will be ture after all validation checkups
     var firstName = document.getElementById("firstName").value;
     var lastName = document.getElementById("lastName").value;
     var email = document.getElementById("email").value;
@@ -133,11 +135,14 @@ const RegisterForm = () => {
       validationCheck = false;
     } else if (pswd.length < 8) {
       //Checking if password is between 8 to 16 characters
+      document.getElementById("pswd").style.border = "1px solid red";
       document.getElementById("msgText").innerHTML =
         "Password must be above 8 characters.";
+
       validationCheck = false;
     } else if (pswd !== confirmPswd) {
       //Checking if the password and confirm password field have the same input
+      document.getElementById("confirmPswd").style.border = "1px solid red";
       document.getElementById("msgText").innerHTML = "Password did not match.";
       validationCheck = false;
     } else if (!document.getElementById("agreementCheckbox").checked) {
@@ -147,6 +152,7 @@ const RegisterForm = () => {
       validationCheck = false;
     } else {
       validationCheck = true;
+      registerUser = true; // After complete validation this varibale will push data to databases to register new user.
     }
 
     if (validationCheck) {
@@ -154,11 +160,27 @@ const RegisterForm = () => {
     } else {
       document.getElementById("messageContainer").style.display = "flex";
     }
+
+    if (registerUser) {
+      document.getElementById("messageContainer").style.display = "flex";
+      document.getElementById("messageContainer").style.background = "#d7fde2";
+      document.getElementById("messageContainer").style.border =
+        "1px solid #20f65d";
+      document.getElementById("msgText").innerHTML =
+        "Account registered successfully.";
+      document.getElementById("msgText").style.color = "green";
+      document.getElementById("registerFields").style.pointerEvents = "none";
+
+      // Will load the signin page in 3 seconds
+      setTimeout(() => {
+        window.location.href = "/signin";
+      }, 3000);
+    }
   }
 
   return (
     <Wrapper>
-      <RegisterFields>
+      <RegisterFields id="registerFields">
         <Title>CREATE YOUR ACCOUNT</Title>
         <InputField placeholder="First Name" id="firstName"></InputField>
         <InputField placeholder="Last Name" id="lastName"></InputField>
