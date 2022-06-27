@@ -117,6 +117,7 @@ const SigInForm = () => {
       validationCheck = false;
     } else if (pswd.length < 8) {
       //Checking if password is between 8 to 16 characters
+      document.getElementById("pswd").style.border = "1px solid red";
       document.getElementById("msgText").innerHTML = "Enter a valid password.";
       validationCheck = false;
     } else {
