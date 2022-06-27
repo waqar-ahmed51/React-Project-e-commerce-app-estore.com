@@ -135,11 +135,14 @@ const RegisterForm = () => {
       validationCheck = false;
     } else if (pswd.length < 8) {
       //Checking if password is between 8 to 16 characters
+      document.getElementById("pswd").style.border = "1px solid red";
       document.getElementById("msgText").innerHTML =
         "Password must be above 8 characters.";
+
       validationCheck = false;
     } else if (pswd !== confirmPswd) {
       //Checking if the password and confirm password field have the same input
+      document.getElementById("confirmPswd").style.border = "1px solid red";
       document.getElementById("msgText").innerHTML = "Password did not match.";
       validationCheck = false;
     } else if (!document.getElementById("agreementCheckbox").checked) {
