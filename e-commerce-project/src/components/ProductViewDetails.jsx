@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Add, Remove } from "@material-ui/icons";
+import { Add, Remove, ShoppingCartOutlined } from "@material-ui/icons";
 import { useParams } from "react-router-dom";
 import { Products } from "../data";
 
@@ -136,7 +136,25 @@ const Color = styled.div`
     transition: all 0.3s ease;
   }
 `;
-const AddCart = styled.button``;
+const AddCart = styled.button`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  width: 100%;
+  border: 1px solid black;
+  background-color: black;
+  color: white;
+  font-size: 20px;
+  padding: 10px 20px;
+  cursor: pointer;
+  &:hover {
+    background-color: white;
+    color: black;
+    transform: scale(1.1);
+    transition: all 0.5s ease;
+  }
+`;
 const ProductViewDetails = () => {
   // Fetching the product id from url
   let { id } = useParams();
@@ -207,8 +225,11 @@ const ProductViewDetails = () => {
           <Price id="prodcut_total_price">{product_total_price}</Price>
           <Currency>PKR</Currency>
         </QuantityPrice>
+        <AddCart>
+          <ShoppingCartOutlined style={{ marginRight: "20px" }} />
+          Add to Cart
+        </AddCart>
       </InfoContainer>
-      <AddCart>Add to Cart</AddCart>
     </Wrapper>
   );
 };
