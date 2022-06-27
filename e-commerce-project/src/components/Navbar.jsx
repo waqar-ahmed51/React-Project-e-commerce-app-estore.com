@@ -62,16 +62,7 @@ const MenuItem = styled.div`
   margin-left: 25px;
 `;
 
-let cartItemPush = {
-  id: 10,
-  title: "IPHONE 13 PRO MAX",
-  img: "https://gagadget.com/media/post_big/iphone-13-pro-review-dan-baker-35_gAtW7pC.jpg",
-};
-
-cartItems.push(cartItemPush);
-
 const Navbar = () => {
-  console.log("Cart Items Lookup: ", cartItems);
   return (
     <Container>
       <Wrapper>
