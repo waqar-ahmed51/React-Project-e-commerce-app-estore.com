@@ -60,17 +60,92 @@ const ForgetPassword = styled.p`
     color: black;
   }
 `;
+const MessageContainer = styled.div`
+  margin: 10px;
+  background-color: #facfcf;
+  color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 30px;
+  border: 1px solid red;
+  display: none;
+`;
+
+const MessageText = styled.p`
+  color: red;
+  font-size: 15px;
+`;
 
 const SigInForm = () => {
+  function signInUser() {
+    // SignIn Form validation starts here.
+    var validationCheck = true; // a variable which will be ture after all validation checkups
+    var registerUser = false; // a variable which will be ture after all validation checkups
+    var email = document.getElementById("email").value;
+    var pswd = document.getElementById("pswd").value;
+
+    // Valid Email validation
+    var validRegex =
+      /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+
+    // Check input fileds invidually if they have a value or not. Marking them red if they don't have value.
+    if (email === "") {
+      document.getElementById("email").style.border = "1px solid red";
+    } else {
+      document.getElementById("email").style.border = "1px solid black";
+    }
+    if (pswd === "") {
+      document.getElementById("pswd").style.border = "1px solid red";
+    } else {
+      document.getElementById("pswd").style.border = "1px solid black";
+    }
+
+    //Complete form validation with multi-level chekcking
+    if (
+      //Checking if any of filed is not filled by user.
+      email === "" ||
+      pswd === ""
+    ) {
+      document.getElementById("msgText").innerHTML = "Check your fields.";
+      validationCheck = false;
+    } else if (!email.match(validRegex)) {
+      //Checking if the email is valid or not.
+      document.getElementById("email").style.border = "1px solid red";
+      document.getElementById("msgText").innerHTML = "Enter a valid email.";
+      validationCheck = false;
+    } else if (pswd.length < 8) {
+      //Checking if password is between 8 to 16 characters
+      document.getElementById("msgText").innerHTML = "Enter a valid password.";
+      validationCheck = false;
+    } else {
+      validationCheck = true;
+      registerUser = true; // After complete validation this varibale will push data to databases to register new user.
+    }
+
+    if (validationCheck) {
+      document.getElementById("messageContainer").style.display = "none";
+    } else {
+      document.getElementById("messageContainer").style.display = "flex";
+    }
+  }
   return (
     <div>
       <Wrapper>
         <SignInFields>
           <Title>SIGN IN TO YOUR ACCOUNT</Title>
-          <InputField placeholder="Email"></InputField>
-          <InputField placeholder="Password" type="password"></InputField>
+          <InputField placeholder="Email" id="email"></InputField>
+          <InputField
+            placeholder="Password"
+            type="password"
+            id="pswd"
+          ></InputField>
           <ForgetPassword>FORGET PASSWORD</ForgetPassword>
-          <SubmitButton>SIGN IN</SubmitButton>
+          <MessageContainer id="messageContainer">
+            <MessageText id="msgText" />
+          </MessageContainer>
+          <SubmitButton onClick={signInUser}>SIGN IN</SubmitButton>
         </SignInFields>
       </Wrapper>
     </div>
