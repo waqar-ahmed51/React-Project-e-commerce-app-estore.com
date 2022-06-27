@@ -78,6 +78,7 @@ const RegisterForm = () => {
   function registerUser() {
     // Register Form validation starts here.
     var validationCheck = true; // a variable which will be ture after all validation checkups
+    var registerUser = false; // a variable which will be ture after all validation checkups
     var firstName = document.getElementById("firstName").value;
     var lastName = document.getElementById("lastName").value;
     var email = document.getElementById("email").value;
@@ -147,12 +148,23 @@ const RegisterForm = () => {
       validationCheck = false;
     } else {
       validationCheck = true;
+      registerUser = true; // After complete validation this varibale will push data to databases to register new user.
     }
 
     if (validationCheck) {
       document.getElementById("messageContainer").style.display = "none";
     } else {
       document.getElementById("messageContainer").style.display = "flex";
+    }
+
+    if (registerUser) {
+      document.getElementById("messageContainer").style.display = "flex";
+      document.getElementById("messageContainer").style.background = "#d7fde2";
+      document.getElementById("messageContainer").style.border =
+        "1px solid #20f65d";
+      document.getElementById("msgText").innerHTML =
+        "Account registered successfully.";
+      document.getElementById("msgText").style.color = "red";
     }
   }
 
