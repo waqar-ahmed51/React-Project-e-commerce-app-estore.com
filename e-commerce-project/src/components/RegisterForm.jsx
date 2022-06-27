@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Checkbox } from "@material-ui/core";
+import { withRouter } from "react-router-dom";
 
 const Wrapper = styled.div`
   margin: 20px;
@@ -164,13 +165,19 @@ const RegisterForm = () => {
         "1px solid #20f65d";
       document.getElementById("msgText").innerHTML =
         "Account registered successfully.";
-      document.getElementById("msgText").style.color = "red";
+      document.getElementById("msgText").style.color = "green";
+      document.getElementById("registerFields").style.pointerEvents = "none";
+
+      // Will load the signin page in 3 seconds
+      setTimeout(() => {
+        window.location.href = "/signin";
+      }, 3000);
     }
   }
 
   return (
     <Wrapper>
-      <RegisterFields>
+      <RegisterFields id="registerFields">
         <Title>CREATE YOUR ACCOUNT</Title>
         <InputField placeholder="First Name" id="firstName"></InputField>
         <InputField placeholder="Last Name" id="lastName"></InputField>
