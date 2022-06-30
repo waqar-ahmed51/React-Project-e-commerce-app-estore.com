@@ -88,7 +88,9 @@ const Icon = styled.div`
   }
 `;
 
-const Product = ({ item }) => {
+const Product = (props) => {
+  // console.log(items);
+  const item = props.items;
   return (
     <Container>
       <Image src={item.img} />
@@ -97,7 +99,7 @@ const Product = ({ item }) => {
       </ProductTitleSpace>
       <Info>
         <Icon>
-          <ShoppingCartOutlined />
+          <ShoppingCartOutlined onClick={() => props.addItemCart(item)} />
         </Icon>
         <Link to={"/productview/" + item.id} className="CustomRouterLink">
           <Icon>

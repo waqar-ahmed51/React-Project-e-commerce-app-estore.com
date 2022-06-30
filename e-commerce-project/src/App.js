@@ -26,38 +26,14 @@ class App extends Component {
           bg: "ebfcf5",
           link: "/laptops",
       },
-      {
-          id: 2,
-          img: "https://www.pngmart.com/files/4/Phone-Case-Transparent-PNG.png",
-          title: "PHONES 20% OFF",
-          desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum porro exercitationem,perferendis a iste.",
-          bg: "f9f6ff",
-          link: "/phones",
-      },
-      {
-          id: 3,
-          img: "https://www.pngmart.com/files/6/Sennheiser-Headphone-PNG-Transparent-Picture.png",
-          title: "HEADPHONES 40% OFF",
-          desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum porro exercitationem,perferendis a iste.",
-          bg: "e9e9e9cc",
-          link: "/headphones",
-      },
-      {
-          id: 4,
-          img: "https://www.pngmart.com/files/6/Sennheiser-Headphone-PNG-Transparent-Picture.png",
-          title: "HEADPHONES 40% OFF",
-          desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum porro exercitationem,perferendis a iste.",
-          bg: "e9e9e9cc",
-          link: "/headphones",
-      },
   ],
 
-
    } 
+   
   render() { 
     return (
       <Router>
-        <Navbar/>
+        <Navbar ItemsInCart={this.state.cartItems.length}/>
       <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/productlist" element={<ProductList />} />

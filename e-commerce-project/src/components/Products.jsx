@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import styled from "styled-components";
 import { popularProducts } from "../data";
 import Product from "./Product";
@@ -12,17 +12,30 @@ const ProductContainer = styled.div`
   flex-wrap: wrap;
   justify-content: space-between;
 `;
-
-const Products = () => {
-  return (
-    <Container>
-      <ProductContainer>
-        {popularProducts.map((item) => (
-          <Product item={item} key={item.id} />
-        ))}
-      </ProductContainer>
-    </Container>
-  );
-};
+class Products extends Component {
+  state = {};
+  handleAddItemCart = (item) => {
+    console.log("Products ", item);
+  };
+  handleTest = () => {
+    console.log("Test Prop");
+  };
+  render() {
+    console.log("Products Props", this.props);
+    return (
+      <Container testprop={this.handleTest}>
+        <ProductContainer>
+          {popularProducts.map((item) => (
+            <Product
+              items={item}
+              key={item.id}
+              addItemCart={this.handleAddItemCart}
+            />
+          ))}
+        </ProductContainer>
+      </Container>
+    );
+  }
+}
 
 export default Products;

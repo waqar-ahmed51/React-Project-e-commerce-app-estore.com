@@ -61,7 +61,7 @@ const MenuItem = styled.div`
   margin-left: 25px;
 `;
 
-const Navbar = () => {
+const Navbar = ({ ItemsInCart }) => {
   return (
     <Container>
       <Wrapper>
@@ -89,7 +89,7 @@ const Navbar = () => {
           </MenuItem>
           <MenuItem>
             <Link to="/cart" className="CustomRouterLink">
-              <Badge badgeContent={1} color="primary">
+              <Badge badgeContent={ItemsInCart} color="primary">
                 <ShoppingCartOutlined />
               </Badge>
             </Link>
