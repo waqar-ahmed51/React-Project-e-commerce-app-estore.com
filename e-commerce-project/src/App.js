@@ -1,3 +1,4 @@
+import React, { Component } from 'react';
 import "./App.css";
 import Home from "./pages/Home";
 import ProductList from "./pages/ProductList";
@@ -12,25 +13,65 @@ import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
+class App extends Component {
+  state = { 
+     cartItems : [
+      {
+          id: 1,
+          // Comment the image below of laptop during development its a heavy image 
+          img: "https://www.pngmart.com/files/4/Macbook-PNG-Photo.png",
+          // img: "https://cdn2-imgix.macpaw.com/images/content/en_1633513105.png?auto=format&fm=png&ixlib=php-3.3.1&q=60&w=468",
+          title: "LAPTOPS 30% OFF",
+          desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum porro exercitationem,perferendis a iste.",
+          bg: "ebfcf5",
+          link: "/laptops",
+      },
+      {
+          id: 2,
+          img: "https://www.pngmart.com/files/4/Phone-Case-Transparent-PNG.png",
+          title: "PHONES 20% OFF",
+          desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum porro exercitationem,perferendis a iste.",
+          bg: "f9f6ff",
+          link: "/phones",
+      },
+      {
+          id: 3,
+          img: "https://www.pngmart.com/files/6/Sennheiser-Headphone-PNG-Transparent-Picture.png",
+          title: "HEADPHONES 40% OFF",
+          desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum porro exercitationem,perferendis a iste.",
+          bg: "e9e9e9cc",
+          link: "/headphones",
+      },
+      {
+          id: 4,
+          img: "https://www.pngmart.com/files/6/Sennheiser-Headphone-PNG-Transparent-Picture.png",
+          title: "HEADPHONES 40% OFF",
+          desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum porro exercitationem,perferendis a iste.",
+          bg: "e9e9e9cc",
+          link: "/headphones",
+      },
+  ],
 
-const App = () => {
 
-  return (
-    <Router>
-      <Navbar/>
-    <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/productlist" element={<ProductList />} />
-        <Route path="/productview/:id" element={<ProductView />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/signin" element={<SignIn />} />
-        <Route path="/cart" element={<Cart />} />
-        <Route path="/checkout" element={<Checkout />} />
-        <Route path="*" element={<ErrorPage />} />
-      </Routes>
-      <Footer/>
-    </Router>
-  );
-};
-
+   } 
+  render() { 
+    return (
+      <Router>
+        <Navbar/>
+      <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/productlist" element={<ProductList />} />
+          <Route path="/productview/:id" element={<ProductView />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/signin" element={<SignIn />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/checkout" element={<Checkout />} />
+          <Route path="*" element={<ErrorPage />} />
+        </Routes>
+        <Footer/>
+      </Router>
+    );
+  }
+}
+ 
 export default App;
