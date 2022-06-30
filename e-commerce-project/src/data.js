@@ -28,42 +28,7 @@ export const sliderItems = [
 ];
 
 
-export const cartItems = [
-    {
-        id: 1,
-        // Comment the image below of laptop during development its a heavy image 
-        img: "https://www.pngmart.com/files/4/Macbook-PNG-Photo.png",
-        // img: "https://cdn2-imgix.macpaw.com/images/content/en_1633513105.png?auto=format&fm=png&ixlib=php-3.3.1&q=60&w=468",
-        title: "LAPTOPS 30% OFF",
-        desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum porro exercitationem,perferendis a iste.",
-        bg: "ebfcf5",
-        link: "/laptops",
-    },
-    {
-        id: 2,
-        img: "https://www.pngmart.com/files/4/Phone-Case-Transparent-PNG.png",
-        title: "PHONES 20% OFF",
-        desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum porro exercitationem,perferendis a iste.",
-        bg: "f9f6ff",
-        link: "/phones",
-    },
-    {
-        id: 3,
-        img: "https://www.pngmart.com/files/6/Sennheiser-Headphone-PNG-Transparent-Picture.png",
-        title: "HEADPHONES 40% OFF",
-        desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum porro exercitationem,perferendis a iste.",
-        bg: "e9e9e9cc",
-        link: "/headphones",
-    },
-    {
-        id: 4,
-        img: "https://www.pngmart.com/files/6/Sennheiser-Headphone-PNG-Transparent-Picture.png",
-        title: "HEADPHONES 40% OFF",
-        desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum porro exercitationem,perferendis a iste.",
-        bg: "e9e9e9cc",
-        link: "/headphones",
-    },
-];
+
 
 
 export const categories = [
