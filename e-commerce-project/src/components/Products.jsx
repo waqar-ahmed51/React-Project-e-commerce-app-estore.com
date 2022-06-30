@@ -14,14 +14,8 @@ const ProductContainer = styled.div`
 `;
 class Products extends Component {
   state = {};
-  handleAddItemCart = (item) => {
-    console.log("Products ", item);
-  };
-  handleTest = () => {
-    console.log("Test Prop");
-  };
   render() {
-    console.log("Products Props", this.props);
+    // console.log("Products Props", this.props);
     return (
       <Container testprop={this.handleTest}>
         <ProductContainer>
@@ -29,7 +23,7 @@ class Products extends Component {
             <Product
               items={item}
               key={item.id}
-              addItemCart={this.handleAddItemCart}
+              addItemCart={this.props.addItemCart}
             />
           ))}
         </ProductContainer>

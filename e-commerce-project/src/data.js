@@ -27,8 +27,10 @@ export const sliderItems = [
     },
 ];
 
-
-
+// Items added to cart 
+export const CartItemsData=[
+    // Cart Items will be added here through product buttons - update via states
+];
 
 
 export const categories = [
