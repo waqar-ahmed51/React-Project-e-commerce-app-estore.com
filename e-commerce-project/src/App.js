@@ -17,7 +17,6 @@ import Footer from "./components/Footer";
 class App extends Component {
   state = { 
      cartItemsTotalNum : 0,
-
    } 
 
    handleAddItemCart = (item) => {

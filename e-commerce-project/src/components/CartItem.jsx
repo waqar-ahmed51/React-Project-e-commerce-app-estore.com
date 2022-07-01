@@ -1,5 +1,6 @@
 import { Add, DeleteOutline, Remove } from "@material-ui/icons";
 import styled from "styled-components";
+import React, { Component } from "react";
 
 const CartProduct = styled.div`
   display: flex;
@@ -111,44 +112,44 @@ const DeleteProductContainer = styled.div`
   }
 `;
 
-const CartItem = () => {
-  return (
-    <CartProduct>
-      <ProducImage>
-        <SNumber>1.</SNumber>
-        <ImageContainer>
-          <Image src="https://gagadget.com/media/post_big/iphone-13-pro-review-dan-baker-35_gAtW7pC.jpg" />
-        </ImageContainer>
-      </ProducImage>
-      <ProdctDetails>
-        <Title>IPHONE 13 PRO</Title>
-        <Desc>RAM : 6 GB | ROM : 128 GB | COLOR: BLUE</Desc>
-        <Desc>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus
-          nostrum quo veniam alias sunt laudantium iste soluta, vel, sequi
-          recusandae dolore, possimus distinctio voluptate doloribus tempore
-          commodi ratione incidunt eum!
-        </Desc>
-      </ProdctDetails>
-      <ProdctPrice>
-        <Price>12,0000 PKR</Price>
-        <QuantityPrice>
-          <QuantityButtonContainer>
-            <QuantityButton>
-              <Remove />
-            </QuantityButton>
-            <Quantity>1</Quantity>
-            <QuantityButton>
-              <Add />
-            </QuantityButton>
-          </QuantityButtonContainer>
-        </QuantityPrice>
-      </ProdctPrice>
-      <DeleteProductContainer>
-        <DeleteOutline />
-      </DeleteProductContainer>
-    </CartProduct>
-  );
-};
+class CartItem extends Component {
+  state = {};
+  render() {
+    const { item, Sn } = this.props;
+
+    return (
+      <CartProduct>
+        <ProducImage>
+          <SNumber>{Sn}</SNumber>
+          <ImageContainer>
+            <Image src={item.img} />
+          </ImageContainer>
+        </ProducImage>
+        <ProdctDetails>
+          <Title>{item.title}</Title>
+          <Desc>{item["Main Features"]}</Desc>
+          <Desc>{item.desc}</Desc>
+        </ProdctDetails>
+        <ProdctPrice>
+          <Price>{item.price} PKR</Price>
+          <QuantityPrice>
+            <QuantityButtonContainer>
+              <QuantityButton>
+                <Remove />
+              </QuantityButton>
+              <Quantity>1</Quantity>
+              <QuantityButton>
+                <Add />
+              </QuantityButton>
+            </QuantityButtonContainer>
+          </QuantityPrice>
+        </ProdctPrice>
+        <DeleteProductContainer>
+          <DeleteOutline />
+        </DeleteProductContainer>
+      </CartProduct>
+    );
+  }
+}
 
 export default CartItem;

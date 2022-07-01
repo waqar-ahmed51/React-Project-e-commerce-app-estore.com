@@ -1,11 +1,14 @@
 import styled from "styled-components";
 
 const Container = styled.div`
-  background-color: #fdfafa;
   margin: 10px;
-  padding: 200px 0px;
+  display: flex;
+  flex-direction: column;
   text-align: center;
-  font-size: 70px;
+  align-content: center;
+  font-size: 40px;
+  /* 100vh - header and footer in pixels */
+  min-height: calc(100vh - 59px - 279px);
 `;
 
 const ErrorPage = () => {

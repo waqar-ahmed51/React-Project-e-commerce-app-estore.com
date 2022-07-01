@@ -16,6 +16,7 @@ const Container = styled.div`
   margin: 20px 0px 0px 0px;
   padding: 15px 0px 0px 0px;
   border-top: 1px solid #b7b7b7;
+  margin-top: auto;
 `;
 
 const FooterContainer = styled.div`

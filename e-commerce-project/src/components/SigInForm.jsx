@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
 const Wrapper = styled.div`
-  margin: 20px;
-  height: 60vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  /* 100vh - header and footer in pixels */
+  min-height: calc(100vh - 59px - 279px);
 `;
 
 const Title = styled.h1`

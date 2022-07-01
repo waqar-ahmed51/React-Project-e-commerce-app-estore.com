@@ -38,12 +38,12 @@ const TotalPriceContainer = styled.div`
     color: white;
   }
 `;
-const TotalPriceCart = () => {
+const TotalPriceCart = ({ totalItems, totalPriceCartItems }) => {
   return (
     <TotalPriceContainer>
-      <TotalItems>(3 items)</TotalItems>
+      <TotalItems>({totalItems} items)</TotalItems>
       <TotalTitle>Total </TotalTitle>
-      <TotalPrice>3,60,000 PKR</TotalPrice>
+      <TotalPrice>{totalPriceCartItems} PKR</TotalPrice>
     </TotalPriceContainer>
   );
 };
