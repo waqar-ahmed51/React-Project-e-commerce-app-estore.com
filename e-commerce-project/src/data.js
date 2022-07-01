@@ -61,6 +61,8 @@ export const popularProducts = [
         desc: "lorem ispsum",
         img: "https://gagadget.com/media/post_big/iphone-13-pro-review-dan-baker-35_gAtW7pC.jpg",
         price: 120000,
+        quantity:1,
+        priceQuantity:0,
         "Main Features": "RAM : 6 GB | ROM : 128 GB | COLOR: BLUE 0",
         specs:{
             RAM: "4 GB",
@@ -82,6 +84,8 @@ export const popularProducts = [
         desc: "lorem ispsum",
         img: "https://gagadget.com/media/post_big/iphone-13-pro-review-dan-baker-35_gAtW7pC.jpg",
         price: 11,
+        quantity:1,
+        priceQuantity:0,
         "Main Features": "RAM : 6 GB | ROM : 128 GB | COLOR: BLUE 1",
         specs:{
             RAM: "4 GB",
@@ -102,6 +106,8 @@ export const popularProducts = [
         desc: "lorem ispsum",
         img: "https://gagadget.com/media/post_big/iphone-13-pro-review-dan-baker-35_gAtW7pC.jpg",
         price: 22,
+        quantity:1,
+        priceQuantity:0,
         "Main Features": "RAM : 6 GB | ROM : 128 GB | COLOR: BLUE 2",
         specs:{
             RAM: "4 GB",
@@ -122,6 +128,8 @@ export const popularProducts = [
         desc: "lorem ispsum",
         img: "https://gagadget.com/media/post_big/iphone-13-pro-review-dan-baker-35_gAtW7pC.jpg",
         price: 33,
+        quantity:1,
+        priceQuantity:0,
         "Main Features": "RAM : 6 GB | ROM : 128 GB | COLOR: BLUE 3 ",
         specs:{
             RAM: "4 GB",

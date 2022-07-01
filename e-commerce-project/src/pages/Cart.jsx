@@ -20,23 +20,54 @@ const NothingCart = styled.div`
 `;
 
 class Cart extends Component {
-  state = {};
+  state = {
+    test: 0,
+    // fetching cart items from the CartItemsData fro data.js and putting in state.
+    cartItems: CartItemsData,
+  };
+  // constructor() {
+  //   super();
+  //   const cartItems = CartItemsData;
+  //   this.setState({ cartItems });
+  //   console.log(this.state.cartItems);
+  // }
+
+  //Product Quantity and total price of the particular product
+  onhandleAddQuantity = (id) => {
+    console.log("onhandleAddQuantity", CartItemsData[id]);
+    
+    const increment = ++CartItemsData[id].quantity;
+    this.setState({ increment });
+
+    let priceQuantityShow = (CartItemsData[id].priceQuantity +=
+      CartItemsData[id].price);
+    this.setState({ priceQuantityShow });
+  };
+  onhandleRemoveQuantity = (id) => {
+    console.log("onhandleRemoveQuantity", CartItemsData[id]);
+    const decrement = --CartItemsData[id].quantity;
+    console.log(CartItemsData[id].priceQuantity);
+    this.setState({ decrement });
+  };
 
   render() {
     //Serail Number for the product.
+    console.log(this.state.cartItems);
     let Sno = 0;
     let totalPriceCartItems = 0;
-
     return (
       <div>
         <Container>
           {/* Cart Items are loaded from the data.js */}
-          {CartItemsData.map((item) => (
+          {this.state.cartItems.map((item) => (
             <CartItem
-              item_quantity={1}
+              item_quantity={this.state.cartItems[item.id].quantity}
+              item_quantity_price={this.state.cartItems[item.id].priceQuantity}
               item={item}
               key={item.id}
               Sn={++Sno}
+              AddQuantity={this.onhandleAddQuantity}
+              RemoveQuantity={this.onhandleRemoveQuantity}
               totalPriceCartItems={(totalPriceCartItems += item.price)}
             />
           ))}
