@@ -1,5 +1,6 @@
 import { AddShoppingCart, ShoppingBasket } from "@material-ui/icons";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const ButtonsContainer = styled.div`
   display: flex;
@@ -53,14 +54,18 @@ const Checkout = styled.button`
 const CartCheckoutContinueShoppingButtons = () => {
   return (
     <ButtonsContainer>
-      <ContinueShopping>
-        <AddShoppingCart style={{ marginRight: "20px" }} />
-        CONTINUE SHOPPING
-      </ContinueShopping>
-      <Checkout>
-        <ShoppingBasket style={{ marginRight: "20px" }} />
-        CHECKOUT
-      </Checkout>
+      <Link to="/" className="CustomRouterLink">
+        <ContinueShopping>
+          <AddShoppingCart style={{ marginRight: "20px" }} />
+          CONTINUE SHOPPING
+        </ContinueShopping>
+      </Link>
+      <Link to="/checkout" className="CustomRouterLink">
+        <Checkout>
+          <ShoppingBasket style={{ marginRight: "20px" }} />
+          CHECKOUT
+        </Checkout>
+      </Link>
     </ButtonsContainer>
   );
 };
