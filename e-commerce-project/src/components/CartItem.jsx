@@ -117,6 +117,27 @@ class CartItem extends Component {
   render() {
     const { item, Sn } = this.props;
 
+    //Product Quantity and total price of the particular product
+    var quantity = 1;
+    var product_total_price = item.price * quantity;
+    function AddQuantity() {
+      quantity = quantity + 1;
+      var total_price = product_total_price * quantity;
+      document.getElementById("product_quanity" + item.id).innerHTML = quantity;
+      document.getElementById("prodcut_total_price" + item.id).innerHTML =
+        total_price + " PKR";
+    }
+    function RemoveQuantity() {
+      quantity = quantity - 1;
+      if (quantity <= 1) {
+        quantity = 1;
+      }
+      var total_price = product_total_price * quantity;
+      document.getElementById("product_quanity" + item.id).innerHTML = quantity;
+      document.getElementById("prodcut_total_price" + item.id).innerHTML =
+        total_price + " PKR";
+    }
+
     return (
       <CartProduct>
         <ProducImage>
@@ -131,15 +152,19 @@ class CartItem extends Component {
           <Desc>{item.desc}</Desc>
         </ProdctDetails>
         <ProdctPrice>
-          <Price>{item.price} PKR</Price>
+          <Price id={"prodcut_total_price" + item.id}>
+            {product_total_price} PKR
+          </Price>
           <QuantityPrice>
             <QuantityButtonContainer>
               <QuantityButton>
-                <Remove />
+                <Remove onClick={RemoveQuantity} />
               </QuantityButton>
-              <Quantity>1</Quantity>
+              <Quantity id={"product_quanity" + item.id}>
+                {this.props.item_quantity}
+              </Quantity>
               <QuantityButton>
-                <Add />
+                <Add onClick={AddQuantity} />
               </QuantityButton>
             </QuantityButtonContainer>
           </QuantityPrice>

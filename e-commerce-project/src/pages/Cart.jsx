@@ -20,24 +20,20 @@ const NothingCart = styled.div`
 `;
 
 class Cart extends Component {
-  state = {
-    CartItemsDataInState: [],
-  };
+  state = {};
 
   render() {
     //Serail Number for the product.
     let Sno = 0;
     let totalPriceCartItems = 0;
-    // Passing data from "data.js" to state
-    // const CartItemsDataInState = CartItemsData;
-    // this.setState(CartItemsDataInState);
-    console.log("State Cart Items", this.state.CartItemsDataInState);
+
     return (
       <div>
         <Container>
           {/* Cart Items are loaded from the data.js */}
           {CartItemsData.map((item) => (
             <CartItem
+              item_quantity={1}
               item={item}
               key={item.id}
               Sn={++Sno}

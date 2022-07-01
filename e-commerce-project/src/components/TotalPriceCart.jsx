@@ -41,7 +41,9 @@ const TotalPriceContainer = styled.div`
 const TotalPriceCart = ({ totalItems, totalPriceCartItems }) => {
   return (
     <TotalPriceContainer>
-      <TotalItems>({totalItems} items)</TotalItems>
+      <TotalItems>
+        ({totalItems} item{totalItems > 1 ? "s" : ""})
+      </TotalItems>
       <TotalTitle>Total </TotalTitle>
       <TotalPrice>{totalPriceCartItems} PKR</TotalPrice>
     </TotalPriceContainer>
