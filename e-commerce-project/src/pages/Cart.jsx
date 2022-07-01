@@ -10,6 +10,15 @@ const Container = styled.div`
   /* 100vh - header and footer in pixels */
   min-height: calc(100vh - 59px - 279px);
 `;
+
+const NothingCart = styled.div`
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-content: center;
+  font-size: 40px;
+`;
+
 class Cart extends Component {
   state = {
     CartItemsDataInState: [],
@@ -35,11 +44,21 @@ class Cart extends Component {
               totalPriceCartItems={(totalPriceCartItems += item.price)}
             />
           ))}
-          <TotalPriceCart
-            totalItems={Sno}
-            totalPriceCartItems={totalPriceCartItems}
-          />
-          <CartCheckoutContinueShoppingButtons />
+
+          {Sno > 0 ? (
+            <div>
+              <TotalPriceCart
+                totalItems={Sno}
+                totalPriceCartItems={totalPriceCartItems}
+              />
+              <CartCheckoutContinueShoppingButtons />
+            </div>
+          ) : (
+            <NothingCart>
+              <h1>Nothing In Cart!</h1>
+              <h4>Go back to add items to cart.</h4>
+            </NothingCart>
+          )}
         </Container>
       </div>
     );
