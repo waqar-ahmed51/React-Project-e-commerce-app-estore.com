@@ -25,20 +25,16 @@ class Cart extends Component {
     // fetching cart items from the CartItemsData fro data.js and putting in state.
     cartItems: CartItemsData,
   };
-  // constructor() {
-  //   super();
-  //   const cartItems = CartItemsData;
-  //   this.setState({ cartItems });
-  //   console.log(this.state.cartItems);
-  // }
 
   //Product Quantity and total price of the particular product
   onhandleAddQuantity = (id) => {
     console.log("onhandleAddQuantity", CartItemsData[id]);
-    
+
+    //Updating the quanity in the state for the product
     const increment = ++CartItemsData[id].quantity;
     this.setState({ increment });
 
+    //Updating the price per quantity in the state for the product
     let priceQuantityShow = (CartItemsData[id].priceQuantity +=
       CartItemsData[id].price);
     this.setState({ priceQuantityShow });
@@ -52,9 +48,10 @@ class Cart extends Component {
 
   render() {
     //Serail Number for the product.
-    console.log(this.state.cartItems);
+    console.log("State Items Cart", this.state.cartItems);
     let Sno = 0;
     let totalPriceCartItems = 0;
+    let totalCartItems = 0;
     return (
       <div>
         <Container>
@@ -68,14 +65,15 @@ class Cart extends Component {
               Sn={++Sno}
               AddQuantity={this.onhandleAddQuantity}
               RemoveQuantity={this.onhandleRemoveQuantity}
-              totalPriceCartItems={(totalPriceCartItems += item.price)}
+              totalPriceCartItems={(totalPriceCartItems += item.priceQuantity)}
+              totalCartItems={(totalCartItems += item.quantity)}
             />
           ))}
 
           {Sno > 0 ? (
             <div>
               <TotalPriceCart
-                totalItems={Sno}
+                totalItems={totalCartItems}
                 totalPriceCartItems={totalPriceCartItems}
               />
               <CartCheckoutContinueShoppingButtons />

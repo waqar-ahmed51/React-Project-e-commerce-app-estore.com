@@ -115,7 +115,14 @@ const DeleteProductContainer = styled.div`
 class CartItem extends Component {
   state = {};
   render() {
-    const { item, Sn, item_quantity_price } = this.props;
+    const {
+      item,
+      Sn,
+      item_quantity_price,
+      item_quantity,
+      RemoveQuantity,
+      AddQuantity,
+    } = this.props;
 
     return (
       <CartProduct>
@@ -135,11 +142,11 @@ class CartItem extends Component {
           <QuantityPrice>
             <QuantityButtonContainer>
               <QuantityButton>
-                <Remove onClick={() => this.props.RemoveQuantity(item.id)} />
+                <Remove onClick={() => RemoveQuantity(item.id)} />
               </QuantityButton>
-              <Quantity>{this.props.item_quantity}</Quantity>
+              <Quantity>{item_quantity}</Quantity>
               <QuantityButton>
-                <Add onClick={() => this.props.AddQuantity(item.id)} />
+                <Add onClick={() => AddQuantity(item.id)} />
               </QuantityButton>
             </QuantityButtonContainer>
           </QuantityPrice>
