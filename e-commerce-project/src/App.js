@@ -17,6 +17,8 @@ import Footer from "./components/Footer";
 class App extends Component {
   state = { 
      cartItemsTotalNum : 0,
+     // fetching cart items from the CartItemsData fro data.js and putting in state.
+    cartItems: CartItemsData,
    } 
 
    handleAddItemCart = (item) => {
@@ -24,6 +26,47 @@ class App extends Component {
     CartItemsData.push(item);
     const cartItemsTotalNum = CartItemsData.length;
     this.setState({ cartItemsTotalNum });
+  };
+
+  
+  //Product Quantity and total price of the particular product
+  onhandleAddQuantity = (id) => {
+    //Updating the quanity in the state for the product
+    const increment = ++CartItemsData[id].quantity;
+    this.setState({ increment });
+    //Updating the price per quantity in the state for the product
+    let priceQuantityShow = (CartItemsData[id].priceQuantity +=
+      CartItemsData[id].price);
+    this.setState({ priceQuantityShow });
+  };
+
+  //Decrease quantity of the product in the cart
+  onhandleRemoveQuantity = (id) => {
+    // Controlling quantity to go below 1
+    if(CartItemsData[id].quantity>1){
+    const decrement = --CartItemsData[id].quantity;
+    this.setState({ decrement });
+      //Updating the price per quantity in the state for the product
+    let priceQuantityShow = (CartItemsData[id].priceQuantity -=
+      CartItemsData[id].price);
+    this.setState({ priceQuantityShow });
+  }  };
+
+  // Deleteing products in the cart
+  onhandleDeleteProduct=(itemid)=>{
+    var deleteItemsInCart = this.state.cartItems;
+    deleteItemsInCart=this.state.cartItems.filter(function(deleteItemsInCart){
+      return deleteItemsInCart.id !== itemid;
+    });
+    // Deleting all ojects in CartItemsData in data.js and pushing the filtered objects/items to CartItemsData data.js
+    const start=0;
+    const end=CartItemsData.length;
+    CartItemsData.splice(start,end);
+    deleteItemsInCart.filter(function(DataCartItemPush){
+      CartItemsData.push(DataCartItemPush)
+      return DataCartItemPush.id !== "x";
+    });
+    this.setState({cartItems: deleteItemsInCart});
   };
    
   render() { 
@@ -36,7 +79,13 @@ class App extends Component {
           <Route path="/productview/:id" element={<ProductView />} />
           <Route path="/register" element={<Register />} />
           <Route path="/signin" element={<SignIn />} />
-          <Route path="/cart" element={<Cart />} />
+          <Route path="/cart" element={<Cart 
+          AddQuantity={this.onhandleAddQuantity}
+          RemoveQuantity={this.onhandleRemoveQuantity}
+          DeleteProduct={this.onhandleDeleteProduct}
+          cartItems={this.state.cartItems}
+          
+          />} />
           <Route path="/checkout" element={<Checkout />} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
