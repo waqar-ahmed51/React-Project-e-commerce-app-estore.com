@@ -22,6 +22,7 @@ class App extends Component {
    } 
 
    handleAddItemCart = (item) => {
+    console.log("Test which item is passed to cart :", item);
     // We can not make changes directly to the state better create variable with the same name and then set with setstate.
     CartItemsData.push(item);
     const cartItemsTotalNum = CartItemsData.length;
