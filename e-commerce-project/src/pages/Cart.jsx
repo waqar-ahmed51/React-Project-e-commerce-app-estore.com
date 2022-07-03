@@ -21,7 +21,6 @@ const NothingCart = styled.div`
 
 class Cart extends Component {
   state = {
-    test: 0,
     // fetching cart items from the CartItemsData fro data.js and putting in state.
     cartItems: CartItemsData,
   };
