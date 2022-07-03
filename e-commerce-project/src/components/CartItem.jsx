@@ -122,6 +122,8 @@ class CartItem extends Component {
       item_quantity,
       RemoveQuantity,
       AddQuantity,
+      DeleteProduct,
+      itemid
     } = this.props;
 
     return (
@@ -142,16 +144,16 @@ class CartItem extends Component {
           <QuantityPrice>
             <QuantityButtonContainer>
               <QuantityButton>
-                <Remove onClick={() => RemoveQuantity(item.id)} />
+                <Remove onClick={() => RemoveQuantity(itemid)} />
               </QuantityButton>
               <Quantity>{item_quantity}</Quantity>
               <QuantityButton>
-                <Add onClick={() => AddQuantity(item.id)} />
+                <Add onClick={() => AddQuantity(itemid)} />
               </QuantityButton>
             </QuantityButtonContainer>
           </QuantityPrice>
         </ProdctPrice>
-        <DeleteProductContainer>
+        <DeleteProductContainer onClick={() => DeleteProduct(item.id)}>
           <DeleteOutline />
         </DeleteProductContainer>
       </CartProduct>

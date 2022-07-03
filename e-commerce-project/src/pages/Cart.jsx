@@ -52,30 +52,45 @@ class Cart extends Component {
     let priceQuantityShow = (CartItemsData[id].priceQuantity -=
       CartItemsData[id].price);
     this.setState({ priceQuantityShow });
-  }
-
-    
+  }  };
+  onhandleDeleteProduct=(itemid)=>{
+    console.log("Delete clicked", itemid)
+    var deleteItemsInCart = this.state.cartItems;
+    console.log("deleteItemsInCart Before : ",deleteItemsInCart);
+    deleteItemsInCart=this.state.cartItems.filter(function(deleteItemsInCart){
+      return deleteItemsInCart.id !== itemid;
+    });
+    // this.state.cartItems=deleteItemsInCart;
+    console.log("deleteItemsInCart After : ",deleteItemsInCart);
+  this.setState({cartItems: deleteItemsInCart} );
   };
 
   render() {
     //Serail Number for the product.
     console.log("State Items Cart", this.state.cartItems);
+    console.log("Data Items Cart", CartItemsData);
     let Sno = 0;
     let totalPriceCartItems = 0;
     let totalCartItems = 0;
+
+    //Item id to fetch and modify data for the copy of cartitems in state CartItemsData
+    let itemid=0; 
+
     return (
       <div>
         <Container>
           {/* Cart Items are loaded from the data.js */}
           {this.state.cartItems.map((item) => (
             <CartItem
-              item_quantity={this.state.cartItems[item.id].quantity}
-              item_quantity_price={this.state.cartItems[item.id].priceQuantity}
+              item_quantity={this.state.cartItems[itemid].quantity}
+              item_quantity_price={this.state.cartItems[itemid].priceQuantity}
               item={item}
+              itemid={itemid++}
               key={item.id}
               Sn={++Sno}
               AddQuantity={this.onhandleAddQuantity}
               RemoveQuantity={this.onhandleRemoveQuantity}
+              DeleteProduct={this.onhandleDeleteProduct}
               totalPriceCartItems={(totalPriceCartItems += item.priceQuantity)}
               totalCartItems={(totalCartItems += item.quantity)}
             />
