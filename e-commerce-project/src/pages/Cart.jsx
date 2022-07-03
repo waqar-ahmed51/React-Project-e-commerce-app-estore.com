@@ -28,20 +28,18 @@ class Cart extends Component {
   //Product Quantity and total price of the particular product
   onhandleAddQuantity = (id) => {
     console.log("onhandleAddQuantity", CartItemsData[id]);
-
     //Updating the quanity in the state for the product
     const increment = ++CartItemsData[id].quantity;
     this.setState({ increment });
-    
-
     //Updating the price per quantity in the state for the product
     let priceQuantityShow = (CartItemsData[id].priceQuantity +=
       CartItemsData[id].price);
     this.setState({ priceQuantityShow });
   };
+
+  //Decrease quantity of the product in the cart
   onhandleRemoveQuantity = (id) => {
     console.log("onhandleRemoveQuantity", CartItemsData[id]);
-
     // Controlling quantity to go below 1
     if(CartItemsData[id].quantity>1){
     const decrement = --CartItemsData[id].quantity;
@@ -52,10 +50,10 @@ class Cart extends Component {
       CartItemsData[id].price);
     this.setState({ priceQuantityShow });
   }  };
+
+  // Deleteing products in the cart
   onhandleDeleteProduct=(itemid)=>{
-    console.log("Delete clicked", itemid)
     var deleteItemsInCart = this.state.cartItems;
-    console.log("deleteItemsInCart Before : ",deleteItemsInCart);
     deleteItemsInCart=this.state.cartItems.filter(function(deleteItemsInCart){
       return deleteItemsInCart.id !== itemid;
     });
@@ -63,18 +61,10 @@ class Cart extends Component {
     const start=0;
     const end=CartItemsData.length;
     CartItemsData.splice(start,end);
-
-
     deleteItemsInCart.filter(function(DataCartItemPush){
-      console.log("Test",DataCartItemPush);
       CartItemsData.push(DataCartItemPush)
       return DataCartItemPush.id !== "x";
     });
-
-
-    // 
-
-    console.log("deleteItemsInCart After : ",deleteItemsInCart);
     this.setState({cartItems: deleteItemsInCart});
   };
 
