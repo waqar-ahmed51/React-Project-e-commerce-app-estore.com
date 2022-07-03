@@ -60,9 +60,23 @@ class Cart extends Component {
     deleteItemsInCart=this.state.cartItems.filter(function(deleteItemsInCart){
       return deleteItemsInCart.id !== itemid;
     });
-    // this.state.cartItems=deleteItemsInCart;
+    // Deleting all ojects in CartItemsData in data.js and pushing the filtered objects/items to CartItemsData data.js
+    const start=0;
+    const end=CartItemsData.length;
+    CartItemsData.splice(start,end);
+
+
+    deleteItemsInCart.filter(function(DataCartItemPush){
+      console.log("Test",DataCartItemPush);
+      CartItemsData.push(DataCartItemPush)
+      return DataCartItemPush.id !== "x";
+    });
+
+
+    // 
+
     console.log("deleteItemsInCart After : ",deleteItemsInCart);
-  this.setState({cartItems: deleteItemsInCart} );
+    this.setState({cartItems: deleteItemsInCart});
   };
 
   render() {
