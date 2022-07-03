@@ -12,16 +12,16 @@ const TotalPrice = styled.h1`
 `;
 
 const TotalItems = styled.h1`
+  flex: 8;
   font-size: 20px;
-  padding-right: 77%;
-  text-align: center;
+
 `;
 
 const TotalPriceContainer = styled.div`
   background-color: #e7e6e6;
   padding: 10px;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: flex-end;
   &:hover {
     background-color: black;
@@ -41,8 +41,8 @@ const TotalPriceContainer = styled.div`
 const TotalPriceCart = ({ totalItems, totalPriceCartItems }) => {
   return (
     <TotalPriceContainer>
-      <TotalItems>
-        ({totalItems} item{totalItems > 1 ? "s" : ""})
+      <TotalItems> 
+        ( {totalItems} item{totalItems > 1 ? "s" : ""} )
       </TotalItems>
       <TotalTitle>Total </TotalTitle>
       <TotalPrice>{totalPriceCartItems} PKR</TotalPrice>

@@ -33,6 +33,7 @@ class Cart extends Component {
     //Updating the quanity in the state for the product
     const increment = ++CartItemsData[id].quantity;
     this.setState({ increment });
+    
 
     //Updating the price per quantity in the state for the product
     let priceQuantityShow = (CartItemsData[id].priceQuantity +=
@@ -41,9 +42,19 @@ class Cart extends Component {
   };
   onhandleRemoveQuantity = (id) => {
     console.log("onhandleRemoveQuantity", CartItemsData[id]);
+
+    // Controlling quantity to go below 1
+    if(CartItemsData[id].quantity>1){
     const decrement = --CartItemsData[id].quantity;
     console.log(CartItemsData[id].priceQuantity);
     this.setState({ decrement });
+      //Updating the price per quantity in the state for the product
+    let priceQuantityShow = (CartItemsData[id].priceQuantity -=
+      CartItemsData[id].price);
+    this.setState({ priceQuantityShow });
+  }
+
+    
   };
 
   render() {
