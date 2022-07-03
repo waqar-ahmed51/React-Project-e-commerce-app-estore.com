@@ -38,6 +38,15 @@ class App extends Component {
     let priceQuantityShow = (CartItemsData[id].priceQuantity +=
       CartItemsData[id].price);
     this.setState({ priceQuantityShow });
+
+    // Updating navbar cart total quantity
+    let cartItemsTotalNum=this.state.cartItemsTotalNum;
+    cartItemsTotalNum++;
+    // Preventing Cart total count to be negative
+    if(cartItemsTotalNum<0){
+      cartItemsTotalNum=0;
+    }
+    this.setState({cartItemsTotalNum})
   };
 
   //Decrease quantity of the product in the cart
@@ -50,14 +59,24 @@ class App extends Component {
     let priceQuantityShow = (CartItemsData[id].priceQuantity -=
       CartItemsData[id].price);
     this.setState({ priceQuantityShow });
+
+    // Updating navbar cart total quantity
+    let cartItemsTotalNum=this.state.cartItemsTotalNum;
+    cartItemsTotalNum--;
+    // Preventing Cart total count to be negative
+    if(cartItemsTotalNum<0){
+      cartItemsTotalNum=0;
+    }
+    this.setState({cartItemsTotalNum})
   }  };
 
   // Deleteing products in the cart
-  onhandleDeleteProduct=(itemid)=>{
+  onhandleDeleteProduct=(itemid,  itemquantity)=>{
     var deleteItemsInCart = this.state.cartItems;
     deleteItemsInCart=this.state.cartItems.filter(function(deleteItemsInCart){
       return deleteItemsInCart.id !== itemid;
     });
+
     // Deleting all ojects in CartItemsData in data.js and pushing the filtered objects/items to CartItemsData data.js
     const start=0;
     const end=CartItemsData.length;
@@ -67,6 +86,15 @@ class App extends Component {
       return DataCartItemPush.id !== "x";
     });
     this.setState({cartItems: deleteItemsInCart});
+
+    // Updating navbar cart total quantity - fetching from CartItem.jsx as parameter
+    let cartItemsTotalNum=this.state.cartItemsTotalNum;
+    cartItemsTotalNum=cartItemsTotalNum-itemquantity;
+    // Preventing Cart total count to be negative
+    if(cartItemsTotalNum<0){
+      cartItemsTotalNum=0;
+    }
+    this.setState({cartItemsTotalNum})
   };
    
   render() { 
@@ -84,7 +112,6 @@ class App extends Component {
           RemoveQuantity={this.onhandleRemoveQuantity}
           DeleteProduct={this.onhandleDeleteProduct}
           cartItems={this.state.cartItems}
-          
           />} />
           <Route path="/checkout" element={<Checkout />} />
           <Route path="*" element={<ErrorPage />} />

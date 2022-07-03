@@ -46,6 +46,7 @@ class Cart extends Component {
               DeleteProduct={DeleteProduct}
               totalPriceCartItems={(totalPriceCartItems += item.priceQuantity)}
               totalCartItems={(totalCartItems += item.quantity)}
+              
             />
           ))}
 

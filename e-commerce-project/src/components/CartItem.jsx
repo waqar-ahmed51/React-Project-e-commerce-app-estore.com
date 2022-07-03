@@ -153,7 +153,7 @@ class CartItem extends Component {
             </QuantityButtonContainer>
           </QuantityPrice>
         </ProdctPrice>
-        <DeleteProductContainer onClick={() => DeleteProduct(item.id)}>
+        <DeleteProductContainer onClick={() => DeleteProduct(item.id, item.quantity)}>
           <DeleteOutline />
         </DeleteProductContainer>
       </CartProduct>
