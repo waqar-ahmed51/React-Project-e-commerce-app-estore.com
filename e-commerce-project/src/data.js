@@ -32,6 +32,9 @@ export const CartItemsData=[
     // Cart Items will be added here through product buttons - update via states
 ];
 
+// Items added to cart 
+export const totaPriceOfCartItemsData=[]; // this will recive data form the totalPrice function in Cart.jsx and then will be retrived to App.js state;
+
 
 export const categories = [
     {

@@ -8,7 +8,7 @@ import SignIn from "./pages/SignIn";
 import Cart from "./pages/Cart";
 import Checkout from "./pages/Checkout";
 import ErrorPage from "./pages/ErrorPage";
-import { CartItemsData } from './data';
+import { CartItemsData,totaPriceOfCartItemsData } from './data';
 
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import Navbar from "./components/Navbar";
@@ -19,14 +19,22 @@ class App extends Component {
      cartItemsTotalNum : 0,
      // fetching cart items from the CartItemsData fro data.js and putting in state.
     cartItems: CartItemsData,
+
+    //Data in state for the checkout page.
+    // Total Cost of the items in cart to checkout page.
+    totalPriceCartItems: totaPriceOfCartItemsData,
+
    } 
 
    handleAddItemCart = (item) => {
-    console.log("Test which item is passed to cart :", item);
+    // console.log("Test which item is passed to cart :", item);s
     // We can not make changes directly to the state better create variable with the same name and then set with setstate.
     CartItemsData.push(item);
     const cartItemsTotalNum = CartItemsData.length;
     this.setState({ cartItemsTotalNum });
+
+    
+
   };
 
   
@@ -35,10 +43,16 @@ class App extends Component {
     //Updating the quanity in the state for the product
     const increment = ++CartItemsData[id].quantity;
     this.setState({ increment });
+
     //Updating the price per quantity in the state for the product
     let priceQuantityShow = (CartItemsData[id].priceQuantity +=
       CartItemsData[id].price);
     this.setState({ priceQuantityShow });
+
+    // //Updating data to checkout page from state totalPriceCartItems.
+    // let totalPriceCartItems=this.state.totalPriceCartItems;
+    // totalPriceCartItems=totalPriceCartItems+CartItemsData[id].price;
+    // this.setState({ totalPriceCartItems });
 
     // Updating navbar cart total quantity
     let cartItemsTotalNum=this.state.cartItemsTotalNum;
@@ -84,7 +98,7 @@ class App extends Component {
     CartItemsData.splice(start,end);
     deleteItemsInCart.filter(function(DataCartItemPush){
       CartItemsData.push(DataCartItemPush)
-      return DataCartItemPush.id !== "x";
+      return DataCartItemPush.id !== "nothing";
     });
     this.setState({cartItems: deleteItemsInCart});
 
@@ -114,7 +128,10 @@ class App extends Component {
           DeleteProduct={this.onhandleDeleteProduct}
           cartItems={this.state.cartItems}
           />} />
-          <Route path="/checkout" element={<Checkout />} />
+          <Route path="/checkout" element={<Checkout 
+          totalCartItems={this.state.cartItemsTotalNum}
+          totalPriceCartItems={this.state.totalPriceCartItems}
+          />} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
         <Footer/>

@@ -2,6 +2,7 @@ import styled from "styled-components";
 import CartCheckoutContinueShoppingButtons from "../components/CartCheckoutContinueShoppingButtons";
 import CartItem from "../components/CartItem";
 import TotalPriceCart from "../components/TotalPriceCart";
+import { totaPriceOfCartItemsData } from "../data";
 import React, { Component } from "react";
 
 const Container = styled.div`
@@ -19,16 +20,24 @@ const NothingCart = styled.div`
 `;
 
 class Cart extends Component {
-
   render() {
     //Serail Number for the product.
     let Sno = 0;
     let totalPriceCartItems = 0;
     let totalCartItems = 0;
 
+    // function for calculating the total data and also pushing data to App.js state to send as prop to checkout page.
+    function totalPrice(item) {
+      totalPriceCartItems += item.priceQuantity;
+      // totaPriceOfCartItemsData = totalPriceCartItems;
+      totaPriceOfCartItemsData.push(totalPriceCartItems);
+      return totalPriceCartItems;
+    }
+
     //Item id to fetch and modify data for the copy of cartitems in state CartItemsData
-    let itemid=0; 
-    const {cartItems,AddQuantity,RemoveQuantity,DeleteProduct}=this.props;
+    let itemid = 0;
+    const { cartItems, AddQuantity, RemoveQuantity, DeleteProduct } =
+      this.props;
     return (
       <div>
         <Container>
@@ -44,9 +53,8 @@ class Cart extends Component {
               AddQuantity={AddQuantity}
               RemoveQuantity={RemoveQuantity}
               DeleteProduct={DeleteProduct}
-              totalPriceCartItems={(totalPriceCartItems += item.priceQuantity)}
+              totalPriceCartItems={totalPrice(item)}
               totalCartItems={(totalCartItems += item.quantity)}
-              
             />
           ))}
 

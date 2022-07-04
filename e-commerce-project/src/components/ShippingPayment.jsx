@@ -126,7 +126,8 @@ const CashOnDelivery = styled.div`
 `;
 const OnlinePayment = styled.div``;
 
-const ShippingPayment = () => {
+const ShippingPayment = ({ totalCartItems, totalPriceCartItems }) => {
+  totalPriceCartItems = totalPriceCartItems[totalPriceCartItems.length - 1];
   return (
     <Wrapper>
       <ShippingPaymentContainer>
@@ -135,15 +136,21 @@ const ShippingPayment = () => {
           <SummaryTitle>Summary</SummaryTitle>
           <PriceContianer>
             <PriceTitle>Subtotal </PriceTitle>
-            <PriceDetail>3,20,000 PKR</PriceDetail>
+            <PriceDetail>{totalPriceCartItems} PKR</PriceDetail>
           </PriceContianer>
           <PriceContianer>
             <PriceTitle>Delivery </PriceTitle>
             <PriceDetail>1000 PKR</PriceDetail>
           </PriceContianer>
           <PriceContianer>
+            <PriceTitle>{totalCartItems > 1 ? "Items" : "Item"}</PriceTitle>
+            <PriceDetail>{totalCartItems}</PriceDetail>
+          </PriceContianer>
+          <PriceContianer>
             <PriceTitle style={{ fontSize: "30px" }}>Total </PriceTitle>
-            <PriceDetail style={{ fontSize: "30px" }}>3,20,100 PKR</PriceDetail>
+            <PriceDetail style={{ fontSize: "30px" }}>
+              {totalPriceCartItems + 1000} PKR
+            </PriceDetail>
           </PriceContianer>
         </PurchaseSummary>
         <InputField placeholder="Full Name"></InputField>
