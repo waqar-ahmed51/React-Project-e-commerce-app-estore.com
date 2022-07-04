@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { Checkbox } from "@material-ui/core";
 
 const Wrapper = styled.div`
   margin: 20px;
@@ -114,17 +113,13 @@ const SummaryTitle = styled.h3`
 
 const PaymentMethod = styled.div`
   height: 50px;
-  width: 100%;
+  width: 104%;
   padding-bottom: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
 `;
-const CashOnDelivery = styled.div`
-  padding-right: 90px;
-`;
-const OnlinePayment = styled.div``;
 
 const ShippingPayment = ({ totalCartItems, totalPriceCartItems }) => {
   totalPriceCartItems = totalPriceCartItems[totalPriceCartItems.length - 1];
@@ -166,10 +161,13 @@ const ShippingPayment = ({ totalCartItems, totalPriceCartItems }) => {
         </SelectFiled>
         <InputFieldAddress placeholder="Address"></InputFieldAddress>
         <PaymentMethod>
-          <Checkbox color="black" checked />
-          <CashOnDelivery>Cash on delivery</CashOnDelivery>
-          <Checkbox color="black" />
-          <OnlinePayment>Online Payment</OnlinePayment>
+          <SelectFiled>
+            <Option disabled selected>
+              Payment Method
+            </Option>
+            <Option>Cash On Delivery</Option>
+            <Option>Online Transfer</Option>
+          </SelectFiled>
         </PaymentMethod>
         <SubmitButton>PLACE ORDER</SubmitButton>
       </ShippingPaymentContainer>
