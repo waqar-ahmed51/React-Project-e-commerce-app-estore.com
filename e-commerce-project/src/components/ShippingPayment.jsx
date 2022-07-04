@@ -152,44 +152,64 @@ const ShippingPayment = ({ totalCartItems, totalPriceCartItems }) => {
     // Check input fileds invidually if they have a value or not. Marking them red if they don't have value.
     if (fullname === "") {
       document.getElementById("fullname").style.border = "1px solid red";
+      document.getElementById("msgText").innerHTML = "Check your fields.";
+      validationCheck = false;
     } else {
       document.getElementById("fullname").style.border = "1px solid black";
     }
     if (contact === "") {
       document.getElementById("contact").style.border = "1px solid red";
+      document.getElementById("msgText").innerHTML = "Check your fields.";
+      validationCheck = false;
     } else {
       document.getElementById("contact").style.border = "1px solid black";
     }
-    if (city === "") {
-      document.getElementById("city").style.border = "1px solid red";
-    } else {
-      document.getElementById("city").style.border = "1px solid black";
-    }
     if (address === "") {
       document.getElementById("address").style.border = "1px solid red";
+      document.getElementById("msgText").innerHTML = "Check your fields.";
+      validationCheck = false;
     } else {
       document.getElementById("address").style.border = "1px solid black";
     }
-    if (paymentmethod === "") {
+    if (city === "City") {
+      document.getElementById("city").style.border = "1px solid red";
+      document.getElementById("msgText").innerHTML = "Select you city.";
+      validationCheck = false;
+    } else {
+      document.getElementById("city").style.border = "1px solid black";
+    }
+    if (paymentmethod === "Payment Method") {
       document.getElementById("paymentmethod").style.border = "1px solid red";
+      document.getElementById("msgText").innerHTML =
+        "Select you payment method.";
+      validationCheck = false;
     } else {
       document.getElementById("paymentmethod").style.border = "1px solid black";
     }
 
     //Complete form validation with multi-level chekcking
-    if (
-      //Checking if any of filed is not filled by user.
-      fullname === "" ||
-      contact === "" ||
-      city === "" ||
-      address === "" ||
-      paymentmethod === ""
-    ) {
-      document.getElementById("msgText").innerHTML = "Check your fields.";
-      validationCheck = false;
-    } else {
-      validationCheck = true;
-    }
+    // if (
+    //   //Checking if any of filed is not filled by user.
+    //   fullname === "" ||
+    //   contact === "" ||
+    //   address === ""
+    // ) {
+    //   document.getElementById("msgText").innerHTML = "Check your fields.";
+    //   validationCheck = false;
+    // } else if (city === "City") {
+    //   validationCheck = false;
+    //   document.getElementById("city").style.border = "1px solid red";
+    //   document.getElementById("msgText").innerHTML = "Select you city.";
+    // } else if (paymentmethod === "Payment Method") {
+    //   validationCheck = false;
+    //   document.getElementById("paymentmethod").style.border = "1px solid red";
+    //   document.getElementById("msgText").innerHTML =
+    //     "Select you payment method.";
+    // } else {
+    //   validationCheck = true;
+    //   document.getElementById("city").style.border = "1px solid black";
+    //   document.getElementById("paymentmethod").style.border = "1px solid black";
+    // }
 
     if (validationCheck) {
       document.getElementById("messageContainer").style.display = "none";
