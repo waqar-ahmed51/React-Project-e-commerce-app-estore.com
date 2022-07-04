@@ -121,7 +121,83 @@ const PaymentMethod = styled.div`
   text-align: center;
 `;
 
+const MessageContainer = styled.div`
+  margin: 10px;
+  background-color: #facfcf;
+  color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 30px;
+  border: 1px solid red;
+  display: none;
+`;
+
+const MessageText = styled.p`
+  color: red;
+  font-size: 15px;
+`;
+
 const ShippingPayment = ({ totalCartItems, totalPriceCartItems }) => {
+  function ValidateShippingPayment() {
+    // Register Form validation starts here.
+    var validationCheck = true; // a variable which will be ture after all validation checkups
+    var fullname = document.getElementById("fullname").value;
+    var contact = document.getElementById("contact").value;
+    var city = document.getElementById("city").value;
+    var address = document.getElementById("address").value;
+    var paymentmethod = document.getElementById("paymentmethod").value;
+
+    // Check input fileds invidually if they have a value or not. Marking them red if they don't have value.
+    if (fullname === "") {
+      document.getElementById("fullname").style.border = "1px solid red";
+    } else {
+      document.getElementById("fullname").style.border = "1px solid black";
+    }
+    if (contact === "") {
+      document.getElementById("contact").style.border = "1px solid red";
+    } else {
+      document.getElementById("contact").style.border = "1px solid black";
+    }
+    if (city === "") {
+      document.getElementById("city").style.border = "1px solid red";
+    } else {
+      document.getElementById("city").style.border = "1px solid black";
+    }
+    if (address === "") {
+      document.getElementById("address").style.border = "1px solid red";
+    } else {
+      document.getElementById("address").style.border = "1px solid black";
+    }
+    if (paymentmethod === "") {
+      document.getElementById("paymentmethod").style.border = "1px solid red";
+    } else {
+      document.getElementById("paymentmethod").style.border = "1px solid black";
+    }
+
+    //Complete form validation with multi-level chekcking
+    if (
+      //Checking if any of filed is not filled by user.
+      fullname === "" ||
+      contact === "" ||
+      city === "" ||
+      address === "" ||
+      paymentmethod === ""
+    ) {
+      document.getElementById("msgText").innerHTML = "Check your fields.";
+      validationCheck = false;
+    } else {
+      validationCheck = true;
+    }
+
+    if (validationCheck) {
+      document.getElementById("messageContainer").style.display = "none";
+    } else {
+      document.getElementById("messageContainer").style.display = "flex";
+    }
+  }
+
   totalPriceCartItems = totalPriceCartItems[totalPriceCartItems.length - 1];
   return (
     <Wrapper>
@@ -148,9 +224,13 @@ const ShippingPayment = ({ totalCartItems, totalPriceCartItems }) => {
             </PriceDetail>
           </PriceContianer>
         </PurchaseSummary>
-        <InputField placeholder="Full Name"></InputField>
-        <InputField placeholder="Contact" type="number"></InputField>
-        <SelectFiled>
+        <InputField placeholder="Full Name" id="fullname"></InputField>
+        <InputField
+          placeholder="Contact"
+          type="number"
+          id="contact"
+        ></InputField>
+        <SelectFiled id="city">
           <Option disabled selected>
             City
           </Option>
@@ -159,9 +239,12 @@ const ShippingPayment = ({ totalCartItems, totalPriceCartItems }) => {
           <Option>Islamabad</Option>
           <Option>Multan</Option>
         </SelectFiled>
-        <InputFieldAddress placeholder="Address"></InputFieldAddress>
+        <InputFieldAddress
+          placeholder="Address"
+          id="address"
+        ></InputFieldAddress>
         <PaymentMethod>
-          <SelectFiled>
+          <SelectFiled id="paymentmethod">
             <Option disabled selected>
               Payment Method
             </Option>
@@ -169,7 +252,12 @@ const ShippingPayment = ({ totalCartItems, totalPriceCartItems }) => {
             <Option>Online Transfer</Option>
           </SelectFiled>
         </PaymentMethod>
-        <SubmitButton>PLACE ORDER</SubmitButton>
+        <MessageContainer id="messageContainer">
+          <MessageText id="msgText" />
+        </MessageContainer>
+        <SubmitButton onClick={ValidateShippingPayment}>
+          PLACE ORDER
+        </SubmitButton>
       </ShippingPaymentContainer>
     </Wrapper>
   );
