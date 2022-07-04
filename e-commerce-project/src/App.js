@@ -9,51 +9,50 @@ import Cart from "./pages/Cart";
 import Checkout from "./pages/Checkout";
 import ErrorPage from "./pages/ErrorPage";
 import { CartItemsData,totaPriceOfCartItemsData } from './data';
-
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
 class App extends Component {
-  state = { 
+  state = {
+    //Preventing duplication product to cart
+    itemsIDsStorage:[],
+
      cartItemsTotalNum : 0,
      // fetching cart items from the CartItemsData fro data.js and putting in state.
     cartItems: CartItemsData,
-
-    //Data in state for the checkout page.
-    // Total Cost of the items in cart to checkout page.
+    //Data in state for the checkout page. Total Cost of the items in cart to checkout page.
     totalPriceCartItems: totaPriceOfCartItemsData,
-
    } 
 
    handleAddItemCart = (item) => {
-    // console.log("Test which item is passed to cart :", item);s
+    console.log("Test which item is passed to cart :", item.id);
+    console.log("Ids storgae :", this.state.itemsIDsStorage);
+    let itemsIDsStorage=this.state.itemsIDsStorage;
+    if(!itemsIDsStorage.includes(item.id)){
+      CartItemsData.push(item);
+      //Preventing duplication product to be added in cart - based on state itemsIDsStorage (keeps ids for the products)
+      itemsIDsStorage.push(item.id);
+      this.setState({itemsIDsStorage});
+    }else{
+      //console.log("Dont Add");
+    }
+
     // We can not make changes directly to the state better create variable with the same name and then set with setstate.
-    CartItemsData.push(item);
+    
     const cartItemsTotalNum = CartItemsData.length;
     this.setState({ cartItemsTotalNum });
-
-    
-
   };
 
-  
   //Product Quantity and total price of the particular product
   onhandleAddQuantity = (id) => {
     //Updating the quanity in the state for the product
     const increment = ++CartItemsData[id].quantity;
     this.setState({ increment });
-
     //Updating the price per quantity in the state for the product
     let priceQuantityShow = (CartItemsData[id].priceQuantity +=
       CartItemsData[id].price);
     this.setState({ priceQuantityShow });
-
-    // //Updating data to checkout page from state totalPriceCartItems.
-    // let totalPriceCartItems=this.state.totalPriceCartItems;
-    // totalPriceCartItems=totalPriceCartItems+CartItemsData[id].price;
-    // this.setState({ totalPriceCartItems });
-
     // Updating navbar cart total quantity
     let cartItemsTotalNum=this.state.cartItemsTotalNum;
     cartItemsTotalNum++;
@@ -74,7 +73,6 @@ class App extends Component {
     let priceQuantityShow = (CartItemsData[id].priceQuantity -=
       CartItemsData[id].price);
     this.setState({ priceQuantityShow });
-
     // Updating navbar cart total quantity
     let cartItemsTotalNum=this.state.cartItemsTotalNum;
     cartItemsTotalNum--;
@@ -91,7 +89,6 @@ class App extends Component {
     deleteItemsInCart=this.state.cartItems.filter(function(deleteItemsInCart){
       return deleteItemsInCart.id !== itemid;
     });
-
     // Deleting all ojects in CartItemsData in data.js and pushing the filtered objects/items to CartItemsData data.js
     const start=0;
     const end=CartItemsData.length;
@@ -101,7 +98,6 @@ class App extends Component {
       return DataCartItemPush.id !== "nothing";
     });
     this.setState({cartItems: deleteItemsInCart});
-
     // Updating navbar cart total quantity - fetching from CartItem.jsx as parameter
     let cartItemsTotalNum=this.state.cartItemsTotalNum;
     cartItemsTotalNum=cartItemsTotalNum-itemquantity;

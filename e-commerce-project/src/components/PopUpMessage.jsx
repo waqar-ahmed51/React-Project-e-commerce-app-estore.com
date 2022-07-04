@@ -8,13 +8,16 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  height: 40px;
+  height: 30px;
   border: 1px solid red;
+  position: fixed;
+  left: 590px;
+  z-index: 50;
+  width: 30vw;
 `;
 
-const ErrorMessge = () => {
+const PopUpMessage = () => {
   return <Container>Error</Container>;
 };
 
-export default ErrorMessge;
+export default PopUpMessage;
