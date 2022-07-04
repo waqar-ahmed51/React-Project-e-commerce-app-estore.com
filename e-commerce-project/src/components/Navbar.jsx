@@ -7,7 +7,6 @@ import { Link } from "react-router-dom";
 const Container = styled.div`
   height: 60px;
   border-bottom: 1px solid #b7b7b7;
-  /* background-color: black; */
 `;
 
 const Wrapper = styled.div`
