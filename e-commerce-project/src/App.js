@@ -34,14 +34,10 @@ class App extends Component {
       //Preventing duplication product to be added in cart - based on state itemsIDsStorage (keeps ids for the products)
       itemsIDsStorage.push(item.id);
       this.setState({itemsIDsStorage});
-    }else{
-      //console.log("Dont Add");
-    }
 
-    // We can not make changes directly to the state better create variable with the same name and then set with setstate.
-    
-    const cartItemsTotalNum = CartItemsData.length;
-    this.setState({ cartItemsTotalNum });
+      const cartItemsTotalNum = CartItemsData.length;
+      this.setState({ cartItemsTotalNum });
+    }
   };
 
   //Product Quantity and total price of the particular product
