@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import { popularProducts } from "../data";
+import { allProducts } from "../data";
 import Product from "./Product";
 
 const Container = styled.div`
@@ -16,16 +16,22 @@ class Products extends Component {
   state = {};
   render() {
     // console.log("Products Props", this.props);
+    const categoryfilter = this.props.category;
     return (
       <Container>
         <ProductContainer>
-          {popularProducts.map((item) => (
-            <Product
-              items={item}
-              key={item.id}
-              addItemCart={this.props.addItemCart}
-            />
-          ))}
+          {allProducts.map((item) =>
+            item.category === categoryfilter ? (
+              <Product
+                items={item}
+                key={item.id}
+                addItemCart={this.props.addItemCart}
+              />
+            ) : (
+              // Just making condition dead - will not do anything for other produts
+              console.log()
+            )
+          )}
         </ProductContainer>
       </Container>
     );

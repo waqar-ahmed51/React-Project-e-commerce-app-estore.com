@@ -14,7 +14,7 @@ class Home extends Component {
         <Slider />
         <Categories />
         <PopularPorductsHeading />
-        <Products addItemCart={this.props.addItemCart} />
+        <Products addItemCart={this.props.addItemCart} category={"popular"} />
         <NewsLetter />
       </div>
     );

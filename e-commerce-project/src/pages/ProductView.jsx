@@ -1,9 +1,9 @@
 import ProductViewDetails from "../components/ProductViewDetails";
 
-const ProductView = () => {
+const ProductView = (props) => {
   return (
     <div>
-      <ProductViewDetails />
+      <ProductViewDetails addItemCart={props.addItemCart} />
     </div>
   );
 };

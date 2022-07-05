@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { ShoppingCartOutlined } from "@material-ui/icons";
+import { Add, Remove, ShoppingCartOutlined } from "@material-ui/icons";
 import { useParams } from "react-router-dom";
 import { allProducts } from "../data";
 
@@ -72,20 +72,69 @@ const QuantityPrice = styled.div`
   align-content: center;
   align-items: center;
 `;
+const QuantityButtonContainer = styled.div`
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+`;
+const QuantityButton = styled.button`
+  padding: 3px;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  border: 1px solid black;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  &:hover {
+    background-color: white;
+    color: black;
+    transform: scale(1.1);
+    transition: all 0.5s ease;
+  }
+`;
+const Quantity = styled.p`
+  font-size: 25px;
+  margin: 0px 20px;
+`;
 
 const Price = styled.span`
   display: flex;
   justify-content: flex-end;
-  flex: 1;
+  flex: 5;
   font-weight: 100;
   font-size: 30px;
 `;
 
 const Currency = styled.span`
   font-size: 20px;
-  flex: 1;
   margin-left: 10px;
   color: #707070;
+`;
+
+const ColorContainer = styled.div`
+  display: flex;
+  align-items: center;
+  margin: 10px 0px;
+  padding: 10px 10px;
+  border-bottom: 1px solid black;
+  /* justify-content: ; */
+`;
+const Color = styled.div`
+  background-color: #${(props) => props.color};
+  border: 1px solid black;
+  margin-left: 20px;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  cursor: pointer;
+  &:hover {
+    transform: scale(1.2);
+    transition: all 0.3s ease;
+  }
 `;
 
 const AddCart = styled.button`
@@ -107,7 +156,7 @@ const AddCart = styled.button`
     transition: all 0.5s ease;
   }
 `;
-const ProductViewDetails = (props) => {
+const ProductViewDetails = () => {
   // Fetching the product id from url
   let { id } = useParams();
   // Converting URL id(String) to number to fetch details below
@@ -123,6 +172,32 @@ const ProductViewDetails = (props) => {
       </SpecContianer>
     );
   }
+
+  // Getting the colors of the product and pushing them in arry to visible in them as color for the device
+  // const colors = [];
+  // for (const key in allProducts[id].colors) {
+  //   colors.push(<Color color={allProducts[id].colors[key]} key={key}></Color>);
+  // }
+
+  //Product Quantity and total price
+  var quantity = 1;
+  var product_total_price = allProducts[id].price * quantity;
+  function AddQuantity() {
+    quantity = quantity + 1;
+    var total_price = product_total_price * quantity;
+    document.getElementById("product_quanity").innerHTML = quantity;
+    document.getElementById("prodcut_total_price").innerHTML = total_price;
+  }
+  function RemoveQuantity() {
+    quantity = quantity - 1;
+    if (quantity <= 1) {
+      quantity = 1;
+    }
+    var total_price = product_total_price * quantity;
+    document.getElementById("product_quanity").innerHTML = quantity;
+    document.getElementById("prodcut_total_price").innerHTML = total_price;
+  }
+
   return (
     <Wrapper>
       <ImageContainer>
@@ -133,11 +208,27 @@ const ProductViewDetails = (props) => {
         <Desc>{allProducts[id].desc}</Desc>
         {/* Getting Specs for the product through for in loop */}
         {specs}
+
+        <ColorContainer>
+          Color
+          <Color color="6EA3C5" style={{ border: "3px solid black" }}></Color>
+          {colors}
+        </ColorContainer>
+
         <QuantityPrice>
-          <Price id="prodcut_total_price">{allProducts[id].price}</Price>
+          <QuantityButtonContainer>
+            <QuantityButton>
+              <Remove onClick={RemoveQuantity} />
+            </QuantityButton>
+            <Quantity id="product_quanity">{quantity}</Quantity>
+            <QuantityButton>
+              <Add onClick={AddQuantity} />
+            </QuantityButton>
+          </QuantityButtonContainer>
+          <Price id="prodcut_total_price">{product_total_price}</Price>
           <Currency>PKR</Currency>
         </QuantityPrice>
-        <AddCart onClick={() => props.addItemCart(allProducts[id])}>
+        <AddCart>
           <ShoppingCartOutlined style={{ marginRight: "20px" }} />
           Add to Cart
         </AddCart>

@@ -36,7 +36,8 @@ class App extends Component {
       itemsIDsStorage.push(item.id);
       this.setState({itemsIDsStorage});
 
-      const cartItemsTotalNum = CartItemsData.length;
+      let cartItemsTotalNum = this.state.cartItemsTotalNum;
+      cartItemsTotalNum++;
       this.setState({ cartItemsTotalNum });
     }else{
       console.log("Item exsists in Ids storgae in state");
@@ -119,7 +120,7 @@ class App extends Component {
       <Routes>
           <Route path="/" element={<Home addItemCart={this.handleAddItemCart}/>} />
           <Route path="/productlist/:category" element={<ProductList addItemCart={this.handleAddItemCart}/>} />
-          <Route path="/productview/:id" element={<ProductView />} />
+          <Route path="/productview/:id" element={<ProductView addItemCart={this.handleAddItemCart}/>} />
           <Route path="/register" element={<Register />} />
           <Route path="/signin" element={<SignIn />} />
           <Route path="/cart" element={<Cart 
