@@ -1,5 +1,5 @@
 import {
-  FavoriteBorderOutlined,
+  // FavoriteBorderOutlined,
   SearchOutlined,
   ShoppingCartOutlined,
 } from "@material-ui/icons";
@@ -74,7 +74,7 @@ const Image = styled.img`
 const Icon = styled.div`
   width: 40px;
   height: 40px;
-  border-radius: 50%;
+  /* border-radius: 50%; */
   background-color: white;
   display: flex;
   align-items: center;
@@ -82,6 +82,7 @@ const Icon = styled.div`
   margin: 10px;
   transition: all 0.3s ease;
   &:hover {
+    border: 1px solid white;
     background-color: #000000;
     color: white;
     transform: scale(1.4);
@@ -106,9 +107,9 @@ const Product = (props) => {
             <SearchOutlined />
           </Icon>
         </Link>
-        <Icon>
+        {/* <Icon>
           <FavoriteBorderOutlined />
-        </Icon>
+        </Icon> */}
       </Info>
     </Container>
   );

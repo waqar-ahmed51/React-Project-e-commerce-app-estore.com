@@ -86,10 +86,12 @@ const Button = styled.button`
   font-size: 20px;
   background-color: transparent;
   cursor: pointer;
+  border: 2px solid black;
   &:hover {
     background-color: #000000;
+    border: 2px solid white;
     color: white;
-    /* transform: scale(1.4); */
+    transform: scale(1.2);
     transition: all 0.3s ease;
   }
 `;
