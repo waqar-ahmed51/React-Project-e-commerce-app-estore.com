@@ -17,7 +17,7 @@ class Products extends Component {
   render() {
     // console.log("Products Props", this.props);
     return (
-      <Container testprop={this.handleTest}>
+      <Container>
         <ProductContainer>
           {popularProducts.map((item) => (
             <Product

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Add, Remove, ShoppingCartOutlined } from "@material-ui/icons";
 import { useParams } from "react-router-dom";
-import { Products } from "../data";
+import { allProducts } from "../data";
 
 const Wrapper = styled.div`
   padding: 50px;
@@ -163,24 +163,24 @@ const ProductViewDetails = () => {
 
   // Getting the specs of the product and pushing them in arry to visible in them spec UI table
   const specs = [];
-  for (const key in Products[id].specs) {
+  for (const key in allProducts[id].specs) {
     specs.push(
       <SpecContianer key={key}>
         <SpectTitle>{key}</SpectTitle>
-        <SpecDetail>{Products[id].specs[key]}</SpecDetail>
+        <SpecDetail>{allProducts[id].specs[key]}</SpecDetail>
       </SpecContianer>
     );
   }
 
   // Getting the colors of the product and pushing them in arry to visible in them as color for the device
   const colors = [];
-  for (const key in Products[id].colors) {
-    colors.push(<Color color={Products[id].colors[key]} key={key}></Color>);
+  for (const key in allProducts[id].colors) {
+    colors.push(<Color color={allProducts[id].colors[key]} key={key}></Color>);
   }
 
   //Product Quantity and total price
   var quantity = 1;
-  var product_total_price = Products[id].price * quantity;
+  var product_total_price = allProducts[id].price * quantity;
   function AddQuantity() {
     quantity = quantity + 1;
     var total_price = product_total_price * quantity;
@@ -200,11 +200,11 @@ const ProductViewDetails = () => {
   return (
     <Wrapper>
       <ImageContainer>
-        <Image src={Products[id].img} />
+        <Image src={allProducts[id].img} />
       </ImageContainer>
       <InfoContainer>
-        <Title>{Products[id].title}</Title>
-        <Desc>{Products[id].desc}</Desc>
+        <Title>{allProducts[id].title}</Title>
+        <Desc>{allProducts[id].desc}</Desc>
         {/* Getting Specs for the product through for in loop */}
         {specs}
         <ColorContainer>

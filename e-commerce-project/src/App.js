@@ -31,12 +31,15 @@ class App extends Component {
     let itemsIDsStorage=this.state.itemsIDsStorage;
     if(!itemsIDsStorage.includes(item.id)){
       CartItemsData.push(item);
+      this.setState({cartItems:CartItemsData});
       //Preventing duplication product to be added in cart - based on state itemsIDsStorage (keeps ids for the products)
       itemsIDsStorage.push(item.id);
       this.setState({itemsIDsStorage});
 
       const cartItemsTotalNum = CartItemsData.length;
       this.setState({ cartItemsTotalNum });
+    }else{
+      console.log("Item exsists in Ids storgae in state");
     }
   };
 
@@ -90,7 +93,7 @@ class App extends Component {
     const end=CartItemsData.length;
     CartItemsData.splice(start,end);
     deleteItemsInCart.filter(function(DataCartItemPush){
-      CartItemsData.push(DataCartItemPush)
+      CartItemsData.push(DataCartItemPush);
       return DataCartItemPush.id !== "nothing";
     });
     this.setState({cartItems: deleteItemsInCart});
@@ -102,6 +105,11 @@ class App extends Component {
       cartItemsTotalNum=0;
     }
     this.setState({cartItemsTotalNum})
+    //Deleting IDs from itemsIDsStorage Array in state so User can add product again to cart.
+    let itemsIDsStorage=this.state.itemsIDsStorage;
+    let index=itemsIDsStorage.indexOf(itemid);
+    itemsIDsStorage[index]=99999;
+    this.setState({itemsIDsStorage});
   };
    
   render() { 
@@ -110,7 +118,7 @@ class App extends Component {
         <Navbar ItemsInCart={this.state.cartItemsTotalNum}/>
       <Routes>
           <Route path="/" element={<Home addItemCart={this.handleAddItemCart}/>} />
-          <Route path="/productlist/:category" element={<ProductList />} />
+          <Route path="/productlist/:category" element={<ProductList addItemCart={this.handleAddItemCart}/>} />
           <Route path="/productview/:id" element={<ProductView />} />
           <Route path="/register" element={<Register />} />
           <Route path="/signin" element={<SignIn />} />

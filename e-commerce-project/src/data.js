@@ -156,15 +156,17 @@ export const popularProducts = [
 
 // Products all here 
 // Product Id starts from zero same as index to object
-export const Products = [
+export const allProducts = [
     {
         id: 0,
         title: "IPHONE 13 PRO MAX",
         desc: "lorem ispsum",
         img: "https://gagadget.com/media/post_big/iphone-13-pro-review-dan-baker-35_gAtW7pC.jpg",
-        price: 120000,
+        // Price and Price Quantity must be same
+        price: 100,
+        priceQuantity:100, 
         quantity:1,
-        priceQuantity:0,
+        
         "Main Features": "RAM : 6 GB | ROM : 128 GB | COLOR: BLUE 0",
         specs:{
             RAM: "4 GB",
@@ -185,9 +187,10 @@ export const Products = [
         title: "IPHONE 13 PRO MAX 1",
         desc: "lorem ispsum",
         img: "https://gagadget.com/media/post_big/iphone-13-pro-review-dan-baker-35_gAtW7pC.jpg",
+        // Price and Price Quantity must be same
         price: 11,
+        priceQuantity:11, 
         quantity:1,
-        priceQuantity:0,
         "Main Features": "RAM : 6 GB | ROM : 128 GB | COLOR: BLUE 1",
         specs:{
             RAM: "4 GB",
@@ -207,9 +210,10 @@ export const Products = [
         title: "IPHONE 13 PRO MAX 2",
         desc: "lorem ispsum",
         img: "https://gagadget.com/media/post_big/iphone-13-pro-review-dan-baker-35_gAtW7pC.jpg",
+        // Price and Price Quantity must be same
         price: 22,
+        priceQuantity:22, 
         quantity:1,
-        priceQuantity:0,
         "Main Features": "RAM : 6 GB | ROM : 128 GB | COLOR: BLUE 2",
         specs:{
             RAM: "4 GB",
@@ -229,9 +233,10 @@ export const Products = [
         title: "IPHONE 13 PRO MAX 3",
         desc: "lorem ispsum",
         img: "https://gagadget.com/media/post_big/iphone-13-pro-review-dan-baker-35_gAtW7pC.jpg",
+        // Price and Price Quantity must be same
         price: 33,
+        priceQuantity:33, 
         quantity:1,
-        priceQuantity:0,
         "Main Features": "RAM : 6 GB | ROM : 128 GB | COLOR: BLUE 3 ",
         specs:{
             RAM: "4 GB",

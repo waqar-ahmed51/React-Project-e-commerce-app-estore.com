@@ -6,13 +6,13 @@ import { useParams } from "react-router-dom";
 
 const Container = styled.div`
   margin: 0px 20px;
-  /* 100vh - header and footer in pixels */
   min-height: calc(100vh - 59px - 279px);
 `;
 
-const ProductList = () => {
-  //Getting data from url
+const ProductList = (props) => {
+  //Getting category from url
   let { category } = useParams();
+
   //Setting the Page Title
   let pagetitle = "Erorr";
   if (category === "laptops") {
@@ -26,8 +26,8 @@ const ProductList = () => {
   return (
     <Container>
       <PageTitle title={pagetitle} />
-      <ProductFilter />
-      <Products />
+      <ProductFilter category={category} />
+      <Products category={category} addItemCart={props.addItemCart} />
     </Container>
   );
 };

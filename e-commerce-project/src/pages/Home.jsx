@@ -9,7 +9,6 @@ class Home extends Component {
   state = {};
 
   render() {
-    // console.log("Home Props", this.props);
     return (
       <div>
         <Slider />

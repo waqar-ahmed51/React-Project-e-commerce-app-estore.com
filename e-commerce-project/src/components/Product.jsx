@@ -89,7 +89,7 @@ const Icon = styled.div`
   }
 `;
 
-const Product = (props) => {
+const Product = (props) => { 
   // console.log(items);
   const item = props.items;
   return (
