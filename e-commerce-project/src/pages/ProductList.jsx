@@ -9,6 +9,10 @@ const Container = styled.div`
   min-height: calc(100vh - 59px - 279px);
 `;
 
+function handleSortBy(sort) {
+  console.log(sort);
+}
+
 const ProductList = (props) => {
   //Getting category from url
   let { category } = useParams();
@@ -26,7 +30,7 @@ const ProductList = (props) => {
   return (
     <Container>
       <PageTitle title={pagetitle} />
-      <ProductFilter category={category} />
+      <ProductFilter category={category} sortByPorduct={handleSortBy} />
       <Products category={category} addItemCart={props.addItemCart} />
     </Container>
   );

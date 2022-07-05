@@ -24,7 +24,6 @@ const Option = styled.option``;
 const ProductFilter = (props) => {
   let category = props.category;
   category = category.toUpperCase();
-
   return (
     <FilterContainer>
       <Filter>
@@ -55,7 +54,12 @@ const ProductFilter = (props) => {
       </Filter>
       <Filter>
         <FilterText>SORT {category}</FilterText>
-        <Select>
+        <Select
+          id="sortBy"
+          onChange={() =>
+            props.sortByPorduct(document.getElementById("sortBy").value)
+          }
+        >
           <Option disabled selected>
             Sort by
           </Option>
