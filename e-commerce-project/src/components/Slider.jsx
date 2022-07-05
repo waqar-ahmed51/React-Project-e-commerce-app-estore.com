@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 
 const Container = styled.div`
   width: 100%;
-  height: 92vh;
+  /* height: 100vh; */
   display: flex;
   position: relative;
   overflow: hidden;
@@ -143,5 +143,4 @@ const Slider = () => {
     </Container>
   );
 };
-// #e9e9e9cc
 export default Slider;
