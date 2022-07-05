@@ -110,7 +110,7 @@ class App extends Component {
         <Navbar ItemsInCart={this.state.cartItemsTotalNum}/>
       <Routes>
           <Route path="/" element={<Home addItemCart={this.handleAddItemCart}/>} />
-          <Route path="/productlist" element={<ProductList />} />
+          <Route path="/productlist/:category" element={<ProductList />} />
           <Route path="/productview/:id" element={<ProductView />} />
           <Route path="/register" element={<Register />} />
           <Route path="/signin" element={<SignIn />} />

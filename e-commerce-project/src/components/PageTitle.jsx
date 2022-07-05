@@ -9,8 +9,8 @@ const Title = styled.h1`
   padding-bottom: 20px;
 `;
 
-const PageTitle = () => {
-  return <Title>Phones</Title>;
+const PageTitle = ({ title }) => {
+  return <Title>{title}</Title>;
 };
 
 export default PageTitle;

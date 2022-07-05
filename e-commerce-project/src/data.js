@@ -41,19 +41,19 @@ export const categories = [
         id: 1,
         img: "https://cdn.mos.cms.futurecdn.net/uWjEogFLUTBc8mSvagdiuP.jpg",
         title: "LAPTOPS",
-        link: "/laptops",
+        link: "/productlist/laptops",
     },
     {
         id: 2,
         img: "https://www.cnet.com/a/img/resize/55fb60ca6a8cf5035ac2b5044ef54e6f87f6be3f/2020/08/18/b7168aea-9f7e-47bb-9f31-4cb8ad92fbc7/lg-note-20-ultra-5g-iphone-11-se-google-pixel-4a-lg-velvet-6133.jpg?auto=webp&fit=crop&height=675&width=1200",
         title: "PHONES",
-        link: "/phones",
+        link: "/productlist/phones",
     },
     {
         id: 3,
         img: "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/sony-headphone-5-12-inline-5-1652371430.jpg?crop=0.667xw:1.00xh;0.167xw,0&resize=640:*",
         title: "HEADPHONES",
-        link: "/headphones",
+        link: "/productlist/headphones",
     },
 ];
 
