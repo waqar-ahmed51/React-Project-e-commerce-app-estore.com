@@ -34,7 +34,7 @@ class App extends Component {
       this.setState({cartItems:CartItemsData});
       //Preventing duplication product to be added in cart - based on state itemsIDsStorage (keeps ids for the products)
       itemsIDsStorage.push(item.id);
-      this.setState({itemsIDsStorage});
+      this.setState({itemsIDsStorage})
 
       let cartItemsTotalNum = this.state.cartItemsTotalNum;
       cartItemsTotalNum++;

@@ -7,19 +7,29 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-const ProductTitleSpace = styled.div`
+const ProductInfoGeneral = styled.div`
   bottom: 0;
   width: 100%;
-  height: 40px;
+  height: 60px;
   background-color: #000000;
   position: absolute;
   z-index: 2;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 `;
 const ProductTitle = styled.h3`
   color: white;
+`;
+const MainFeatures = styled.h3`
+  font-size: 11px;
+  color: white;
+  margin: 2px;
+`;
+const ProductPrice = styled.h3`
+  color: white;
+  font-size: 13px;
 `;
 
 const Info = styled.div`
@@ -39,16 +49,12 @@ const Info = styled.div`
 `;
 
 const Container = styled.div`
-  flex: 1;
   margin: 5px;
-  min-width: 280px;
-  /* max-width: 350px; */
   height: 350px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #8b8b8b;
+  background-color: #e6e6e6;
   position: relative;
+  min-width: 300px;
+  max-width: 300px;
   &:hover ${Info} {
     opacity: 1;
   }
@@ -57,7 +63,17 @@ const Container = styled.div`
     transform: scale(1.3);
     color: black;
   }
-  &:hover ${ProductTitleSpace} {
+  &:hover ${MainFeatures} {
+    transition: all 0.3s ease;
+    transform: scale(1.3);
+    color: black;
+  }
+  &:hover ${ProductPrice} {
+    transition: all 0.3s ease;
+    transform: scale(1.3);
+    color: black;
+  }
+  &:hover ${ProductInfoGeneral} {
     transition: all 0.5s ease;
     background-color: white;
     border: 1px solid black;
@@ -66,15 +82,19 @@ const Container = styled.div`
 `;
 
 const Image = styled.img`
-  height: 100%;
+  height: 85%;
   width: 100%;
+  /* padding-bottom: 100px; */
   object-fit: cover;
+  position: absolute;
+  top: 0;
 `;
 
 const Icon = styled.div`
   width: 40px;
   height: 40px;
   /* border-radius: 50%; */
+  border: 1px solid black;
   background-color: white;
   display: flex;
   align-items: center;
@@ -89,15 +109,17 @@ const Icon = styled.div`
   }
 `;
 
-const Product = (props) => { 
+const Product = (props) => {
   // console.log(items);
   const item = props.items;
   return (
     <Container>
       <Image src={item.img} />
-      <ProductTitleSpace>
+      <ProductInfoGeneral>
         <ProductTitle>{item.title}</ProductTitle>
-      </ProductTitleSpace>
+        <MainFeatures>{item["Main Features"]}</MainFeatures>
+        <ProductPrice>{item.price} PKR</ProductPrice>
+      </ProductInfoGeneral>
       <Info>
         <Icon>
           <ShoppingCartOutlined onClick={() => props.addItemCart(item)} />

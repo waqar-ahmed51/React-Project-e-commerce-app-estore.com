@@ -6,7 +6,7 @@ const FilterContainer = styled.div`
 `;
 
 const Filter = styled.div`
-  margin: 20px; 
+  margin: 20px;
 `;
 
 const FilterText = styled.span`
@@ -21,11 +21,14 @@ const Select = styled.select`
 `;
 const Option = styled.option``;
 
-const ProductFilter = () => {
+const ProductFilter = (props) => {
+  let category = props.category;
+  category = category.toUpperCase();
+
   return (
     <FilterContainer>
       <Filter>
-        <FilterText>Filter Phones:</FilterText>
+        <FilterText>FILTER {category}</FilterText>
         <Select>
           <Option disabled selected>
             RAM
@@ -35,6 +38,7 @@ const ProductFilter = () => {
           <Option>6 GB</Option>
           <Option>8 GB</Option>
           <Option>16 GB</Option>
+          <Option>All</Option>
         </Select>
         <Select>
           <Option disabled selected>
@@ -46,18 +50,18 @@ const ProductFilter = () => {
           <Option>64 GB</Option>
           <Option>128 GB</Option>
           <Option>256 GB</Option>
+          <Option>All</Option>
         </Select>
       </Filter>
       <Filter>
-        <FilterText>Sort Phones:</FilterText>
+        <FilterText>SORT {category}</FilterText>
         <Select>
           <Option disabled selected>
             Sort by
           </Option>
           <Option>Price Low to High</Option>
           <Option>Price High to Low</Option>
-          <Option>Latest</Option>
-          <Option>Popular</Option>
+          <Option>All</Option>
         </Select>
       </Filter>
     </FilterContainer>
