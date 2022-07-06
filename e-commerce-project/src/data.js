@@ -61,6 +61,7 @@ export const allProducts = [
         priceQuantity:100, 
         quantity:1,
         category:"phones",
+        popular:"yes",
         "Main Features": "RAM : 6 GB | ROM : 128 GB | COLOR: BLUE 0",
         specs:{
             RAM: "4 GB",
@@ -86,6 +87,7 @@ export const allProducts = [
         priceQuantity:11, 
         quantity:1,
         category:"phones",
+        popular:"yes",
         "Main Features": "RAM : 6 GB | ROM : 128 GB | COLOR: BLUE 1",
         specs:{
             RAM: "4 GB",
@@ -110,6 +112,7 @@ export const allProducts = [
         priceQuantity:22, 
         quantity:1,
         category:"laptops",
+        popular:"yes",
         "Main Features": "RAM : 6 GB | ROM : 128 GB | COLOR: BLUE 2",
         specs:{
             RAM: "4 GB",
@@ -134,6 +137,7 @@ export const allProducts = [
         priceQuantity:33, 
         quantity:1,
         category:"phones",
+        popular:"yes",
         "Main Features": "RAM : 6 GB | ROM : 128 GB | COLOR: BLUE 3 ",
         specs:{
             RAM: "4 GB",
@@ -158,6 +162,7 @@ export const allProducts = [
         priceQuantity:100, 
         quantity:1,
         category:"phones",
+        popular:"yes",
         "Main Features": "RAM : 6 GB | ROM : 128 GB | COLOR: BLUE 0",
         specs:{
             RAM: "4 GB",
@@ -183,6 +188,7 @@ export const allProducts = [
         priceQuantity:100, 
         quantity:1,
         category:"phones",
+        popular:"no",
         "Main Features": "RAM : 6 GB | ROM : 128 GB | COLOR: BLUE 0",
         specs:{
             RAM: "4 GB",
@@ -208,6 +214,7 @@ export const allProducts = [
         priceQuantity:100, 
         quantity:1,
         category:"phones",
+        popular:"no",
         "Main Features": "RAM : 6 GB | ROM : 128 GB | COLOR: BLUE 0",
         specs:{
             RAM: "4 GB",
@@ -233,6 +240,7 @@ export const allProducts = [
         priceQuantity:100, 
         quantity:1,
         category:"phones",
+        popular:"no",
         "Main Features": "RAM : 6 GB | ROM : 128 GB | COLOR: BLUE 0",
         specs:{
             RAM: "4 GB",
@@ -258,6 +266,7 @@ export const allProducts = [
         priceQuantity:100, 
         quantity:1,
         category:"phones",
+        popular:"no",
         "Main Features": "RAM : 6 GB | ROM : 128 GB | COLOR: BLUE 0",
         specs:{
             RAM: "4 GB",

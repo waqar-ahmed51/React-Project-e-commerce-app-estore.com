@@ -15,13 +15,12 @@ const ProductContainer = styled.div`
 class Products extends Component {
   state = {};
   render() {
-    // console.log("Products Props", this.props);
-    const categoryfilter = this.props.category;
     return (
       <Container>
         <ProductContainer>
           {allProducts.map((item) =>
-            item.category === categoryfilter ? (
+            // This will just fetch popular products for the Home
+            item.popular === "yes" ? (
               <Product
                 items={item}
                 key={item.id}
