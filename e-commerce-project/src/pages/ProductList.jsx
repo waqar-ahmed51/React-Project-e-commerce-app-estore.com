@@ -1,7 +1,8 @@
+import React, { Component } from "react";
 import ProductFilter from "../components/ProductFilter";
 import PageTitle from "../components/PageTitle";
 import styled from "styled-components";
-import { useParams } from "react-router-dom";
+import { withRouter } from "react-router";
 import Product from "../components/Product";
 import { allProducts } from "../data";
 
@@ -17,45 +18,68 @@ const ProductContainer = styled.div`
   justify-content: center;
 `;
 
-// let sortselected = "";
-function handleSortBy(sort) {
-  console.log(sort);
+class ProductList extends Component {
+  state = {};
+  componentDidMount() {
+    const { category } = this.props.match.params;
+    this.fetchData(category);
+  }
+
+  fetchData = (category) => {
+    // ...
+    console.log("------", category);
+  };
+
+  // let sortselected = "";
+  handleSortBy = (sort) => {
+    console.log(sort);
+  };
+
+  // getURLCategory = () => {
+  //   let { category } = useParams();
+  //   return category;
+  // };
+
+  render() {
+    // let category = "phones";
+    // let { category } = useParams();
+    // this.getURLCategory();
+
+    //Setting the Page Title
+    let pagetitle = "Erorr";
+    if (this.category === "laptops") {
+      pagetitle = "LAPTOPS";
+    } else if (this.category === "phones") {
+      pagetitle = "PHONES";
+    } else if (this.category === "headphones") {
+      pagetitle = "HEADPHONES";
+    }
+    return (
+      <Container>
+        <PageTitle title={pagetitle} />
+        <ProductFilter
+          category={this.category}
+          sortByPorduct={this.handleSortBy}
+        />
+        <ProductContainer>
+          {allProducts.map((item) =>
+            item.category === this.category ? (
+              <Product
+                items={item}
+                key={item.id}
+                addItemCart={this.props.addItemCart}
+              />
+            ) : (
+              // Just making condition dead - will not do anything for other produts
+              console.log()
+            )
+          )}
+        </ProductContainer>
+      </Container>
+    );
+  }
 }
 
-const ProductList = (props) => {
-  //Getting category from url
-  let { category } = useParams();
+export default withRouter(ProductList);
 
-  //Setting the Page Title
-  let pagetitle = "Erorr";
-  if (category === "laptops") {
-    pagetitle = "LAPTOPS";
-  } else if (category === "phones") {
-    pagetitle = "PHONES";
-  } else if (category === "headphones") {
-    pagetitle = "HEADPHONES";
-  }
-  // ----------------------------------------------------------------
-  return (
-    <Container>
-      <PageTitle title={pagetitle} />
-      <ProductFilter category={category} sortByPorduct={handleSortBy} />
-      <ProductContainer>
-        {allProducts.map((item) =>
-          item.category === category ? (
-            <Product
-              items={item}
-              key={item.id}
-              addItemCart={props.addItemCart}
-            />
-          ) : (
-            // Just making condition dead - will not do anything for other produts
-            console.log()
-          )
-        )}
-      </ProductContainer>
-    </Container>
-  );
-};
-
-export default ProductList;
+// ----------------------------------------------------------------
