@@ -28,7 +28,12 @@ const ProductFilter = (props) => {
     <FilterContainer>
       <Filter>
         <FilterText>FILTER {category}</FilterText>
-        <Select>
+        <Select
+          id="filter_1"
+          onChange={() =>
+            props.filterProducts_1(document.getElementById("filter_1").value)
+          }
+        >
           <Option disabled selected>
             RAM
           </Option>
@@ -39,7 +44,12 @@ const ProductFilter = (props) => {
           <Option>16 GB</Option>
           <Option>All</Option>
         </Select>
-        <Select>
+        <Select
+          id="filter_2"
+          onChange={() =>
+            props.filterProducts_2(document.getElementById("filter_2").value)
+          }
+        >
           <Option disabled selected>
             ROM
           </Option>
@@ -65,7 +75,6 @@ const ProductFilter = (props) => {
           </Option>
           <Option>Price Low to High</Option>
           <Option>Price High to Low</Option>
-          <Option>All</Option>
         </Select>
       </Filter>
     </FilterContainer>
