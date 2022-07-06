@@ -227,7 +227,7 @@ let employees = [
 
 
 employees.sort((a, b) => {
-  // return a.price - b.price; FOR // LOW TO HIGH
+  // return a.price - b.price; // LOW TO HIGH
   return b.price - a.price; // FOR HIGH TO LOW
 });
 
