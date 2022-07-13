@@ -99,7 +99,7 @@ export const allProducts = [
         colors:{
             color1: "58FF33",
             color2: "FF33F3",
-            color3: "3346FF",
+            color3: "3346FFX",
         },
     },
     {
