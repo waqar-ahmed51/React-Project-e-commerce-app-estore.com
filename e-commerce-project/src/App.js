@@ -8,7 +8,7 @@ import SignIn from "./pages/SignIn";
 import Cart from "./pages/Cart";
 import Checkout from "./pages/Checkout";
 import ErrorPage from "./pages/ErrorPage";
-import { CartItemsData,totaPriceOfCartItemsData } from './data';
+import { allProducts,CartItemsData,totaPriceOfCartItemsData } from './data';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -23,6 +23,10 @@ class App extends Component {
     cartItems: CartItemsData,
     //Data in state for the checkout page. Total Cost of the items in cart to checkout page.
     totalPriceCartItems: totaPriceOfCartItemsData,
+
+    //For fetching the API data.
+    items: [],
+    DataisLoaded: false
    } 
 
    handleAddItemCart = (item) => {
@@ -112,10 +116,29 @@ class App extends Component {
     itemsIDsStorage[index]=99999;
     this.setState({itemsIDsStorage});
   };
+
+  componentDidMount() {
+    fetch("https://dummyjson.com/products")
+        .then((res) => res.json())
+        .then((json) => {
+            this.setState({
+                items: json,
+                DataisLoaded: true
+            });
+        })
+  }
+
+  
    
   render() { 
+    console.log("Test",this.state.items.products);
+
+    const { DataisLoaded} = this.state;
+        if (!DataisLoaded) return <div>
+            <h1> Pleses wait some time.... </h1> </div> ;
     return (
       <Router>
+        {/* <h2 key="{test.id}"">{test}</h2> */}
         <Navbar ItemsInCart={this.state.cartItemsTotalNum}/>
       <Routes>
           <Route path="/" element={<Home addItemCart={this.handleAddItemCart}/>} />
