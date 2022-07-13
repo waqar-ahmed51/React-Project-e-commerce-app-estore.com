@@ -104,7 +104,7 @@ export const allProducts = [
     },
     {
         id: 2,
-        title: "IPHONE 13 PRO MAX 2",
+        title: "IPHONE 13 PRO MAX 2 x",
         desc: "lorem ispsum",
         img: "https://gagadget.com/media/post_big/iphone-13-pro-review-dan-baker-35_gAtW7pC.jpg",
         // Price and Price Quantity must be same
