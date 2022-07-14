@@ -109,7 +109,7 @@ const Icon = styled.div`
   }
 `;
 
-const Product = (props) => {
+const ProductFromAPI = (props) => {
   // console.log(items);
   const item = props.items;
   return (
@@ -120,21 +120,8 @@ const Product = (props) => {
         <MainFeatures>{item["Main Features"]}</MainFeatures>
         <ProductPrice>{item.price} PKR</ProductPrice>
       </ProductInfoGeneral>
-      <Info>
-        <Icon>
-          <ShoppingCartOutlined onClick={() => props.addItemCart(item)} />
-        </Icon>
-        <Link to={"/productviewa/" + item.id} className="CustomRouterLink">
-          <Icon>
-            <SearchOutlined />
-          </Icon>
-        </Link>
-        {/* <Icon>
-          <FavoriteBorderOutlined />
-        </Icon> */}
-      </Info>
     </Container>
   );
 };
 
-export default Product;
+export default ProductFromAPI;

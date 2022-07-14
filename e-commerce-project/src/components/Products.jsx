@@ -10,7 +10,7 @@ const Container = styled.div`
 const ProductContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: center; 
 `;
 class Products extends Component {
   state = {};

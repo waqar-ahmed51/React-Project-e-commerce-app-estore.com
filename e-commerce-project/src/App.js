@@ -7,8 +7,9 @@ import Register from "./pages/Register";
 import SignIn from "./pages/SignIn";
 import Cart from "./pages/Cart";
 import Checkout from "./pages/Checkout";
+import DataAPI from './pages/DataAPI';
 import ErrorPage from "./pages/ErrorPage";
-import { allProducts,CartItemsData,totaPriceOfCartItemsData } from './data';
+import { CartItemsData,totaPriceOfCartItemsData } from './data';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -24,9 +25,7 @@ class App extends Component {
     //Data in state for the checkout page. Total Cost of the items in cart to checkout page.
     totalPriceCartItems: totaPriceOfCartItemsData,
 
-    //For fetching the API data.
-    items: [],
-    DataisLoaded: false
+    
    } 
 
    handleAddItemCart = (item) => {
@@ -117,28 +116,12 @@ class App extends Component {
     this.setState({itemsIDsStorage});
   };
 
-  componentDidMount() {
-    fetch("https://dummyjson.com/products")
-        .then((res) => res.json())
-        .then((json) => {
-            this.setState({
-                items: json,
-                DataisLoaded: true
-            });
-        })
-  }
-
   
+  
+  render() {
    
-  render() { 
-    console.log("Test",this.state.items.products);
-
-    const { DataisLoaded} = this.state;
-        if (!DataisLoaded) return <div>
-            <h1> Pleses wait some time.... </h1> </div> ;
     return (
       <Router>
-        {/* <h2 key="{test.id}"">{test}</h2> */}
         <Navbar ItemsInCart={this.state.cartItemsTotalNum}/>
       <Routes>
           <Route path="/" element={<Home addItemCart={this.handleAddItemCart}/>} />
@@ -156,6 +139,7 @@ class App extends Component {
           totalCartItems={this.state.cartItemsTotalNum}
           totalPriceCartItems={this.state.totalPriceCartItems}
           />} />
+          <Route path="/dataapi" element={<DataAPI />} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
         <Footer/>
