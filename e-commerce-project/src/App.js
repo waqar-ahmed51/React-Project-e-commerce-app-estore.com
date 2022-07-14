@@ -15,17 +15,15 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
 class App extends Component {
+
   state = {
     //Preventing duplication product to cart
     itemsIDsStorage:[],
-
      cartItemsTotalNum : 0,
-     // fetching cart items from the CartItemsData fro data.js and putting in state.
+     //fetching cart items from the CartItemsData fro data.js and putting in state.
     cartItems: CartItemsData,
     //Data in state for the checkout page. Total Cost of the items in cart to checkout page.
     totalPriceCartItems: totaPriceOfCartItemsData,
-
-    
    } 
 
    handleAddItemCart = (item) => {
@@ -38,7 +36,6 @@ class App extends Component {
       //Preventing duplication product to be added in cart - based on state itemsIDsStorage (keeps ids for the products)
       itemsIDsStorage.push(item.id);
       this.setState({itemsIDsStorage})
-
       let cartItemsTotalNum = this.state.cartItemsTotalNum;
       cartItemsTotalNum++;
       this.setState({ cartItemsTotalNum });
@@ -115,11 +112,8 @@ class App extends Component {
     itemsIDsStorage[index]=99999;
     this.setState({itemsIDsStorage});
   };
-
-  
   
   render() {
-   
     return (
       <Router>
         <Navbar ItemsInCart={this.state.cartItemsTotalNum}/>
