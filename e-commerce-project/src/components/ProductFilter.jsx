@@ -37,7 +37,10 @@ const ProductFilter = (props) => {
           <Select
             id="filter_1"
             onChange={() =>
-              props.filterProducts_1(document.getElementById("filter_1").value)
+              props.filterProducts(
+                document.getElementById("filter_1").value,
+                document.getElementById("filter_2").value
+              )
             }
           >
             <Option disabled selected>
@@ -53,7 +56,10 @@ const ProductFilter = (props) => {
           <Select
             id="filter_2"
             onChange={() =>
-              props.filterProducts_2(document.getElementById("filter_2").value)
+              props.filterProducts(
+                document.getElementById("filter_1").value,
+                document.getElementById("filter_2").value
+              )
             }
           >
             <Option disabled selected>

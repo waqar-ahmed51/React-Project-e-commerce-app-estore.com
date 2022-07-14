@@ -10,12 +10,12 @@ const Title = styled.h1`
   padding-bottom: 20px;
 `;
 
-const PageTitle = () => {
+const PageTitle = (props) => {
   //Getting category from URL
   let { category } = useParams();
 
   //Setting the Page Title
-  let pagetitle = "Erorr";
+  let pagetitle = props.title;
   if (category === "laptops") {
     pagetitle = "LAPTOPS";
   } else if (category === "phones") {

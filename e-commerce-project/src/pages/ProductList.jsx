@@ -19,40 +19,55 @@ class ProductList extends Component {
 
   handleSortBy = (sort) => {
     if (sort === "Price Low to High") {
-      let sortedProducts = this.state.sortedProducts;
+      let sortedProducts = allProducts;
       sortedProducts.sort((a, b) => {
         return a.price - b.price; // FOR  LOW TO HIGH
       });
-      this.setState({ finalStateProducts: sortedProducts });
+      this.setState({ sortedProducts: sortedProducts });
     } else if (sort === "Price High to Low") {
-      let sortedProducts = this.state.sortedProducts;
+      let sortedProducts = this.state.finalStateProducts;
       sortedProducts.sort((a, b) => {
         return b.price - a.price; // FOR HIGH TO LOW
       });
-      this.setState({ finalStateProducts: sortedProducts });
+      this.setState({ sortedProducts: sortedProducts });
     }
   };
 
-  handlefilterProducts_1 = (filter_1) => {
+  handlefilterProducts = (filter_1, filter_2) => {
+    console.log("Both Filters : ", filter_1, filter_2);
     let filteredProdcuts = this.state.sortedProducts;
-    this.setState({ filteredProdcuts });
 
-    let filter_1_products = filteredProdcuts.filter(function (product) {
-      return product.specs.RAM === filter_1;
+    let filter_products = filteredProdcuts.filter(function (product) {
+      return product.specs.RAM === filter_1 && product.specs.ROM === filter_2;
     });
-    this.setState({ finalStateProducts: filter_1_products });
-    // console.log(filter_1_products);
-  };
-  handlefilterProducts_2 = (filter_2) => {
-    let filteredProdcuts = this.state.sortedProducts;
-    this.setState({ filteredProdcuts });
+    this.setState({ finalStateProducts: filter_products });
+    console.log("filter_products : ", filter_products);
 
-    let filter_2_products = filteredProdcuts.filter(function (product) {
-      return product.specs.ROM === filter_2;
-    });
-    this.setState({ finalStateProducts: filter_2_products });
-    // console.log(filter_2_products);
+    // if (filter_1 !== "RAM") {
+    //   let filter_products = filteredProdcuts.filter(function (product) {
+    //     return product.specs.RAM === filter_1;
+    //   });
+    //   this.setState({ finalStateProducts: filter_products });
+    //   console.log("filter_products : ", filter_products);
+    // }
+    // if (filter_2 !== "ROM") {
+    //   let filter_products = filteredProdcuts.filter(function (product) {
+    //     return product.specs.ROM === filter_2;
+    //   });
+    //   this.setState({ finalStateProducts: filter_products });
+    //   console.log("filter_products : ", filter_products);
+    // }
   };
+
+  // handlefilterProducts_2 = (filter_2) => {
+  //   let filteredProdcuts = allProducts;
+
+  //   let filter_2_products = filteredProdcuts.filter(function (product) {
+  //     return product.specs.ROM === filter_2;
+  //   });
+  //   this.setState({ finalStateProducts: filter_2_products });
+  //   // console.log(filter_2_products);
+  // };
 
   render() {
     return (
@@ -60,10 +75,10 @@ class ProductList extends Component {
         <PageTitle />
         <ProductFilter
           sortByPorduct={this.handleSortBy}
-          filterProducts_1={this.handlefilterProducts_1}
-          filterProducts_2={this.handlefilterProducts_2}
+          filterProducts={this.handlefilterProducts}
         />
         <ProductListContainer
+          addItemCart={this.props.addItemCart}
           finalStateProducts={this.state.finalStateProducts}
         />
       </Container>

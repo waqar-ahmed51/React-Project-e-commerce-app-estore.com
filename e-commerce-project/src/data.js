@@ -62,7 +62,7 @@ export const allProducts = [
         quantity:1,
         category:"phones",
         popular:"yes",
-        "Main Features": "RAM : 6 GB | ROM : 64 GB",
+        "Main Features": "RAM : 4 GB | ROM : 64 GB",
         specs:{
             RAM: "4 GB",
             ROM: "64 GB",
