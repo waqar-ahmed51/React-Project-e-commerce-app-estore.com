@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { useParams } from "react-router-dom";
 
 const FilterContainer = styled.div`
   display: flex;
@@ -22,7 +23,9 @@ const Select = styled.select`
 const Option = styled.option``;
 
 const ProductFilter = (props) => {
-  let category = props.category;
+  //Getting category from URL
+  let { category } = useParams();
+
   category = category.toUpperCase();
   return (
     <FilterContainer>

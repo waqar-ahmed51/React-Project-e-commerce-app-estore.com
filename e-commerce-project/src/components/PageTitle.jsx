@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { useParams } from "react-router-dom";
 
 const Title = styled.h1`
   margin: 20px;
@@ -9,8 +10,20 @@ const Title = styled.h1`
   padding-bottom: 20px;
 `;
 
-const PageTitle = ({ title }) => {
-  return <Title>{title}</Title>;
+const PageTitle = () => {
+  //Getting category from URL
+  let { category } = useParams();
+
+  //Setting the Page Title
+  let pagetitle = "Erorr";
+  if (category === "laptops") {
+    pagetitle = "LAPTOPS";
+  } else if (category === "phones") {
+    pagetitle = "PHONES";
+  } else if (category === "headphones") {
+    pagetitle = "HEADPHONES";
+  }
+  return <Title>{pagetitle}</Title>;
 };
 
 export default PageTitle;

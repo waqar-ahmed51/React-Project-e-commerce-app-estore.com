@@ -2,20 +2,12 @@ import React, { Component } from "react";
 import ProductFilter from "../components/ProductFilter";
 import PageTitle from "../components/PageTitle";
 import styled from "styled-components";
-// import { useParams } from "react-router-dom";
-import Product from "../components/Product";
 import { allProducts } from "../data";
+import ProductListContainer from "../components/ProductListContainer";
 
 const Container = styled.div`
   margin: 0px 20px;
   min-height: calc(100vh - 59px - 279px);
-`;
-
-const ProductContainer = styled.div`
-  padding: 20px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
 `;
 
 class ProductList extends Component {
@@ -62,48 +54,18 @@ class ProductList extends Component {
     // console.log(filter_2_products);
   };
 
-  // getURLCategory = () => {
-  //   let { category } = useParams();
-  //   return category;
-  // };
-
   render() {
-    let category = "phones";
-    // let { category } = useParams();
-    // this.getURLCategory();
-
-    //Setting the Page Title
-    let pagetitle = "Erorr";
-    if (category === "laptops") {
-      pagetitle = "LAPTOPS";
-    } else if (category === "phones") {
-      pagetitle = "PHONES";
-    } else if (category === "headphones") {
-      pagetitle = "HEADPHONES";
-    }
     return (
       <Container>
-        <PageTitle title={pagetitle} />
+        <PageTitle />
         <ProductFilter
-          category={category}
           sortByPorduct={this.handleSortBy}
           filterProducts_1={this.handlefilterProducts_1}
           filterProducts_2={this.handlefilterProducts_2}
         />
-        <ProductContainer>
-          {this.state.finalStateProducts.map((item) =>
-            item.category === category ? (
-              <Product
-                items={item}
-                key={item.id}
-                addItemCart={this.props.addItemCart}
-              />
-            ) : (
-              // Just making condition dead - will not do anything for other produts
-              console.log()
-            )
-          )}
-        </ProductContainer>
+        <ProductListContainer
+          finalStateProducts={this.state.finalStateProducts}
+        />
       </Container>
     );
   }

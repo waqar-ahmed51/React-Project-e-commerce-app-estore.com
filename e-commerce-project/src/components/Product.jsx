@@ -110,7 +110,13 @@ const Icon = styled.div`
 `;
 
 const Product = (props) => {
+
+
+  
   // console.log(items);
+
+
+
   const item = props.items;
   return (
     <Container>
@@ -124,7 +130,7 @@ const Product = (props) => {
         <Icon>
           <ShoppingCartOutlined onClick={() => props.addItemCart(item)} />
         </Icon>
-        <Link to={"/productviewa/" + item.id} className="CustomRouterLink">
+        <Link to={"/productview/" + item.id} className="CustomRouterLink">
           <Icon>
             <SearchOutlined />
           </Icon>
