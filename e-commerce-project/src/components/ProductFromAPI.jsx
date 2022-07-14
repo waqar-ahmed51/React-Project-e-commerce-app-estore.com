@@ -1,16 +1,10 @@
-import {
-  // FavoriteBorderOutlined,
-  SearchOutlined,
-  ShoppingCartOutlined,
-} from "@material-ui/icons";
 import React from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
 
 const ProductInfoGeneral = styled.div`
   bottom: 0;
   width: 100%;
-  height: 60px;
+  height: 90px;
   background-color: #000000;
   position: absolute;
   z-index: 2;
@@ -60,17 +54,14 @@ const Container = styled.div`
   }
   &:hover ${ProductTitle} {
     transition: all 0.3s ease;
-    transform: scale(1.3);
     color: black;
   }
   &:hover ${MainFeatures} {
     transition: all 0.3s ease;
-    transform: scale(1.3);
     color: black;
   }
   &:hover ${ProductPrice} {
     transition: all 0.3s ease;
-    transform: scale(1.3);
     color: black;
   }
   &:hover ${ProductInfoGeneral} {
@@ -90,34 +81,14 @@ const Image = styled.img`
   top: 0;
 `;
 
-const Icon = styled.div`
-  width: 40px;
-  height: 40px;
-  /* border-radius: 50%; */
-  border: 1px solid black;
-  background-color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 10px;
-  transition: all 0.3s ease;
-  &:hover {
-    border: 1px solid white;
-    background-color: #000000;
-    color: white;
-    transform: scale(1.4);
-  }
-`;
-
 const ProductFromAPI = (props) => {
-  // console.log(items);
   const item = props.items;
   return (
     <Container>
-      <Image src={item.img} />
+      <Image src={item.images[0]} />
       <ProductInfoGeneral>
         <ProductTitle>{item.title}</ProductTitle>
-        <MainFeatures>{item["Main Features"]}</MainFeatures>
+        <MainFeatures>{item["description"]}</MainFeatures>
         <ProductPrice>{item.price} PKR</ProductPrice>
       </ProductInfoGeneral>
     </Container>

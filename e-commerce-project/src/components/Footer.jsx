@@ -185,13 +185,36 @@ function Footer() {
                 Cart
               </Link>
             </ListItem>
-            <ListItem>Laptops</ListItem>
-            <ListItem>Phones</ListItem>
-            <ListItem>Headphones</ListItem>
-            <ListItem>My Account</ListItem>
-            <ListItem>Order Tracking</ListItem>
-            <ListItem>Wishlist</ListItem>
-            <ListItem>Terms</ListItem>
+            <ListItem>
+              <Link to="/productlist/laptops" className="CustomRouterLink">
+                Laptops
+              </Link>
+            </ListItem>
+            <ListItem>
+              <Link to="/dataapi" className="CustomRouterLink">
+                Data API
+              </Link>
+            </ListItem>
+            <ListItem>
+              <Link to="/productlist/phones" className="CustomRouterLink">
+                Phones
+              </Link>
+            </ListItem>
+            <ListItem>
+              <Link to="/ordertracking" className="CustomRouterLink">
+                Order Tracking
+              </Link>
+            </ListItem>
+            <ListItem>
+              <Link to="/productlist/headphones" className="CustomRouterLink">
+                Headphones
+              </Link>
+            </ListItem>
+            <ListItem>
+              <Link to="/outlets" className="CustomRouterLink">
+                Outlets
+              </Link>
+            </ListItem>
           </List>
         </Center>
         <Right>
