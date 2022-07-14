@@ -184,10 +184,10 @@ export const allProducts = [
         desc: "lorem ispsum",
         img: "https://gagadget.com/media/post_big/iphone-13-pro-review-dan-baker-35_gAtW7pC.jpg",
         // Price and Price Quantity must be same
-        price: 100,
+        price: 1000,
         priceQuantity:100, 
         quantity:1,
-        category:"phones",
+        category:"headphones",
         popular:"no",
         "Main Features": "RAM : 4 GB | ROM : 64 GB",
         specs:{
@@ -213,7 +213,7 @@ export const allProducts = [
         price: 100,
         priceQuantity:100, 
         quantity:1,
-        category:"phones",
+        category:"laptops",
         popular:"no",
         "Main Features": "RAM : 6 GB | ROM : 64 GB",
         specs:{
@@ -265,7 +265,7 @@ export const allProducts = [
         price: 100,
         priceQuantity:100, 
         quantity:1,
-        category:"laptops",
+        category:"headphones",
         popular:"no",
         "Main Features": "RAM : 6 GB | ROM : 64 GB",
         specs:{

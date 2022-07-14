@@ -29,42 +29,46 @@ const ProductFilter = (props) => {
   category = category.toUpperCase();
   return (
     <FilterContainer>
-      <Filter>
-        <FilterText>FILTER {category}</FilterText>
-        <Select
-          id="filter_1"
-          onChange={() =>
-            props.filterProducts_1(document.getElementById("filter_1").value)
-          }
-        >
-          <Option disabled selected>
-            RAM
-          </Option>
-          <Option>2 GB</Option>
-          <Option>4 GB</Option>
-          <Option>6 GB</Option>
-          <Option>8 GB</Option>
-          <Option>16 GB</Option>
-          <Option>All</Option>
-        </Select>
-        <Select
-          id="filter_2"
-          onChange={() =>
-            props.filterProducts_2(document.getElementById("filter_2").value)
-          }
-        >
-          <Option disabled selected>
-            ROM
-          </Option>
-          <Option>8 GB</Option>
-          <Option>16 GB</Option>
-          <Option>32 GB</Option>
-          <Option>64 GB</Option>
-          <Option>128 GB</Option>
-          <Option>256 GB</Option>
-          <Option>All</Option>
-        </Select>
-      </Filter>
+      {category === "HEADPHONES" ? (
+        <Filter></Filter>
+      ) : (
+        <Filter>
+          <FilterText>FILTER {category}</FilterText>
+          <Select
+            id="filter_1"
+            onChange={() =>
+              props.filterProducts_1(document.getElementById("filter_1").value)
+            }
+          >
+            <Option disabled selected>
+              RAM
+            </Option>
+            <Option>2 GB</Option>
+            <Option>4 GB</Option>
+            <Option>6 GB</Option>
+            <Option>8 GB</Option>
+            <Option>16 GB</Option>
+            <Option>All</Option>
+          </Select>
+          <Select
+            id="filter_2"
+            onChange={() =>
+              props.filterProducts_2(document.getElementById("filter_2").value)
+            }
+          >
+            <Option disabled selected>
+              ROM
+            </Option>
+            <Option>8 GB</Option>
+            <Option>16 GB</Option>
+            <Option>32 GB</Option>
+            <Option>64 GB</Option>
+            <Option>128 GB</Option>
+            <Option>256 GB</Option>
+            <Option>All</Option>
+          </Select>
+        </Filter>
+      )}
       <Filter>
         <FilterText>SORT {category}</FilterText>
         <Select
