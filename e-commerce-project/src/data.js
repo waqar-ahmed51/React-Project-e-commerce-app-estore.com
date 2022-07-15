@@ -7,7 +7,7 @@ export const sliderItems = [
         title: "LAPTOPS 30% OFF",
         desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum porro exercitationem,perferendis a iste.",
         bg: "ebfcf5",
-        link: "/laptops",
+        link: "/productview/1",
     },
     {
         id: 2,
@@ -15,7 +15,7 @@ export const sliderItems = [
         title: "PHONES 20% OFF",
         desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum porro exercitationem,perferendis a iste.",
         bg: "f9f6ff",
-        link: "/phones",
+        link: "/productview/1",
     },
     {
         id: 3,
@@ -23,7 +23,7 @@ export const sliderItems = [
         title: "HEADPHONES 40% OFF",
         desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum porro exercitationem,perferendis a iste.",
         bg: "e9e9e9cc",
-        link: "/headphones",
+        link: "/productview/1",
     },
 ];
 
