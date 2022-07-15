@@ -3,19 +3,21 @@ export const sliderItems = [
         id: 1,
         // Comment the image below of laptop during development its a heavy image 
         // img: "https://www.pngmart.com/files/4/Macbook-PNG-Photo.png",
-        img: "https://cdn2-imgix.macpaw.com/images/content/en_1633513105.png?auto=format&fm=png&ixlib=php-3.3.1&q=60&w=468",
+        img: "https://www.theiphonewiki.com/w/images/c/c4/MacBook_Pro_13-inch_M1_2020.png",
         title: "LAPTOPS 30% OFF",
         desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum porro exercitationem,perferendis a iste.",
         bg: "ebfcf5",
         link: "/productview/1",
+        size:"70%"
     },
     {
         id: 2,
-        img: "https://www.pngmart.com/files/4/Phone-Case-Transparent-PNG.png",
+        img: "http://cdn.shopify.com/s/files/1/0593/9727/5805/products/iphone-13-pro-max-graphite-select_cb9edf31-3fd4-4f27-8ed6-978343b9313d_1200x1200.png?v=1643889724",
         title: "PHONES 20% OFF",
         desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum porro exercitationem,perferendis a iste.",
         bg: "f9f6ff",
         link: "/productview/1",
+        size:"80%"
     },
     {
         id: 3,
@@ -24,13 +26,14 @@ export const sliderItems = [
         desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum porro exercitationem,perferendis a iste.",
         bg: "e9e9e9cc",
         link: "/productview/1",
+        size:"70%"
     },
 ];
 
 export const categories = [
     {
         id: 1,
-        img: "https://cdn.mos.cms.futurecdn.net/uWjEogFLUTBc8mSvagdiuP.jpg",
+        img: "https://www.cnet.com/a/img/resize/749c306c97f14076499981fc018dace33d0e367d/hub/2018/02/13/517fda12-de2a-4c3f-bee5-05daaf870537/01laptops-with-longest-battery-life-2018-feb.jpg?auto=webp&width=1200",
         title: "LAPTOPS",
         link: "/productlist/laptops",
     },
@@ -42,7 +45,7 @@ export const categories = [
     },
     {
         id: 3,
-        img: "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/sony-headphone-5-12-inline-5-1652371430.jpg?crop=0.667xw:1.00xh;0.167xw,0&resize=640:*",
+        img: "https://i.pcmag.com/imagery/articles/06X5FmHnKHTTmFzyn5jMunR-7..v1651759223.jpg",
         title: "HEADPHONES",
         link: "/productlist/headphones",
     },

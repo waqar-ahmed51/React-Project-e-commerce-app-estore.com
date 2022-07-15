@@ -96,9 +96,7 @@ const Button = styled.button`
   }
 `;
 
-const Image = styled.img`
-  height: 70%;
-`;
+const Image = styled.img``;
 
 const Slider = () => {
   const [slideIndex, setSlideIndex] = useState(0);
@@ -129,7 +127,7 @@ const Slider = () => {
               </Button>
             </InfoContainer>
             <ImageContainer>
-              <Image src={items.img} />
+              <Image src={items.img} style={{ height: items.size }} />
             </ImageContainer>
           </Slide>
         ))}
