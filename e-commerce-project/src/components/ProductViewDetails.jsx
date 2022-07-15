@@ -9,6 +9,7 @@ const Wrapper = styled.div`
 `;
 const ImageContainer = styled.div`
   border: 2px solid black;
+  padding: 2px;
   flex: 1;
 `;
 const Image = styled.img`

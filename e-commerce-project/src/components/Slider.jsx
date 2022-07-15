@@ -53,7 +53,7 @@ const Arrow = styled.div`
 const Slide = styled.div`
   display: flex;
   width: 100vw;
-  height: 92vh;
+  height: calc(100vh - 59px);
   align-items: center;
   background-color: #${(props) => props.bg};
 `;

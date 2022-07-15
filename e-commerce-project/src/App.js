@@ -66,7 +66,7 @@ class App extends Component {
       document.getElementById("popMessage").style.border = "1px solid green";
       document.getElementById("popMessage").style.display = "flex";
       //Removing the Pop Up message after seconds
-    setInterval(this.removePopMessage, 2000);
+    setInterval(this.removePopMessage, 3000);
     }else{
       //Showing Pop Up Message - when user tries to add produt again.
       let messageText="Product already in Cart"
@@ -76,7 +76,7 @@ class App extends Component {
       document.getElementById("popMessage").style.border = "1px solid red";
       document.getElementById("popMessage").style.display = "flex";
       //Removing the Pop Up message after seconds
-    setInterval(this.removePopMessage, 2000);
+    setInterval(this.removePopMessage, 3000);
       // console.log("Item exsists in Ids storgae in state");
     }
   }; 
