@@ -29,63 +29,57 @@ class ProductList extends Component {
   };
 
   handleSortBy = (sort) => {
+    console.log("Sorting selection : ", sort);
+    let sortedProducts = allProducts;
     if (sort === "Price Low to High") {
-      let sortedProducts = this.finalStateProducts;
       sortedProducts.sort((a, b) => {
         return a.price - b.price; // FOR  LOW TO HIGH
       });
-      this.setState({ finalStateProducts: sortedProducts });
+      this.setState({ sortedProducts: sortedProducts });
     } else if (sort === "Price High to Low") {
-      let sortedProducts = this.state.finalStateProducts;
       sortedProducts.sort((a, b) => {
         return b.price - a.price; // FOR HIGH TO LOW
       });
-      this.setState({ finalStateProducts: sortedProducts });
+      this.setState({ sortedProducts: sortedProducts });
     }
   };
 
-  handlefilterProducts = (filter_1, filter_2) => {
-    console.log("Both Filters : ", filter_1, filter_2);
-    let filteredProdcuts = allProducts;
+  handlefilterProducts = (filter_1, filter_2, category) => {
+    console.log("Both Filters : ", filter_1, filter_2, category);
+    let filteredProdcuts = this.state.sortedProducts;
+    let filter_products;
+    if (filter_1 === "RAM" || filter_1 === "All") {
+      filter_products = filteredProdcuts.filter(function (product) {
+        return product.specs.ROM === filter_2 && product.category === category;
+      });
+      this.setState({ finalStateProducts: filter_products });
+      console.log("filter_products 1 : ", filter_products, filter_2, category);
+    } else if (filter_2 === "ROM" || filter_2 === "All") {
+      filter_products = filteredProdcuts.filter(function (product) {
+        return product.specs.RAM === filter_1 && product.category === category;
+      });
+      this.setState({ finalStateProducts: filter_products });
+      console.log("filter_products 2 : ", filter_products, filter_1, category);
+    } else {
+      filter_products = filteredProdcuts.filter(function (product) {
+        return (
+          product.specs.RAM === filter_1 &&
+          product.specs.ROM === filter_2 &&
+          product.category === category
+        );
+      });
+      this.setState({ finalStateProducts: filter_products });
+      console.log("filter_products 3 : ", filter_products);
+    }
 
-    let filter_products = filteredProdcuts.filter(function (product) {
-      return product.specs.RAM === filter_1 && product.specs.ROM === filter_2;
-    });
-    this.setState({ finalStateProducts: filter_products });
-    console.log("filter_products : ", filter_products);
-
+    // Showing Message if nothing matches to the filters.
     if (filter_products.length === 0) {
       document.getElementById("noproduct").style.display = "flex";
       console.log("no product as per selected filters");
     } else {
       document.getElementById("noproduct").style.display = "none";
     }
-
-    // if (filter_1 !== "RAM") {
-    //   let filter_products = filteredProdcuts.filter(function (product) {
-    //     return product.specs.RAM === filter_1;
-    //   });
-    //   this.setState({ finalStateProducts: filter_products });
-    //   console.log("filter_products : ", filter_products);
-    // }
-    // if (filter_2 !== "ROM") {
-    //   let filter_products = filteredProdcuts.filter(function (product) {
-    //     return product.specs.ROM === filter_2;
-    //   });
-    //   this.setState({ finalStateProducts: filter_products });
-    //   console.log("filter_products : ", filter_products);
-    // }
   };
-
-  // handlefilterProducts_2 = (filter_2) => {
-  //   let filteredProdcuts = allProducts;
-
-  //   let filter_2_products = filteredProdcuts.filter(function (product) {
-  //     return product.specs.ROM === filter_2;
-  //   });
-  //   this.setState({ finalStateProducts: filter_2_products });
-  //   // console.log(filter_2_products);
-  // };
 
   render() {
     return (

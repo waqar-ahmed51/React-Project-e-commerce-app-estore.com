@@ -25,7 +25,7 @@ const Option = styled.option``;
 const ProductFilter = (props) => {
   //Getting category from URL
   let { category } = useParams();
-
+  let categoryLowerCase = category.toLowerCase();
   category = category.toUpperCase();
   return (
     <FilterContainer>
@@ -39,7 +39,8 @@ const ProductFilter = (props) => {
             onChange={() =>
               props.filterProducts(
                 document.getElementById("filter_1").value,
-                document.getElementById("filter_2").value
+                document.getElementById("filter_2").value,
+                categoryLowerCase
               )
             }
           >
@@ -58,7 +59,8 @@ const ProductFilter = (props) => {
             onChange={() =>
               props.filterProducts(
                 document.getElementById("filter_1").value,
-                document.getElementById("filter_2").value
+                document.getElementById("filter_2").value,
+                categoryLowerCase
               )
             }
           >
