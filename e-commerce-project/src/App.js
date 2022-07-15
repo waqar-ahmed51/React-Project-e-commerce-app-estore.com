@@ -79,9 +79,6 @@ class App extends Component {
     setInterval(this.removePopMessage, 2000);
       // console.log("Item exsists in Ids storgae in state");
     }
-   
-    
-    
   }; 
    //Removing the Pop Up message after seconds - function
   removePopMessage=()=>{
