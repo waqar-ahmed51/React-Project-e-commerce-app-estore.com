@@ -14,6 +14,20 @@ import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import SearchResult from './pages/SearchResult';
+import styled from "styled-components";
+
+const PopMessage = styled.div`
+/* Some proporties will be triggered from JS functions */
+  margin: 10px;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  position: fixed;
+  left: 590px;
+  z-index: 50;
+  width: 30vw;
+`;
 
 class App extends Component {
 
@@ -25,11 +39,15 @@ class App extends Component {
     cartItems: CartItemsData,
     //Data in state for the checkout page. Total Cost of the items in cart to checkout page.
     totalPriceCartItems: totaPriceOfCartItemsData,
+
+    //Message for Pop Up text
+    MessageText: "Product Added to Cart"
    } 
 
    handleAddItemCart = (item) => {
-    console.log("Test which item is passed to cart :", item.id);
-    console.log("Ids storgae :", this.state.itemsIDsStorage);
+    // console.log("Test which item is passed to cart :", item.id);
+    // console.log("Ids storgae :", this.state.itemsIDsStorage);
+
     let itemsIDsStorage=this.state.itemsIDsStorage;
     if(!itemsIDsStorage.includes(item.id)){
       CartItemsData.push(item);
@@ -40,12 +58,38 @@ class App extends Component {
       let cartItemsTotalNum = this.state.cartItemsTotalNum;
       cartItemsTotalNum++;
       this.setState({ cartItemsTotalNum });
+      //Showing Pop Up Message - when product added to cart 
+      let messageText="Product Added to Cart"
+      this.setState({MessageText:messageText})
+      document.getElementById("popMessage").style.color = "green";
+      document.getElementById("popMessage").style.background = "#D2F5A9";
+      document.getElementById("popMessage").style.border = "1px solid green";
+      document.getElementById("popMessage").style.display = "flex";
+      //Removing the Pop Up message after seconds
+    setInterval(this.removePopMessage, 2000);
     }else{
-      console.log("Item exsists in Ids storgae in state");
+      //Showing Pop Up Message - when user tries to add produt again.
+      let messageText="Product already in Cart"
+      this.setState({MessageText:messageText})
+      document.getElementById("popMessage").style.color = "red";
+      document.getElementById("popMessage").style.background = "#F5C2A9";
+      document.getElementById("popMessage").style.border = "1px solid red";
+      document.getElementById("popMessage").style.display = "flex";
+      //Removing the Pop Up message after seconds
+    setInterval(this.removePopMessage, 2000);
+      // console.log("Item exsists in Ids storgae in state");
     }
+   
+    
+    
+  }; 
+   //Removing the Pop Up message after seconds - function
+  removePopMessage=()=>{
+    document.getElementById("popMessage").style.display = "none";
   };
 
   //Product Quantity and total price of the particular product
+  
   onhandleAddQuantity = (id) => {
     //Updating the quanity in the state for the product
     const increment = ++CartItemsData[id].quantity;
@@ -118,6 +162,7 @@ class App extends Component {
     return (
       <Router>
         <Navbar ItemsInCart={this.state.cartItemsTotalNum}/>
+        <PopMessage id="popMessage" >{this.state.MessageText}</PopMessage>
       <Routes>
           <Route path="/" element={<Home addItemCart={this.handleAddItemCart}/>} />
           <Route path="/productlist/:category" element={<ProductList addItemCart={this.handleAddItemCart}/>} />

@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const Container = styled.div`
+const PopMessage = styled.div`
   margin: 10px;
   background-color: #facfcf;
   color: red;
@@ -17,7 +17,7 @@ const Container = styled.div`
 `;
 
 const PopUpMessage = () => {
-  return <Container>Error</Container>;
+  return <PopMessage>Error</PopMessage>;
 };
 
 export default PopUpMessage;
