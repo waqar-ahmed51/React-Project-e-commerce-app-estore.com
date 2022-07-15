@@ -3,6 +3,7 @@ import { Search, ShoppingCartOutlined } from "@material-ui/icons";
 import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Container = styled.div`
   height: 60px;
@@ -73,6 +74,15 @@ const MenuItem = styled.div`
 `;
 
 const Navbar = ({ ItemsInCart }) => {
+  const navigate = useNavigate();
+
+  const navigateToSearch = (keyword) => {
+    // 👇️ navigate to search with keyword
+    if (keyword !== "") {
+      navigate(`/searchresult/${keyword}`);
+    }
+  };
+
   return (
     <div>
       <Container>
@@ -84,8 +94,22 @@ const Navbar = ({ ItemsInCart }) => {
           </Left>
           <Center>
             <SearchContainer>
-              <Input />
-              <Search style={{ color: "black", fontSize: 20 }} />
+              <Input
+                id="searchInput"
+                onKeyPress={(ev) => {
+                  // Search work when enter is pressed.
+                  if (ev.key === "Enter" && ev.target.value !== "") {
+                    ev.preventDefault();
+                    navigateToSearch(ev.target.value);
+                  }
+                }}
+              />
+              <Search
+                style={{ color: "black", fontSize: 20 }}
+                onClick={() =>
+                  navigateToSearch(document.getElementById("searchInput").value)
+                }
+              />
             </SearchContainer>
           </Center>
           <Right>

@@ -13,6 +13,7 @@ import { CartItemsData,totaPriceOfCartItemsData } from './data';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import SearchResult from './pages/SearchResult';
 
 class App extends Component {
 
@@ -112,7 +113,7 @@ class App extends Component {
     itemsIDsStorage[index]=99999;
     this.setState({itemsIDsStorage});
   };
-  
+
   render() {
     return (
       <Router>
@@ -134,6 +135,7 @@ class App extends Component {
           totalPriceCartItems={this.state.totalPriceCartItems}
           />} />
           <Route path="/dataapi" element={<DataAPI />} />
+          <Route path="/searchresult/:keyword" element={<SearchResult />} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
         <Footer/>
