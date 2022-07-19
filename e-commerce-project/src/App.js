@@ -1,3 +1,4 @@
+// Clone of the React State-Props based estore e-commerce app - Redux Implementing (Making state centralized)
 import React, { Component } from 'react';
 import "./App.css";
 import Home from "./pages/Home";
