@@ -30,36 +30,55 @@ class ProductList extends Component {
 
   handleSortBy = (sort) => {
     console.log("Sorting selection : ", sort);
-    let sortedProducts = allProducts;
+    let sortedProducts = this.state.finalStateProducts;
     if (sort === "Price Low to High") {
       sortedProducts.sort((a, b) => {
         return a.price - b.price; // FOR  LOW TO HIGH
       });
-      this.setState({ sortedProducts: sortedProducts });
+      this.setState({ finalStateProducts: sortedProducts });
     } else if (sort === "Price High to Low") {
       sortedProducts.sort((a, b) => {
         return b.price - a.price; // FOR HIGH TO LOW
       });
-      this.setState({ sortedProducts: sortedProducts });
+      this.setState({ finalStateProducts: sortedProducts });
     }
   };
 
-  handlefilterProducts = (filter_1, filter_2, category) => {
-    console.log("Both Filters : ", filter_1, filter_2, category);
-    let filteredProdcuts = this.state.sortedProducts;
+  //Handling sorted filterted products - a seprate function
+  handleFilSort = (products, sort) => {
+    console.log("New function called :", products, sort);
+    let sortedProducts = products;
+    if (sort === "Price Low to High") {
+      sortedProducts.sort((a, b) => {
+        return a.price - b.price; // FOR  LOW TO HIGH
+      });
+      this.setState({ finalStateProducts: sortedProducts });
+    } else if (sort === "Price High to Low") {
+      sortedProducts.sort((a, b) => {
+        return b.price - a.price; // FOR HIGH TO LOW
+      });
+      this.setState({ finalStateProducts: sortedProducts });
+    } else if (sort === "Sort by") {
+      this.setState({ finalStateProducts: products });
+    }
+  };
+
+  handlefilterProducts = (filter_1, filter_2, category, sort) => {
+    console.log("Both Filters and sort : ", filter_1, filter_2, category, sort);
+    let filteredProdcuts = allProducts;
     let filter_products;
-    if (filter_1 === "RAM" || filter_1 === "All") {
+    if (filter_1 === "RAM") {
       filter_products = filteredProdcuts.filter(function (product) {
         return product.specs.ROM === filter_2 && product.category === category;
       });
-      this.setState({ finalStateProducts: filter_products });
-      console.log("filter_products 1 : ", filter_products, filter_2, category);
-    } else if (filter_2 === "ROM" || filter_2 === "All") {
+      //Calling another function
+      this.handleFilSort(filter_products, sort);
+    } else if (filter_2 === "ROM") {
       filter_products = filteredProdcuts.filter(function (product) {
         return product.specs.RAM === filter_1 && product.category === category;
       });
-      this.setState({ finalStateProducts: filter_products });
-      console.log("filter_products 2 : ", filter_products, filter_1, category);
+      //Calling another function
+      this.handleFilSort(filter_products, sort);
     } else {
       filter_products = filteredProdcuts.filter(function (product) {
         return (
@@ -68,8 +87,44 @@ class ProductList extends Component {
           product.category === category
         );
       });
-      this.setState({ finalStateProducts: filter_products });
-      console.log("filter_products 3 : ", filter_products);
+      //Calling another function
+      this.handleFilSort(filter_products, sort);
+    }
+
+    if (filter_1 === "All" && filter_2 === "ROM") {
+      filter_products = filteredProdcuts.filter(function (product) {
+        return product.category === category;
+      });
+      //Calling another function
+      this.handleFilSort(filter_products, sort);
+    } else if (filter_1 === "All" && filter_2 !== "ROM") {
+      filter_products = filteredProdcuts.filter(function (product) {
+        return product.specs.ROM === filter_2 && product.category === category;
+      });
+      //Calling another function
+      this.handleFilSort(filter_products, sort);
+    }
+
+    if (filter_2 === "All" && filter_1 === "RAM") {
+      filter_products = filteredProdcuts.filter(function (product) {
+        return product.category === category;
+      });
+      //Calling another function
+      this.handleFilSort(filter_products, sort);
+    } else if (filter_2 === "All" && filter_1 !== "RAM") {
+      filter_products = filteredProdcuts.filter(function (product) {
+        return product.specs.RAM === filter_1 && product.category === category;
+      });
+      //Calling another function
+      this.handleFilSort(filter_products, sort);
+    }
+
+    if (filter_1 === "All" && filter_2 === "All") {
+      filter_products = filteredProdcuts.filter(function (product) {
+        return product.category === category;
+      });
+      //Calling another function
+      this.handleFilSort(filter_products, sort);
     }
 
     // Showing Message if nothing matches to the filters.

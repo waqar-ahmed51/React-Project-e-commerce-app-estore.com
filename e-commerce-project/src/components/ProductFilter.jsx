@@ -40,7 +40,8 @@ const ProductFilter = (props) => {
               props.filterProducts(
                 document.getElementById("filter_1").value,
                 document.getElementById("filter_2").value,
-                categoryLowerCase
+                categoryLowerCase,
+                document.getElementById("sortBy").value
               )
             }
           >
@@ -60,7 +61,8 @@ const ProductFilter = (props) => {
               props.filterProducts(
                 document.getElementById("filter_1").value,
                 document.getElementById("filter_2").value,
-                categoryLowerCase
+                categoryLowerCase,
+                document.getElementById("sortBy").value
               )
             }
           >

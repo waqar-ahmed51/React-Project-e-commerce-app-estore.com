@@ -96,8 +96,10 @@ export const allProducts = [
         quantity:1,
         category:"phones",
         popular:"yes",
-        "Main Features": "A15 Bionic chipset | 1024 GB ROM | 6 GB RAM",
+        "Main Features": "A15 Bionic chipset | 256 GB ROM | 6 GB RAM",
         specs:{
+            RAM: "6 GB",
+            ROM: "256 GB",
             "Network Technology": "GSM / CDMA / HSPA / EVDO / LTE / 5G",
             "Announced": "2021, September 14",
             "Status": "Available. Released 2021, September 24",
