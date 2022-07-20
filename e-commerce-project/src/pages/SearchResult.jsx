@@ -27,8 +27,20 @@ const SearchResult = () => {
 
   return (
     <Container>
+      {/* Search Results with title */}
       {allProducts.map((item) =>
         item.title.toLowerCase().match(keyword.toLocaleLowerCase()) ? (
+          <SearchItem keyword={keyword} item={item} key={item.id} Sn={++Sno} />
+        ) : (
+          // Just making condition dead - will not do anything for other products
+          console.log()
+        )
+      )}
+      {/* Search Results with Main features */}
+      {allProducts.map((item) =>
+        item["Main Features"]
+          .toLowerCase()
+          .match(keyword.toLocaleLowerCase()) ? (
           <SearchItem keyword={keyword} item={item} key={item.id} Sn={++Sno} />
         ) : (
           // Just making condition dead - will not do anything for other products
