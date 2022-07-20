@@ -1,5 +1,5 @@
-import { KeyboardArrowLeftOutlined } from "@material-ui/icons";
-import { KeyboardArrowRightOutlined } from "@material-ui/icons";
+import { KeyboardArrowLeftOutlined } from "@mui/icons-material";
+import { KeyboardArrowRightOutlined } from "@mui/icons-material";
 import React, { useState } from "react";
 import styled from "styled-components";
 import { sliderItems } from "../data";

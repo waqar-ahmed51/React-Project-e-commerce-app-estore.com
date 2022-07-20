@@ -8,7 +8,7 @@ import {
   Room,
   Twitter,
   YouTube,
-} from "@material-ui/icons";
+} from "@mui/icons-material";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 

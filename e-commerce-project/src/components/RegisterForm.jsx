@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Checkbox } from "@material-ui/core";
+import { Checkbox } from "@mui/material";
 
 const Wrapper = styled.div`
   display: flex;

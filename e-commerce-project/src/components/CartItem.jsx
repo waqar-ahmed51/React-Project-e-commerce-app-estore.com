@@ -1,4 +1,4 @@
-import { Add, DeleteOutline, Remove } from "@material-ui/icons";
+import { Add, DeleteOutline, Remove } from "@mui/icons-material";
 import styled from "styled-components";
 import React, { Component } from "react";
 
@@ -123,7 +123,7 @@ class CartItem extends Component {
       RemoveQuantity,
       AddQuantity,
       DeleteProduct,
-      itemid
+      itemid,
     } = this.props;
 
     return (
@@ -153,7 +153,9 @@ class CartItem extends Component {
             </QuantityButtonContainer>
           </QuantityPrice>
         </ProdctPrice>
-        <DeleteProductContainer onClick={() => DeleteProduct(item.id, item.quantity)}>
+        <DeleteProductContainer
+          onClick={() => DeleteProduct(item.id, item.quantity)}
+        >
           <DeleteOutline />
         </DeleteProductContainer>
       </CartProduct>

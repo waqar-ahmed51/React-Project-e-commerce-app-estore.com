@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Add, Remove, ShoppingCartOutlined } from "@material-ui/icons";
+import { Add, Remove, ShoppingCartOutlined } from "@mui/icons-material";
 import { useParams } from "react-router-dom";
 import { allProducts } from "../data";
 

@@ -2,7 +2,7 @@ import {
   // FavoriteBorderOutlined,
   SearchOutlined,
   ShoppingCartOutlined,
-} from "@material-ui/icons";
+} from "@mui/icons-material";
 import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
@@ -110,12 +110,7 @@ const Icon = styled.div`
 `;
 
 const Product = (props) => {
-
-
-  
   // console.log(items);
-
-
 
   const item = props.items;
   return (
