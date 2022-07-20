@@ -1,6 +1,7 @@
 # React-E-Commerce-Project
  
  Development in Progress. 
- 
+ Click link to view live demo: https://waqar-ahmed51.github.io/React-E-Commerce-Project/
 
-![estore-com-Home-Page](https://user-images.githubusercontent.com/54082156/174131079-4c4adf83-1faf-4a81-aba1-b2370f39570f.png)
+
+![estore-com](https://user-images.githubusercontent.com/54082156/180027901-a97e8a99-0aa2-4e71-b8e7-12e63e63a858.png)
