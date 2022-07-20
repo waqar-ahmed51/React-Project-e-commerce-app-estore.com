@@ -83,6 +83,19 @@ const Navbar = ({ ItemsInCart }) => {
     }
   };
 
+  // Getting the url to change search visibilty
+  let urlCurrent = window.location.href;
+  let visibiltySearch = true; // variable which make search visible or invisible
+  if (
+    // Add urls here as or condition where you want to disable search
+    urlCurrent.match("register") ||
+    urlCurrent.match("signin")
+    // urlCurrent.match("cart")
+  ) {
+    visibiltySearch = false;
+  }
+  // console.log("Window Pathhhhhh", urlCurrent);
+
   return (
     <div>
       <Container>
@@ -93,24 +106,31 @@ const Navbar = ({ ItemsInCart }) => {
             </Link>
           </Left>
           <Center>
-            <SearchContainer>
-              <Input
-                id="searchInput"
-                onKeyPress={(ev) => {
-                  // Search work when enter is pressed.
-                  if (ev.key === "Enter" && ev.target.value !== "") {
-                    ev.preventDefault();
-                    navigateToSearch(ev.target.value);
+            {/* Visible Search based url */}
+            {visibiltySearch ? (
+              <SearchContainer>
+                <Input
+                  id="searchInput"
+                  onKeyPress={(ev) => {
+                    // Search work when enter is pressed.
+                    if (ev.key === "Enter" && ev.target.value !== "") {
+                      ev.preventDefault();
+                      navigateToSearch(ev.target.value);
+                    }
+                  }}
+                />
+                <Search
+                  style={{ color: "black", fontSize: 20 }}
+                  onClick={() =>
+                    navigateToSearch(
+                      document.getElementById("searchInput").value
+                    )
                   }
-                }}
-              />
-              <Search
-                style={{ color: "black", fontSize: 20 }}
-                onClick={() =>
-                  navigateToSearch(document.getElementById("searchInput").value)
-                }
-              />
-            </SearchContainer>
+                />
+              </SearchContainer>
+            ) : (
+              console.log("")
+            )}
           </Center>
           <Right>
             <MenuItem to="/register">
