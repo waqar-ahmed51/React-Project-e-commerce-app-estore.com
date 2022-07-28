@@ -1,4 +1,4 @@
-# Restful API Node.js Express.js MongoDB
+# React e-commerce Project (named as estore)
  
  Development in Progress. 
  
