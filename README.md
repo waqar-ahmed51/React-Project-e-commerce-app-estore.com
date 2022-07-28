@@ -1,5 +1,4 @@
 # React e-commerce Project (named as estore)
- 
  Development in Progress. 
  
  
