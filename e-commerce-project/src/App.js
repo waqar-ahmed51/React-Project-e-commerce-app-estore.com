@@ -163,8 +163,10 @@ class App extends Component {
         <PopMessage id="popMessage" >{this.state.MessageText}</PopMessage>
       <Routes>
           <Route path="/" element={<Home addItemCart={this.handleAddItemCart}/>} />
+
           {/* Same link for github pages */}
           <Route path="/React-Project-e-commerce-app-estore.com/" element={<Home addItemCart={this.handleAddItemCart}/>} />
+          
           <Route path="/productlist/:category" element={<ProductList addItemCart={this.handleAddItemCart}/>} />
           <Route path="/productview/:id" element={<ProductView addItemCart={this.handleAddItemCart}/>} />
           <Route path="/register" element={<Register />} />
