@@ -201,7 +201,7 @@ function Footer() {
               </Link>
             </ListItem>
             <ListItem>
-              <Link to="/ordertracking" className="CustomRouterLink">
+              <Link to="/addproduct" className="CustomRouterLink">
                 Add Product
               </Link>
             </ListItem>
