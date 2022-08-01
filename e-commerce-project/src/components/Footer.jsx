@@ -202,7 +202,7 @@ function Footer() {
             </ListItem>
             <ListItem>
               <Link to="/ordertracking" className="CustomRouterLink">
-                Order Tracking
+                Add Product
               </Link>
             </ListItem>
             <ListItem>
@@ -212,7 +212,7 @@ function Footer() {
             </ListItem>
             <ListItem>
               <Link to="/outlets" className="CustomRouterLink">
-                Outlets
+                Order Tracking
               </Link>
             </ListItem>
           </List>
