@@ -19,23 +19,8 @@ import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import SearchResult from './pages/SearchResult';
-import styled from "styled-components";
-
-const PopMessage = styled.div`
-/* Some proporties will be triggered from JS functions */
-  margin: 10px;
-  display: none;
-  justify-content: center;
-  align-items: center;
-  height: 30px;
-  position: fixed;
-  left: 590px;
-  z-index: 50;
-  width: 30vw;
-`;
 
 class App extends Component {
-  
   state = {
     //Preventing duplication product to cart
     itemsIDsStorage:[],
@@ -44,15 +29,11 @@ class App extends Component {
     cartItems: CartItemsData,
     //Data in state for the checkout page. Total Cost of the items in cart to checkout page.
     totalPriceCartItems: totaPriceOfCartItemsData,
-
-    //Message for Pop Up text
-    MessageText: "Product Added to Cart"
    } 
-   
+
    handleAddItemCart = (item) => {
     // console.log("Test which item is passed to cart :", item.id);
     // console.log("Ids storgae :", this.state.itemsIDsStorage);
-    
     let itemsIDsStorage=this.state.itemsIDsStorage;
     if(!itemsIDsStorage.includes(item.id)){
       CartItemsData.push(item);
@@ -64,23 +45,18 @@ class App extends Component {
       cartItemsTotalNum++;
       this.setState({ cartItemsTotalNum });
       //Showing Toast Message - when product added to cart 
-      toast.success('Product Added to Cart');
+      toast.success('Product added to Cart', {
+        position: toast.POSITION.BOTTOM_LEFT
+      });
     }else{
-      //Showing Pop Up Message - when user tries to add produt again.
-      toast.error('Product already in Cart');
-
-      //Removing the Pop Up message after seconds
-    setInterval(this.removePopMessage, 3000);
-      // console.log("Item exsists in Ids storgae in state");
+      //Showing Toast Up Message - when user tries to add produt again.
+      toast.error('Product already in Cart', {
+        position: toast.POSITION.BOTTOM_LEFT
+      });
     }
   }; 
-   //Removing the Pop Up message after seconds - function
-  removePopMessage=()=>{
-    document.getElementById("popMessage").style.display = "none";
-  };
 
   //Product Quantity and total price of the particular product
-  
   onhandleAddQuantity = (id) => {
     //Updating the quanity in the state for the product
     const increment = ++CartItemsData[id].quantity;
@@ -153,13 +129,10 @@ class App extends Component {
     return (
       <Router>
         <Navbar ItemsInCart={this.state.cartItemsTotalNum}/>
-        <PopMessage id="popMessage" >{this.state.MessageText}</PopMessage>
       <Routes>
           <Route path="/" element={<Home addItemCart={this.handleAddItemCart}/>} />
-
           {/* Same link for github pages */}
           <Route path="/React-Project-e-commerce-app-estore.com/" element={<Home addItemCart={this.handleAddItemCart}/>} />
-          
           <Route path="/productlist/:category" element={<ProductList addItemCart={this.handleAddItemCart}/>} />
           <Route path="/productview/:id" element={<ProductView addItemCart={this.handleAddItemCart}/>} />
           <Route path="/register" element={<Register />} />
