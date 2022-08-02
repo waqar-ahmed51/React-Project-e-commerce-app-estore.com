@@ -1,5 +1,7 @@
 // Clone of the React State-Props based estore e-commerce app - Redux Implementing (Making state centralized)
 import React, { Component } from 'react';
+import {ToastContainer,toast} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import "./App.css";
 import Home from "./pages/Home";
 import ProductList from "./pages/ProductList";
@@ -33,7 +35,7 @@ const PopMessage = styled.div`
 `;
 
 class App extends Component {
-
+  
   state = {
     //Preventing duplication product to cart
     itemsIDsStorage:[],
@@ -46,11 +48,11 @@ class App extends Component {
     //Message for Pop Up text
     MessageText: "Product Added to Cart"
    } 
-
+   
    handleAddItemCart = (item) => {
     // console.log("Test which item is passed to cart :", item.id);
     // console.log("Ids storgae :", this.state.itemsIDsStorage);
-
+    
     let itemsIDsStorage=this.state.itemsIDsStorage;
     if(!itemsIDsStorage.includes(item.id)){
       CartItemsData.push(item);
@@ -61,23 +63,12 @@ class App extends Component {
       let cartItemsTotalNum = this.state.cartItemsTotalNum;
       cartItemsTotalNum++;
       this.setState({ cartItemsTotalNum });
-      //Showing Pop Up Message - when product added to cart 
-      let messageText="Product Added to Cart"
-      this.setState({MessageText:messageText})
-      document.getElementById("popMessage").style.color = "green";
-      document.getElementById("popMessage").style.background = "#D2F5A9";
-      document.getElementById("popMessage").style.border = "1px solid green";
-      document.getElementById("popMessage").style.display = "flex";
-      //Removing the Pop Up message after seconds
-    setInterval(this.removePopMessage, 3000);
+      //Showing Toast Message - when product added to cart 
+      toast.success('Product Added to Cart');
     }else{
       //Showing Pop Up Message - when user tries to add produt again.
-      let messageText="Product already in Cart"
-      this.setState({MessageText:messageText})
-      document.getElementById("popMessage").style.color = "red";
-      document.getElementById("popMessage").style.background = "#F5C2A9";
-      document.getElementById("popMessage").style.border = "1px solid red";
-      document.getElementById("popMessage").style.display = "flex";
+      toast.error('Product already in Cart');
+
       //Removing the Pop Up message after seconds
     setInterval(this.removePopMessage, 3000);
       // console.log("Item exsists in Ids storgae in state");
@@ -190,6 +181,7 @@ class App extends Component {
           <Route path="*" element={<ErrorPage />} />
         </Routes>
         <Footer/>
+        <ToastContainer/>
       </Router>
     );
   }
