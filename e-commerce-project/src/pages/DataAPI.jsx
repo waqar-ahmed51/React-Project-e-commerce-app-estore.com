@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import PageTitle from "../components/PageTitle";
 import styled from "styled-components";
 import ProductFromAPI from "../components/ProductFromAPI";
-import { allProducts } from "../data";
 
 const Container = styled.div`
   margin: 0px 20px;
@@ -18,10 +17,6 @@ const ProductContainer = styled.div`
 
 class DataAPI extends Component {
   state = {
-    finalStateProducts: allProducts,
-    sortedProducts: allProducts,
-    filteredProdcuts: allProducts,
-
     //For fetching the API data.
     items: [],
     DataisLoaded: false,
