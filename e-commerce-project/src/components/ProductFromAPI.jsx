@@ -83,9 +83,16 @@ const Image = styled.img`
 
 const ProductFromAPI = (props) => {
   const item = props.items;
+  // Getting the url to change img src for data api and restful api
+  let urlCurrent = window.location.href;
   return (
     <Container>
-      <Image src={item.images[0]} />
+      {urlCurrent.match("restfulapi") ? (
+        <Image src={item.img} />
+      ) : (
+        <Image src={item.images[0]} />
+      )}
+
       <ProductInfoGeneral>
         <ProductTitle>{item.title}</ProductTitle>
         <MainFeatures>{item["description"]}</MainFeatures>

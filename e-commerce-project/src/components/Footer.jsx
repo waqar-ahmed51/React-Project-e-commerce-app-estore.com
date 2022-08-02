@@ -201,8 +201,8 @@ function Footer() {
               </Link>
             </ListItem>
             <ListItem>
-              <Link to="/addproduct" className="CustomRouterLink">
-                Add Product
+              <Link to="/addproducttoapi" className="CustomRouterLink">
+                Add Product API
               </Link>
             </ListItem>
             <ListItem>
@@ -211,8 +211,8 @@ function Footer() {
               </Link>
             </ListItem>
             <ListItem>
-              <Link to="/outlets" className="CustomRouterLink">
-                Order Tracking
+              <Link to="/restfulapi" className="CustomRouterLink">
+                Restful API Data
               </Link>
             </ListItem>
           </List>
