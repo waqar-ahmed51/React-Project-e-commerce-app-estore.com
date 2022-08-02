@@ -53,5 +53,3 @@ class DataAPI extends Component {
 }
 
 export default DataAPI;
-
-// ----------------------------------------------------------------

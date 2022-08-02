@@ -9,6 +9,7 @@ import SignIn from "./pages/SignIn";
 import Cart from "./pages/Cart";
 import Checkout from "./pages/Checkout";
 import DataAPI from './pages/DataAPI';
+import AddProductToAPI from './pages/AddProductToAPI';
 import ErrorPage from "./pages/ErrorPage";
 import { CartItemsData,totaPriceOfCartItemsData } from './data';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
@@ -182,6 +183,7 @@ class App extends Component {
           totalPriceCartItems={this.state.totalPriceCartItems}
           />} />
           <Route path="/dataapi" element={<DataAPI />} />
+          <Route path="/addproduct" element={<AddProductToAPI />} />
           <Route path="/searchresult/:keyword" element={<SearchResult />} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
