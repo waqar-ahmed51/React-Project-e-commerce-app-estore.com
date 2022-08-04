@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/React-Project-e-commerce-app-estore.com/static/css/main.14230f39.css",
-    "main.js": "/React-Project-e-commerce-app-estore.com/static/js/main.b92c805a.js",
+    "main.js": "/React-Project-e-commerce-app-estore.com/static/js/main.e6826365.js",
     "static/js/787.e6a110d7.chunk.js": "/React-Project-e-commerce-app-estore.com/static/js/787.e6a110d7.chunk.js",
     "index.html": "/React-Project-e-commerce-app-estore.com/index.html",
     "main.14230f39.css.map": "/React-Project-e-commerce-app-estore.com/static/css/main.14230f39.css.map",
-    "main.b92c805a.js.map": "/React-Project-e-commerce-app-estore.com/static/js/main.b92c805a.js.map",
+    "main.e6826365.js.map": "/React-Project-e-commerce-app-estore.com/static/js/main.e6826365.js.map",
     "787.e6a110d7.chunk.js.map": "/React-Project-e-commerce-app-estore.com/static/js/787.e6a110d7.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.14230f39.css",
-    "static/js/main.b92c805a.js"
+    "static/js/main.e6826365.js"
   ]
 }
