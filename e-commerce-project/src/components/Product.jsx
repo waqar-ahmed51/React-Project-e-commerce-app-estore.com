@@ -125,7 +125,7 @@ const Product = (props) => {
         <Icon onClick={() => props.addItemCart(item)}>
           <ShoppingCartOutlined />
         </Icon>
-        <Link to={"/productview/" + item.id} className="CustomRouterLink">
+        <Link to={"/React-Project-e-commerce-app-estore.com/productview/" + item.id} className="CustomRouterLink">
           <Icon>
             <SearchOutlined />
           </Icon>

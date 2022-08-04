@@ -67,6 +67,8 @@ export const allProducts = [
         popular: "yes",
         "Main Features": "8-Core CPU | 10-Core GPU",
         specs: {
+            RAM: "16 GB",
+            ROM: "256 GB",
             "Display": "Retina display",
             "Battery and Power": "4Up to 20 hours Apple TV app movie playbackGB",
             "Memory": "8GB unified memory",

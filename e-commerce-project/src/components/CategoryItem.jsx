@@ -4,7 +4,7 @@ import styled from "styled-components";
 const Container = styled.div`
   flex: 1;
   margin: 3px;
-  height: 70vh;
+  height: 670px;
   position: relative;
 `;
 
@@ -18,11 +18,11 @@ const TitleBackground = styled.div`
   position: absolute;
   background-color: black;
   width: 100%;
-  height: 100%;
+  height: 120px;
   display: flex;
   align-items: center;
   justify-content: center;
-  opacity: 0.4;
+  opacity: 0.7;
 `;
 
 const Info = styled.div`
@@ -39,13 +39,12 @@ const Info = styled.div`
   &:hover ${TitleBackground} {
     height: 100%;
     transition: all 0.5s ease;
-    opacity: 0.8;
   }
 `;
 
 const Title = styled.h1`
   position: absolute;
-  bottom: 300px;
+  bottom: 330px;
   margin-bottom: 300px;
   color: white;
   margin: 15px;
@@ -54,7 +53,7 @@ const Title = styled.h1`
 
 const Button = styled.button`
   position: absolute;
-  bottom: 250px;
+  bottom: 295px;
   border: none;
   padding: 10px;
   background-color: white;
