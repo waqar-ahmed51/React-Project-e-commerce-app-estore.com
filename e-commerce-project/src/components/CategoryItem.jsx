@@ -7,6 +7,7 @@ const Container = styled.div`
   height: 70vh;
   position: relative;
 `;
+
 const Image = styled.img`
   width: 100%;
   height: 100%;
@@ -17,11 +18,11 @@ const TitleBackground = styled.div`
   position: absolute;
   background-color: black;
   width: 100%;
-  height: 120px;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  opacity: 0.7;
+  opacity: 0.4;
 `;
 
 const Info = styled.div`
@@ -38,12 +39,13 @@ const Info = styled.div`
   &:hover ${TitleBackground} {
     height: 100%;
     transition: all 0.5s ease;
+    opacity: 0.8;
   }
 `;
 
 const Title = styled.h1`
   position: absolute;
-  bottom: 330px;
+  bottom: 300px;
   margin-bottom: 300px;
   color: white;
   margin: 15px;
@@ -52,7 +54,7 @@ const Title = styled.h1`
 
 const Button = styled.button`
   position: absolute;
-  bottom: 295px;
+  bottom: 250px;
   border: none;
   padding: 10px;
   background-color: white;

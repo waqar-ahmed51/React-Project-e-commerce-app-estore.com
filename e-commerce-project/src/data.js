@@ -7,8 +7,8 @@ export const sliderItems = [
         title: "MACBOOK PRO 13",
         desc: "M2 is the next generation of Apple silicon. Its 8-core CPU lets you zip through everyday tasks like creating documents ....",
         bg: "ebfcf5",
-        link: "/productview/0",
-        size:"70%"
+        link: "/React-Project-e-commerce-app-estore.com/productview/0",
+        size: "70%"
     },
     {
         id: 2,
@@ -16,8 +16,8 @@ export const sliderItems = [
         title: "IPHONE 13 Pro",
         desc: "Apple iPhone 13 Pro smartphone. Announced Sep 2021. Apple A15 Bionic chipset, 3095 mAh battery, 1024 GB storage, 6 GB RAM, ..",
         bg: "f9f6ff",
-        link: "/productview/1",
-        size:"80%"
+        link: "/React-Project-e-commerce-app-estore.com/productview/1",
+        size: "80%"
     },
     {
         id: 3,
@@ -25,8 +25,8 @@ export const sliderItems = [
         title: "WH-1000XM5",
         desc: "SONY HD Wireless Noise Cancelling Headphones WH-1000XM5 Register before 2022/8/14 to enjoy 500 coffee coupons.",
         bg: "e9e9e9cc",
-        link: "/productview/2",
-        size:"80%"
+        link: "/React-Project-e-commerce-app-estore.com/productview/2",
+        size: "80%"
     },
 ];
 
@@ -35,19 +35,19 @@ export const categories = [
         id: 1,
         img: "https://www.cnet.com/a/img/resize/749c306c97f14076499981fc018dace33d0e367d/hub/2018/02/13/517fda12-de2a-4c3f-bee5-05daaf870537/01laptops-with-longest-battery-life-2018-feb.jpg?auto=webp&width=1200",
         title: "LAPTOPS",
-        link: "/productlist/laptops",
+        link: "/React-Project-e-commerce-app-estore.com/productlist/laptops",
     },
     {
         id: 2,
         img: "https://www.cnet.com/a/img/resize/55fb60ca6a8cf5035ac2b5044ef54e6f87f6be3f/2020/08/18/b7168aea-9f7e-47bb-9f31-4cb8ad92fbc7/lg-note-20-ultra-5g-iphone-11-se-google-pixel-4a-lg-velvet-6133.jpg?auto=webp&fit=crop&height=675&width=1200",
         title: "PHONES",
-        link: "/productlist/phones",
+        link: "/React-Project-e-commerce-app-estore.com/productlist/phones",
     },
     {
         id: 3,
         img: "https://i.pcmag.com/imagery/articles/06X5FmHnKHTTmFzyn5jMunR-7..v1651759223.jpg",
         title: "HEADPHONES",
-        link: "/productlist/headphones",
+        link: "/React-Project-e-commerce-app-estore.com/productlist/headphones",
     },
 ];
 
@@ -61,12 +61,12 @@ export const allProducts = [
         img: "https://149426355.v2.pressablecdn.com/wp-content/uploads/2020/05/13pro-keyboard.jpg",
         // Price and Price Quantity must be same
         price: 320000,
-        priceQuantity:320000, 
-        quantity:1,
-        category:"laptops",
-        popular:"yes",
+        priceQuantity: 320000,
+        quantity: 1,
+        category: "laptops",
+        popular: "yes",
         "Main Features": "8-Core CPU | 10-Core GPU",
-        specs:{
+        specs: {
             "Display": "Retina display",
             "Battery and Power": "4Up to 20 hours Apple TV app movie playbackGB",
             "Memory": "8GB unified memory",
@@ -79,7 +79,7 @@ export const allProducts = [
             "Audio": "Stereo speakers with high dynamic range",
             "Display Support": "Native DisplayPort output over USB‑C",
         },
-        colors:{
+        colors: {
             color1: "58FF33",
             color2: "FF33F3",
             color3: "3346FF",
@@ -92,12 +92,12 @@ export const allProducts = [
         img: "https://gagadget.com/media/post_big/iphone-13-pro-review-dan-baker-35_gAtW7pC.jpg",
         // Price and Price Quantity must be same
         price: 220000,
-        priceQuantity:220000, 
-        quantity:1,
-        category:"phones",
-        popular:"yes",
+        priceQuantity: 220000,
+        quantity: 1,
+        category: "phones",
+        popular: "yes",
         "Main Features": "A15 Bionic chipset | 256 GB ROM | 6 GB RAM",
-        specs:{
+        specs: {
             RAM: "6 GB",
             ROM: "256 GB",
             "Network Technology": "GSM / CDMA / HSPA / EVDO / LTE / 5G",
@@ -114,7 +114,7 @@ export const allProducts = [
             "Sensors": "Face ID, accelerometer, gyro, proximity, compass, barometer",
             "BATTERY": "Li-Ion 3095 mAh, non-removable (12.11 Wh)",
         },
-        colors:{
+        colors: {
             color1: "58FF33",
             color2: "FF33F3",
             color3: "3346FFX",
@@ -127,12 +127,12 @@ export const allProducts = [
         img: "https://helios-i.mashable.com/imagery/reviews/01HUTTQhSs8SWLx3ouc0f7q/hero-image.fill.size_1200x1200.v1653070267.jpg",
         // Price and Price Quantity must be same
         price: 84000,
-        priceQuantity:84000, 
-        quantity:1,
-        category:"headphones",
-        popular:"yes",
+        priceQuantity: 84000,
+        quantity: 1,
+        category: "headphones",
+        popular: "yes",
         "Main Features": "Noise Cancelling | Processor QN1",
-        specs:{
+        specs: {
             "Bluetooth version": "5.2",
             "Active noise cancellation": "yes",
             "Ambient mode": "yes",
@@ -140,7 +140,7 @@ export const allProducts = [
             "Battery life": "30 hours (ANC on), 40 hours (ANC off)",
             "Bluetooth codecs": "LDAC, AAC, SBC",
         },
-        colors:{
+        colors: {
             color1: "58FF33",
             color2: "FF33F3",
             color3: "3346FF",
@@ -153,19 +153,19 @@ export const allProducts = [
         img: "https://gagadget.com/media/post_big/iphone-13-pro-review-dan-baker-35_gAtW7pC.jpg",
         // Price and Price Quantity must be same
         price: 33,
-        priceQuantity:33, 
-        quantity:1,
-        category:"phones",
-        popular:"yes",
+        priceQuantity: 33,
+        quantity: 1,
+        category: "phones",
+        popular: "yes",
         "Main Features": "RAM : 4 GB | ROM : 32 GB",
-        specs:{
+        specs: {
             RAM: "4 GB",
             ROM: "32 GB",
             "Dual SIM": "YES",
             Battery: "Li-Ion 3240 mAh, non-removable (12.41 Wh)",
             "Main Camera": "12 MP, f/1.6, 26mm (wide), 1.7µm, dual pixel PDAF, sensor-shift OIS",
         },
-        colors:{
+        colors: {
             color1: "58FF33",
             color2: "FF33F3",
             color3: "3346FF",
@@ -178,12 +178,12 @@ export const allProducts = [
         img: "https://gagadget.com/media/post_big/iphone-13-pro-review-dan-baker-35_gAtW7pC.jpg",
         // Price and Price Quantity must be same
         price: 100,
-        priceQuantity:100, 
-        quantity:1,
-        category:"phones",
-        popular:"yes",
+        priceQuantity: 100,
+        quantity: 1,
+        category: "phones",
+        popular: "yes",
         "Main Features": "RAM : 4 GB | ROM : 32 GB",
-        specs:{
+        specs: {
             RAM: "4 GB",
             ROM: "32 GB",
             "Dual SIM": "YES",
@@ -191,7 +191,7 @@ export const allProducts = [
             "Main Camera": "12 MP, f/1.6, 26mm (wide), 1.7µm, dual pixel PDAF, sensor-shift OIS",
             "Front Camera": "10 MP, f/1.6, 26mm (wide), 1.7µm, dual pixel PDAF, sensor-shift OIS",
         },
-        colors:{
+        colors: {
             color1: "58FF33",
             color2: "FF33F3",
             color3: "3346FF",
@@ -204,12 +204,12 @@ export const allProducts = [
         img: "https://gagadget.com/media/post_big/iphone-13-pro-review-dan-baker-35_gAtW7pC.jpg",
         // Price and Price Quantity must be same
         price: 1000,
-        priceQuantity:100, 
-        quantity:1,
-        category:"headphones",
-        popular:"no",
+        priceQuantity: 100,
+        quantity: 1,
+        category: "headphones",
+        popular: "no",
         "Main Features": "RAM : 4 GB | ROM : 64 GB",
-        specs:{
+        specs: {
             RAM: "4 GB",
             ROM: "64 GB",
             "Dual SIM": "YES",
@@ -217,7 +217,7 @@ export const allProducts = [
             "Main Camera": "12 MP, f/1.6, 26mm (wide), 1.7µm, dual pixel PDAF, sensor-shift OIS",
             "Front Camera": "10 MP, f/1.6, 26mm (wide), 1.7µm, dual pixel PDAF, sensor-shift OIS",
         },
-        colors:{
+        colors: {
             color1: "58FF33",
             color2: "FF33F3",
             color3: "3346FF",
@@ -230,12 +230,12 @@ export const allProducts = [
         img: "https://gagadget.com/media/post_big/iphone-13-pro-review-dan-baker-35_gAtW7pC.jpg",
         // Price and Price Quantity must be same
         price: 100,
-        priceQuantity:100, 
-        quantity:1,
-        category:"laptops",
-        popular:"no",
+        priceQuantity: 100,
+        quantity: 1,
+        category: "laptops",
+        popular: "no",
         "Main Features": "RAM : 6 GB | ROM : 64 GB",
-        specs:{
+        specs: {
             RAM: "6 GB",
             ROM: "64 GB",
             "Dual SIM": "YES",
@@ -243,7 +243,7 @@ export const allProducts = [
             "Main Camera": "12 MP, f/1.6, 26mm (wide), 1.7µm, dual pixel PDAF, sensor-shift OIS",
             "Front Camera": "10 MP, f/1.6, 26mm (wide), 1.7µm, dual pixel PDAF, sensor-shift OIS",
         },
-        colors:{
+        colors: {
             color1: "58FF33",
             color2: "FF33F3",
             color3: "3346FF",
@@ -256,12 +256,12 @@ export const allProducts = [
         img: "https://gagadget.com/media/post_big/iphone-13-pro-review-dan-baker-35_gAtW7pC.jpg",
         // Price and Price Quantity must be same
         price: 100,
-        priceQuantity:100, 
-        quantity:1,
-        category:"phones",
-        popular:"no",
+        priceQuantity: 100,
+        quantity: 1,
+        category: "phones",
+        popular: "no",
         "Main Features": "RAM : 6 GB | ROM : 64 GB",
-        specs:{
+        specs: {
             RAM: "6 GB",
             ROM: "64 GB",
             "Dual SIM": "YES",
@@ -269,7 +269,7 @@ export const allProducts = [
             "Main Camera": "12 MP, f/1.6, 26mm (wide), 1.7µm, dual pixel PDAF, sensor-shift OIS",
             "Front Camera": "10 MP, f/1.6, 26mm (wide), 1.7µm, dual pixel PDAF, sensor-shift OIS",
         },
-        colors:{
+        colors: {
             color1: "58FF33",
             color2: "FF33F3",
             color3: "3346FF",
@@ -282,12 +282,12 @@ export const allProducts = [
         img: "https://gagadget.com/media/post_big/iphone-13-pro-review-dan-baker-35_gAtW7pC.jpg",
         // Price and Price Quantity must be same
         price: 100,
-        priceQuantity:100, 
-        quantity:1,
-        category:"headphones",
-        popular:"no",
+        priceQuantity: 100,
+        quantity: 1,
+        category: "headphones",
+        popular: "no",
         "Main Features": "RAM : 6 GB | ROM : 64 GB",
-        specs:{
+        specs: {
             RAM: "6 GB",
             ROM: "64 GB",
             "Dual SIM": "YES",
@@ -295,7 +295,7 @@ export const allProducts = [
             "Main Camera": "12 MP, f/1.6, 26mm (wide), 1.7µm, dual pixel PDAF, sensor-shift OIS",
             "Front Camera": "10 MP, f/1.6, 26mm (wide), 1.7µm, dual pixel PDAF, sensor-shift OIS",
         },
-        colors:{
+        colors: {
             color1: "58FF33",
             color2: "FF33F3",
             color3: "3346FF",
@@ -304,10 +304,10 @@ export const allProducts = [
 ];
 
 // Items added to cart 
-export const CartItemsData=[
+export const CartItemsData = [
     // Cart Items will be added here through product buttons - update via states
 ];
-export const totaPriceOfCartItemsData=[]; // this will recive data form the totalPrice function in Cart.jsx and then will be retrived to App.js state;
+export const totaPriceOfCartItemsData = []; // this will recive data form the totalPrice function in Cart.jsx and then will be retrived to App.js state;
 
 // export const popularProducts = [
 // ];
