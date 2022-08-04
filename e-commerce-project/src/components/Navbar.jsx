@@ -79,7 +79,7 @@ const Navbar = ({ ItemsInCart }) => {
   const navigateToSearch = (keyword) => {
     // 👇️ navigate to search with keyword
     if (keyword !== "") {
-      navigate(`/searchresult/${keyword}`);
+      navigate(`/React-Project-e-commerce-app-estore.com/searchresult/${keyword}`);
     }
   };
 
@@ -101,7 +101,7 @@ const Navbar = ({ ItemsInCart }) => {
       <Container>
         <Wrapper>
           <Left>
-            <Link to="/" className="CustomRouterLink">
+            <Link to="/React-Project-e-commerce-app-estore.com/" className="CustomRouterLink">
               <Logo>estore.</Logo>
             </Link>
           </Left>
@@ -134,17 +134,17 @@ const Navbar = ({ ItemsInCart }) => {
           </Center>
           <Right>
             <MenuItem to="/register">
-              <Link to="/register" className="CustomRouterLink">
+              <Link to="/React-Project-e-commerce-app-estore.com/register" className="CustomRouterLink">
                 REGISTER
               </Link>
             </MenuItem>
             <MenuItem>
-              <Link to="/signin" className="CustomRouterLink">
+              <Link to="/React-Project-e-commerce-app-estore.com/signin" className="CustomRouterLink">
                 SIGN IN
               </Link>
             </MenuItem>
             <MenuItem>
-              <Link to="/cart" className="CustomRouterLink">
+              <Link to="/React-Project-e-commerce-app-estore.com/cart" className="CustomRouterLink">
                 <Badge badgeContent={ItemsInCart} color="primary">
                   <ShoppingCartOutlined />
                 </Badge>

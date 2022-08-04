@@ -134,24 +134,24 @@ class App extends Component {
           <Route path="/" element={<Home addItemCart={this.handleAddItemCart} />} />
           {/* Same link for github pages */}
           <Route path="/React-Project-e-commerce-app-estore.com/" element={<Home addItemCart={this.handleAddItemCart} />} />
-          <Route path="/productlist/:category" element={<ProductList addItemCart={this.handleAddItemCart} />} />
-          <Route path="/productview/:id" element={<ProductView addItemCart={this.handleAddItemCart} />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/signin" element={<SignIn />} />
-          <Route path="/cart" element={<Cart
+          <Route path="/React-Project-e-commerce-app-estore.com/productlist/:category" element={<ProductList addItemCart={this.handleAddItemCart} />} />
+          <Route path="/React-Project-e-commerce-app-estore.com/productview/:id" element={<ProductView addItemCart={this.handleAddItemCart} />} />
+          <Route path="/React-Project-e-commerce-app-estore.com/register" element={<Register />} />
+          <Route path="/React-Project-e-commerce-app-estore.com/signin" element={<SignIn />} />
+          <Route path="/React-Project-e-commerce-app-estore.com/cart" element={<Cart
             AddQuantity={this.onhandleAddQuantity}
             RemoveQuantity={this.onhandleRemoveQuantity}
             DeleteProduct={this.onhandleDeleteProduct}
             cartItems={this.state.cartItems}
           />} />
-          <Route path="/checkout" element={<Checkout
+          <Route path="/React-Project-e-commerce-app-estore.com/checkout" element={<Checkout
             totalCartItems={this.state.cartItemsTotalNum}
             totalPriceCartItems={this.state.totalPriceCartItems}
           />} />
-          <Route path="/dataapi" element={<DataAPI />} />
-          <Route path="/addproducttoapi" element={<AddProductToAPI />} />
-          <Route path="/restfulapi" element={<RestfulAPIData />} />
-          <Route path="/searchresult/:keyword" element={<SearchResult />} />
+          <Route path="/React-Project-e-commerce-app-estore.com/dataapi" element={<DataAPI />} />
+          <Route path="/React-Project-e-commerce-app-estore.com/addproducttoapi" element={<AddProductToAPI />} />
+          <Route path="/React-Project-e-commerce-app-estore.com/restfulapi" element={<RestfulAPIData />} />
+          <Route path="/React-Project-e-commerce-app-estore.com/searchresult/:keyword" element={<SearchResult />} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
         <Footer />

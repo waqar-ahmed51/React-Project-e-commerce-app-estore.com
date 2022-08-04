@@ -54,13 +54,13 @@ const Checkout = styled.button`
 const CartCheckoutContinueShoppingButtons = () => {
   return (
     <ButtonsContainer>
-      <Link to="/" className="CustomRouterLink">
+      <Link to="/React-Project-e-commerce-app-estore.com/" className="CustomRouterLink">
         <ContinueShopping>
           <AddShoppingCart style={{ marginRight: "20px" }} />
           CONTINUE SHOPPING
         </ContinueShopping>
       </Link>
-      <Link to="/checkout" className="CustomRouterLink">
+      <Link to="/React-Project-e-commerce-app-estore.com/checkout" className="CustomRouterLink">
         <Checkout>
           <ShoppingBasket style={{ marginRight: "20px" }} />
           CHECKOUT

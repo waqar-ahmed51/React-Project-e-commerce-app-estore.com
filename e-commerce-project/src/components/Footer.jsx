@@ -141,7 +141,7 @@ function Footer() {
       <FooterContainer>
         <Left>
           <Logo>
-            <Link to="/" className="CustomRouterLink">
+            <Link to="/React-Project-e-commerce-app-estore.com/" className="CustomRouterLink">
               estore.
             </Link>
           </Logo>
@@ -176,42 +176,42 @@ function Footer() {
           <Title>Useful Links</Title>
           <List>
             <ListItem>
-              <Link to="/" className="CustomRouterLink">
+              <Link to="/React-Project-e-commerce-app-estore.com/" className="CustomRouterLink">
                 Home
               </Link>
             </ListItem>
             <ListItem>
-              <Link to="/cart" className="CustomRouterLink">
+              <Link to="/React-Project-e-commerce-app-estore.com/cart" className="CustomRouterLink">
                 Cart
               </Link>
             </ListItem>
             <ListItem>
-              <Link to="/productlist/laptops" className="CustomRouterLink">
+              <Link to="/React-Project-e-commerce-app-estore.com/productlist/laptops" className="CustomRouterLink">
                 Laptops
               </Link>
             </ListItem>
             <ListItem>
-              <Link to="/dataapi" className="CustomRouterLink">
+              <Link to="/React-Project-e-commerce-app-estore.com/dataapi" className="CustomRouterLink">
                 Data API
               </Link>
             </ListItem>
             <ListItem>
-              <Link to="/productlist/phones" className="CustomRouterLink">
+              <Link to="/React-Project-e-commerce-app-estore.com/productlist/phones" className="CustomRouterLink">
                 Phones
               </Link>
             </ListItem>
             <ListItem>
-              <Link to="/addproducttoapi" className="CustomRouterLink">
+              <Link to="/React-Project-e-commerce-app-estore.com/addproducttoapi" className="CustomRouterLink">
                 Add Product API
               </Link>
             </ListItem>
             <ListItem>
-              <Link to="/productlist/headphones" className="CustomRouterLink">
+              <Link to="/React-Project-e-commerce-app-estore.com/productlist/headphones" className="CustomRouterLink">
                 Headphones
               </Link>
             </ListItem>
             <ListItem>
-              <Link to="/restfulapi" className="CustomRouterLink">
+              <Link to="/React-Project-e-commerce-app-estore.com/restfulapi" className="CustomRouterLink">
                 Restful API Data
               </Link>
             </ListItem>

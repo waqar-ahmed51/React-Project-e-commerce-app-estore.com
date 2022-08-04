@@ -22,6 +22,7 @@ const NoProduct = styled.div`
 
 const SearchResult = () => {
   let { keyword } = useParams();
+  
   //Serail Number for the search product.
   let Sno = 0;
 
