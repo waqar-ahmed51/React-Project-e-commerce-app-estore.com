@@ -9,6 +9,7 @@ const Container = styled.div`
   /* 100vh - header and footer in pixels */
   min-height: calc(100vh - 59px - 279px);
 `;
+
 const NoProduct = styled.div`
   display: flex;
   align-items: center;

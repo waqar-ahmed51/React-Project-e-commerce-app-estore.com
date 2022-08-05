@@ -25,6 +25,7 @@ const Option = styled.option``;
 const ProductFilter = (props) => {
   //Getting category from URL
   let { category } = useParams();
+  // console.log("category", category);
   let categoryLowerCase = category.toLowerCase();
   category = category.toUpperCase();
   return (
@@ -49,10 +50,14 @@ const ProductFilter = (props) => {
               RAM
             </Option>
             <Option>2 GB</Option>
+            <Option>3 GB</Option>
             <Option>4 GB</Option>
             <Option>6 GB</Option>
             <Option>8 GB</Option>
             <Option>16 GB</Option>
+            <Option>32 GB</Option>
+            <Option>64 GB</Option>
+            <Option>126 GB</Option>
             <Option>All</Option>
           </Select>
           <Select
@@ -75,6 +80,10 @@ const ProductFilter = (props) => {
             <Option>64 GB</Option>
             <Option>128 GB</Option>
             <Option>256 GB</Option>
+            <Option>512 GB</Option>
+            <Option>1 TB</Option>
+            <Option>2 TB GB</Option>
+            <Option>4 TB GB</Option>
             <Option>All</Option>
           </Select>
         </Filter>

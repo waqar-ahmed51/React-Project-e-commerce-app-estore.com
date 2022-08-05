@@ -52,6 +52,7 @@ const Container = styled.div`
   margin: 5px;
   height: 350px;
   background-color: #e6e6e6;
+  border:1px solid #e6e6e6;
   position: relative;
   min-width: 300px;
   max-width: 300px;
@@ -118,7 +119,7 @@ const Product = (props) => {
       <Image src={item.img} />
       <ProductInfoGeneral>
         <ProductTitle>{item.title}</ProductTitle>
-        <MainFeatures>{item["Main Features"]}</MainFeatures>
+        <MainFeatures>{`${item["Main Features"]} | ${item.specs.RAM} | ${item.specs.ROM} `}</MainFeatures>
         <ProductPrice>{item.price} PKR</ProductPrice>
       </ProductInfoGeneral>
       <Info>
