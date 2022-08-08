@@ -22,8 +22,7 @@ A complete custom UI-based e-commerce project made with react. I named it "estor
 - Cart fully functional, user can increase or decrease the quantity of the product, delete the product, and more.
 - Checkout fully functional, shipping details, and total cost details.
 - Restfull API
-- Dummy JSON API
-and more, visit link or watch project video demo.
+- Dummy JSON API, and more, visit link or watch project video demo.
 
 
 <strong> - Home Page View</strong>
