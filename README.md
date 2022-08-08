@@ -9,6 +9,7 @@ A complete custom UI-based e-commerce project made with react. Developed this pr
 <strong> - Home Page View</strong>
 ![Complete e-commerce react custom UI project](https://user-images.githubusercontent.com/54082156/183431663-57a03e07-203a-4a2b-9b21-0bfbae2e19ee.png)
 
-Please Note:
-The web is not responsive (will add responsive media queries later).
-Images used in the project may be subject to copyright, I used them for learning.
+
+<strong> - Please Note:</strong>
+- The web is not responsive (will add responsive media queries later).
+- Images used in the project may be subject to copyright, I used them for learning.
