@@ -41,4 +41,5 @@ https://user-images.githubusercontent.com/54082156/183894560-4388cdd9-8c61-405d-
 
 <strong>Please Note:</strong>
 - The web is not responsive (will add responsive media queries later).
-- Images used in the project may be subject to copyright, I used them for learning.
+- Images used in the project may be subject to copyright, I used them for learning propose.
+- You may find some bugs in some functionalities, I developed this project to practice on react so few bugs can be ignored. 
