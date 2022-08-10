@@ -2,9 +2,14 @@
 
 A complete custom UI-based e-commerce project made with react. I named it "estore.com" just a dummy name. Developed this project during my internship period at Nisum, Karachi. It was fun working with react component-based web apps and core javascript. It's a complete e-commerce project that has all features an e-commerce website must have. Like adding products to the cart, product detail view, cart items quantity, product category, product sorting, checkout, search item, and more. Further details are mentioned below.
  
+ <p><span style="color: rgb(184, 49, 47);">Please use a laptop/PC to see live demo - The project is not responsive yet. Thank You.</span></p>
 <strong> - Click link to view live demo:</strong> https://waqar-ahmed51.github.io/React-Project-e-commerce-app-estore.com/
 
 <strong> - Project Video Demo</strong>
+
+https://user-images.githubusercontent.com/54082156/183894560-4388cdd9-8c61-405d-86de-1ead3d7905c3.mp4
+
+
 
 <strong>This project's details and features are given below: </strong>
 - Custom UI (every component is made with styled component CSS).
