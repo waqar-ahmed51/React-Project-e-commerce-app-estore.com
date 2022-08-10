@@ -14,7 +14,7 @@ const ProductListContainer = (props) => {
   //Getting category from URL
   let { category } = useParams();
   return (
-    <ProductContainer>
+    <ProductContainer> 
       {props.finalStateProducts.map((item) =>
         item.category === category ? (
           <Product items={item} key={item.id} addItemCart={props.addItemCart} />

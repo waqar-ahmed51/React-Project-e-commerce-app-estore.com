@@ -70,7 +70,7 @@ class SearchItem extends Component {
     const { item, Sn } = this.props;
 
     return (
-      <Link to={"/productview/" + item.id} className="CustomRouterLink">
+      <Link to={"/React-Project-e-commerce-app-estore.com/productview/" + item.id} className="CustomRouterLink">
         <CartProduct>
           <ProducImage>
             <SNumber>{Sn}</SNumber>

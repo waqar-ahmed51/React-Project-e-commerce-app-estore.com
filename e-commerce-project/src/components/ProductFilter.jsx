@@ -82,8 +82,8 @@ const ProductFilter = (props) => {
             <Option>256 GB</Option>
             <Option>512 GB</Option>
             <Option>1 TB</Option>
-            <Option>2 TB GB</Option>
-            <Option>4 TB GB</Option>
+            <Option>2 TB</Option>
+            <Option>4 TB</Option>
             <Option>All</Option>
           </Select>
         </Filter>

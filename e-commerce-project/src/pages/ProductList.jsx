@@ -41,6 +41,7 @@ class ProductList extends Component {
         return b.price - a.price; // FOR HIGH TO LOW
       });
       this.setState({ finalStateProducts: sortedProducts });
+      console.log("finalStateProducts", this.state.finalStateProducts);
     }
   };
 
