@@ -2,9 +2,16 @@
 
 A complete custom UI-based e-commerce project made with react. I named it "estore.com" just a dummy name. Developed this project during my internship period at Nisum, Karachi. It was fun working with react component-based web apps and core javascript. It's a complete e-commerce project that has all features an e-commerce website must have. Like adding products to the cart, product detail view, cart items quantity, product category, product sorting, checkout, search item, and more. Further details are mentioned below.
  
+Please use a laptop/PC to see live demo - The project is not responsive yet. Thank You.
+
 <strong> - Click link to view live demo:</strong> https://waqar-ahmed51.github.io/React-Project-e-commerce-app-estore.com/
 
+
 <strong> - Project Video Demo</strong>
+
+https://user-images.githubusercontent.com/54082156/183894560-4388cdd9-8c61-405d-86de-1ead3d7905c3.mp4
+
+
 
 <strong>This project's details and features are given below: </strong>
 - Custom UI (every component is made with styled component CSS).
@@ -26,9 +33,11 @@ A complete custom UI-based e-commerce project made with react. I named it "estor
 
 
 <strong> - Home Page View</strong>
-![Complete e-commerce react custom UI project](https://user-images.githubusercontent.com/54082156/183431663-57a03e07-203a-4a2b-9b21-0bfbae2e19ee.png)
+
+![estore com mac screenshot](https://user-images.githubusercontent.com/54082156/183893088-6c480663-1989-4770-87f2-33c45ac9a43e.png)
 
 
 <strong>Please Note:</strong>
 - The web is not responsive (will add responsive media queries later).
-- Images used in the project may be subject to copyright, I used them for learning.
+- Images used in the project may be subject to copyright, I used them for learning propose.
+- You may find some bugs in some functionalities, I developed this project to practice on react so few bugs can be ignored. 
