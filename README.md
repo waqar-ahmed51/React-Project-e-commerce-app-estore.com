@@ -7,8 +7,6 @@ Please use a laptop/PC to see live demo - The project is not responsive yet. Tha
 <strong> - Click link to view live demo:</strong> https://waqar-ahmed51.github.io/React-Project-e-commerce-app-estore.com/
 
 
-
-
 <strong> - Project Video Demo</strong>
 
 https://user-images.githubusercontent.com/54082156/183894560-4388cdd9-8c61-405d-86de-1ead3d7905c3.mp4
