@@ -26,7 +26,8 @@ A complete custom UI-based e-commerce project made with react. I named it "estor
 
 
 <strong> - Home Page View</strong>
-![Complete e-commerce react custom UI project](https://user-images.githubusercontent.com/54082156/183431663-57a03e07-203a-4a2b-9b21-0bfbae2e19ee.png)
+
+![estore com mac screenshot](https://user-images.githubusercontent.com/54082156/183893088-6c480663-1989-4770-87f2-33c45ac9a43e.png)
 
 
 <strong>Please Note:</strong>
